@@ -4,7 +4,7 @@ backend:
   branch: main
 
   # Replace this after deploying the Cloudflare Worker.
-  base_url: https://REPLACE-WITH-YOUR-WORKER.workers.dev
+  base_url: https://lung-health-journal-oauth.abdullah-lung-health.workers.dev
   auth_endpoint: /auth
 
   commit_messages:
