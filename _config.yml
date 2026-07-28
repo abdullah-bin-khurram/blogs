@@ -1,0 +1,30 @@
+title: Lung Health Journal
+description: Calm, practical guidance for healthier lungs and more confident breathing.
+author: Abdullah Bin Khurram
+url: "https://abdullah-bin-khurram.github.io"
+baseurl: "/blogs"
+lang: en
+
+timezone: Asia/Karachi
+permalink: /articles/:title/
+markdown: kramdown
+excerpt_separator: "<!--more-->"
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: Abdullah Bin Khurram
+      published: true
+
+exclude:
+  - README.md
+  - oauth-worker
+  - node_modules
+  - vendor

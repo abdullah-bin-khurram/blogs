@@ -1,0 +1,56 @@
+<header class="site-header" data-header>
+  <div class="container header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Lung Health Journal home">
+      <img
+        class="brand-mark"
+        src="{{ '/assets/images/logo.svg' | relative_url }}"
+        alt=""
+        width="44"
+        height="44"
+      >
+
+      <span class="brand-copy">
+        <strong>Lung Health Journal</strong>
+        <small>By Abdullah Bin Khurram</small>
+      </span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-navigation"
+      data-menu-toggle
+    >
+      <span class="sr-only">Toggle navigation</span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav
+      class="site-nav"
+      id="site-navigation"
+      aria-label="Main navigation"
+      data-nav
+    >
+      <a
+        href="{{ '/' | relative_url }}"
+        {% if page.url == '/' %}aria-current="page"{% endif %}
+      >
+        Journal
+      </a>
+
+      <a
+        href="{{ '/about/' | relative_url }}"
+        {% if page.url == '/about/' %}aria-current="page"{% endif %}
+      >
+        About
+      </a>
+
+      <a class="nav-admin" href="{{ '/admin/' | relative_url }}">
+        Writer login
+      </a>
+    </nav>
+  </div>
+</header>

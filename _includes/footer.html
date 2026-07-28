@@ -1,0 +1,41 @@
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a class="footer-brand" href="{{ '/' | relative_url }}">
+        <img
+          src="{{ '/assets/images/logo.svg' | relative_url }}"
+          alt=""
+          width="38"
+          height="38"
+        >
+        <span>Lung Health Journal</span>
+      </a>
+
+      <p>
+        A gentle place to understand breathing, prevention, recovery,
+        and everyday lung wellbeing.
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <strong>Explore</strong>
+      <a href="{{ '/' | relative_url }}#articles">All articles</a>
+      <a href="{{ '/about/' | relative_url }}">About the journal</a>
+      <a href="{{ '/admin/' | relative_url }}">Admin</a>
+    </div>
+
+    <div class="footer-note">
+      <span class="eyebrow">Written by</span>
+      <strong>Abdullah Bin Khurram</strong>
+      <p>Clear ideas for calmer, healthier breathing.</p>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <span>
+      &copy; <span data-year>{{ 'now' | date: '%Y' }}</span>
+      Lung Health Journal.
+    </span>
+    <span>Made with care for every breath.</span>
+  </div>
+</footer>

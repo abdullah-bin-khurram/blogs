@@ -1,0 +1,7 @@
+name = "lung-health-journal-oauth"
+main = "src/index.js"
+compatibility_date = "2026-07-01"
+
+[vars]
+ALLOWED_ORIGIN = "https://abdullah-bin-khurram.github.io"
+REPO_IS_PRIVATE = "false"

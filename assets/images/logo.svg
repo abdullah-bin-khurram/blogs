@@ -1,0 +1,59 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 64 64"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">Lung Health Journal logo</title>
+  <desc id="desc">
+    A soft green circle containing stylized lungs and leaves
+  </desc>
+
+  <circle cx="32" cy="32" r="31" fill="#e4f2e9"/>
+
+  <path
+    d="M32 12v21"
+    fill="none"
+    stroke="#285e50"
+    stroke-width="4.8"
+    stroke-linecap="round"
+  />
+
+  <path
+    d="M31 21c-6 2-11 6-14 12"
+    fill="none"
+    stroke="#3d7663"
+    stroke-width="2.8"
+    stroke-linecap="round"
+  />
+
+  <path
+    d="M33 21c6 2 11 6 14 12"
+    fill="none"
+    stroke="#3d7663"
+    stroke-width="2.8"
+    stroke-linecap="round"
+  />
+
+  <path
+    d="M28 24c-7 2-14 9-17 18-3 10 2 17 9 17 7 0 11-8 11-18V29c0-4-1-6-3-5Z"
+    fill="#e59a8d"
+  />
+
+  <path
+    d="M36 24c7 2 14 9 17 18 3 10-2 17-9 17-7 0-11-8-11-18V29c0-4 1-6 3-5Z"
+    fill="#e59a8d"
+  />
+
+  <path
+    d="M17 22c-7-5-13-4-17 1 4 6 10 8 17 5"
+    fill="#83b494"
+    transform="translate(3)"
+  />
+
+  <path
+    d="M47 22c7-5 13-4 17 1-4 6-10 8-17 5"
+    fill="#83b494"
+    transform="translate(-3)"
+  />
+</svg>

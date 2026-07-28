@@ -1,0 +1,148 @@
+backend:
+  name: github
+  repo: abdullah-bin-khurram/blogs
+  branch: main
+
+  # Replace this after deploying the Cloudflare Worker.
+  base_url: https://REPLACE-WITH-YOUR-WORKER.workers.dev
+  auth_endpoint: /auth
+
+  commit_messages:
+    create: "Create article: {{slug}}"
+    update: "Update article: {{slug}}"
+    delete: "Delete article: {{slug}}"
+    uploadMedia: "Upload media: {{path}}"
+    deleteMedia: "Delete media: {{path}}"
+
+site_url: https://abdullah-bin-khurram.github.io/blogs/
+display_url: https://abdullah-bin-khurram.github.io/blogs/
+logo_url: https://abdullah-bin-khurram.github.io/blogs/assets/images/logo.svg
+
+media_folder: assets/images/uploads
+public_folder: /blogs/assets/images/uploads
+
+publish_mode: simple
+show_preview_links: false
+locale: en
+
+collections:
+  - name: posts
+    label: Articles
+    label_singular: Article
+    folder: _posts
+    create: true
+    delete: true
+    extension: md
+    format: frontmatter
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} — {{category}}"
+
+    sortable_fields:
+      - date
+      - title
+      - category
+      - featured
+      - commit_date
+
+    view_filters:
+      - label: Featured
+        field: featured
+        pattern: true
+
+      - label: Drafts
+        field: published
+        pattern: false
+
+    fields:
+      - label: Layout
+        name: layout
+        widget: hidden
+        default: post
+
+      - label: Article title
+        name: title
+        widget: string
+        hint: Keep it clear, helpful, and natural.
+
+      - label: Short description
+        name: description
+        widget: text
+        hint: Used on the home page, search results, and social previews.
+
+      - label: Publication date
+        name: date
+        widget: datetime
+        default: "{{now}}"
+        date_format: "YYYY-MM-DD"
+        time_format: "HH:mm"
+        format: "YYYY-MM-DD HH:mm:ss ZZ"
+
+      - label: Author
+        name: author
+        widget: string
+        default: Abdullah Bin Khurram
+
+      - label: Category
+        name: category
+        widget: select
+        options:
+          - Breathing Basics
+          - Prevention
+          - Recovery
+          - Air Quality
+          - Lifestyle
+          - Lung Conditions
+        default: Breathing Basics
+
+      - label: Tags
+        name: tags
+        widget: list
+        required: false
+        allow_add: true
+        collapsed: false
+        field:
+          label: Tag
+          name: tag
+          widget: string
+
+      - label: Cover image
+        name: image
+        widget: image
+        required: false
+        choose_url: false
+        media_library:
+          config:
+            multiple: false
+
+      - label: Cover image description
+        name: image_alt
+        widget: string
+        required: false
+        hint: Describe the image for people using screen readers.
+
+      - label: Estimated reading time
+        name: read_time
+        widget: number
+        value_type: int
+        min: 1
+        max: 60
+        default: 5
+
+      - label: Feature on home page
+        name: featured
+        widget: boolean
+        default: false
+
+      - label: Publish this article
+        name: published
+        widget: boolean
+        default: true
+        hint: Turn this off to keep the article as a draft.
+
+      - label: Article body
+        name: body
+        widget: markdown
+        modes:
+          - rich_text
+          - raw
+        minimal: false

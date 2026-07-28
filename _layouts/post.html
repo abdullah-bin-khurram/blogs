@@ -1,0 +1,209 @@
+---
+layout: default
+---
+
+<div class="reading-progress" aria-hidden="true">
+  <span data-reading-progress></span>
+</div>
+
+<article class="article-wrap">
+  <header class="article-hero">
+    <div class="container article-hero-inner">
+      <a
+        class="back-link"
+        href="{{ '/' | relative_url }}#articles"
+        aria-label="Back to all articles"
+      >
+        <span aria-hidden="true">←</span>
+        Back to journal
+      </a>
+
+      <div class="article-heading">
+        <div class="article-meta-top">
+          <span class="category-pill">
+            {{ page.category | default: 'Lung wellbeing' }}
+          </span>
+
+          <span>{{ page.date | date: '%B %-d, %Y' }}</span>
+          <span>{{ page.read_time | default: 5 }} min read</span>
+        </div>
+
+        <h1>{{ page.title }}</h1>
+
+        {% if page.description %}
+          <p class="article-deck">{{ page.description }}</p>
+        {% endif %}
+
+        <div class="article-byline">
+          <div class="author-avatar" aria-hidden="true">AK</div>
+
+          <div>
+            <strong>{{ page.author | default: site.author }}</strong>
+            <span>Author, Lung Health Journal</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="article-visual{% if page.image %} has-image{% endif %}">
+        {% if page.image %}
+          <img
+            src="{{ page.image }}"
+            alt="{{ page.image_alt | default: page.title | escape }}"
+          >
+        {% else %}
+          <div class="breath-orbit breath-orbit-one"></div>
+          <div class="breath-orbit breath-orbit-two"></div>
+
+          <svg
+            class="article-lungs"
+            viewBox="0 0 320 300"
+            role="img"
+            aria-label="Stylized lungs and leaves"
+          >
+            <path
+              d="M160 54v102"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="12"
+              stroke-linecap="round"
+            />
+
+            <path
+              d="M160 94c-22 7-39 20-50 39"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="7"
+              stroke-linecap="round"
+              opacity=".8"
+            />
+
+            <path
+              d="M160 94c22 7 39 20 50 39"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="7"
+              stroke-linecap="round"
+              opacity=".8"
+            />
+
+            <path
+              d="M146 107c-24 7-51 28-65 63-18 44-5 85 25 91 31 7 48-26 48-69v-70c0-11-2-17-8-15Z"
+              fill="currentColor"
+              opacity=".92"
+            />
+
+            <path
+              d="M174 107c24 7 51 28 65 63 18 44 5 85-25 91-31 7-48-26-48-69v-70c0-11 2-17 8-15Z"
+              fill="currentColor"
+              opacity=".92"
+            />
+
+            <path
+              d="M97 125c-20-18-39-21-54-8 9 22 27 31 54 27"
+              fill="#b7d8c2"
+            />
+
+            <path
+              d="M223 125c20-18 39-21 54-8-9 22-27 31-54 27"
+              fill="#b7d8c2"
+            />
+          </svg>
+        {% endif %}
+      </div>
+    </div>
+  </header>
+
+  <div class="container article-content-grid">
+    <aside class="article-aside" aria-label="Article details">
+      <div class="aside-card">
+        <span class="eyebrow">In this article</span>
+
+        {% if page.tags %}
+          <div class="tag-list">
+            {% for tag in page.tags %}
+              <span>{{ tag }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        <button class="copy-link" type="button" data-copy-link>
+          <span aria-hidden="true">↗</span>
+          <span data-copy-label>Copy article link</span>
+        </button>
+      </div>
+    </aside>
+
+    <div class="prose" data-article-body>
+      {{ content }}
+
+      <div class="article-signoff">
+        <div class="signoff-leaf" aria-hidden="true">✦</div>
+
+        <div>
+          <span class="eyebrow">A closing breath</span>
+          <p>
+            Small, steady choices can make caring for your lungs feel
+            less overwhelming and more achievable.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<section class="more-reading">
+  <div class="container">
+    <div class="section-heading compact">
+      <div>
+        <span class="eyebrow">Keep exploring</span>
+        <h2>More from the journal</h2>
+      </div>
+
+      <a
+        class="text-link"
+        href="{{ '/' | relative_url }}#articles"
+      >
+        View all articles
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+    <div class="post-grid post-grid-three">
+      {% assign related_count = 0 %}
+
+      {% for post in site.posts %}
+        {% if post.url != page.url and related_count < 3 %}
+          <article class="post-card small-card">
+            <div class="post-card-art category-{{ post.category | slugify }}">
+              {% if post.image %}
+                <img
+                  src="{{ post.image }}"
+                  alt="{{ post.image_alt | default: post.title | escape }}"
+                >
+              {% else %}
+                <span>
+                  {{ post.category | default: 'Breathe' | slice: 0 }}
+                </span>
+              {% endif %}
+            </div>
+
+            <div class="post-card-body">
+              <div class="post-card-meta">
+                <span>{{ post.category | default: 'Wellbeing' }}</span>
+                <span>{{ post.read_time | default: 5 }} min</span>
+              </div>
+
+              <h3>
+                <a href="{{ post.url | relative_url }}">
+                  {{ post.title }}
+                </a>
+              </h3>
+            </div>
+          </article>
+
+          {% assign related_count = related_count | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

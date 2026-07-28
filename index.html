@@ -1,0 +1,422 @@
+---
+layout: default
+title:
+description: Calm, practical guidance for healthier lungs and more confident breathing.
+---
+
+<section class="hero">
+  <div class="hero-cloud hero-cloud-one"></div>
+  <div class="hero-cloud hero-cloud-two"></div>
+
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <div class="hero-kicker">
+        <span></span>
+        A journal for easier breathing
+      </div>
+
+      <h1>
+        Knowledge that helps every breath feel <em>lighter.</em>
+      </h1>
+
+      <p>
+        Lung Health Journal shares thoughtful, approachable guidance
+        about breathing, prevention, recovery, and everyday respiratory
+        wellbeing.
+      </p>
+
+      <div class="hero-actions">
+        <a class="button button-primary" href="#articles">
+          Explore the journal
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <a
+          class="button button-quiet"
+          href="{{ '/about/' | relative_url }}"
+        >
+          Meet the author
+        </a>
+      </div>
+
+      <div class="hero-trust">
+        <div class="trust-mark" aria-hidden="true">ABK</div>
+
+        <div>
+          <strong>Written by Abdullah Bin Khurram</strong>
+          <span>Clear, caring, and practical health writing</span>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="hero-art"
+      aria-label="Stylized illustration of healthy lungs surrounded by leaves"
+    >
+      <div class="hero-art-card">
+        <div class="soft-ring ring-one"></div>
+        <div class="soft-ring ring-two"></div>
+
+        <svg
+          class="lungs-illustration"
+          viewBox="0 0 460 460"
+          role="img"
+          aria-hidden="true"
+        >
+          <defs>
+            <linearGradient id="lungFill" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f5a995"/>
+              <stop offset="1" stop-color="#d77f79"/>
+            </linearGradient>
+
+            <linearGradient id="stemFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#427d68"/>
+              <stop offset="1" stop-color="#275d50"/>
+            </linearGradient>
+          </defs>
+
+          <path
+            d="M230 76v148"
+            fill="none"
+            stroke="url(#stemFill)"
+            stroke-width="19"
+            stroke-linecap="round"
+          />
+
+          <path
+            d="M230 130c-36 10-66 34-83 70"
+            fill="none"
+            stroke="#3f7663"
+            stroke-width="10"
+            stroke-linecap="round"
+          />
+
+          <path
+            d="M230 130c36 10 66 34 83 70"
+            fill="none"
+            stroke="#3f7663"
+            stroke-width="10"
+            stroke-linecap="round"
+          />
+
+          <path
+            d="M210 146c-38 8-79 39-99 91-26 67-6 128 39 139 46 12 72-37 72-102V170c0-17-4-27-12-24Z"
+            fill="url(#lungFill)"
+          />
+
+          <path
+            d="M250 146c38 8 79 39 99 91 26 67 6 128-39 139-46 12-72-37-72-102V170c0-17 4-27 12-24Z"
+            fill="url(#lungFill)"
+          />
+
+          <path
+            d="M204 183c-34 12-54 38-64 70"
+            fill="none"
+            stroke="#f8c6b8"
+            stroke-width="8"
+            stroke-linecap="round"
+            opacity=".8"
+          />
+
+          <path
+            d="M256 183c34 12 54 38 64 70"
+            fill="none"
+            stroke="#f8c6b8"
+            stroke-width="8"
+            stroke-linecap="round"
+            opacity=".8"
+          />
+
+          <path
+            d="M120 143c-41-29-79-27-104 2 24 37 60 50 104 34"
+            fill="#8dbb9d"
+          />
+
+          <path
+            d="M340 143c41-29 79-27 104 2-24 37-60 50-104 34"
+            fill="#8dbb9d"
+          />
+
+          <path
+            d="M99 336c-37 3-60 22-69 56 37 12 65 2 82-31"
+            fill="#b4d7bd"
+          />
+
+          <path
+            d="M361 336c37 3 60 22 69 56-37 12-65 2-82-31"
+            fill="#b4d7bd"
+          />
+        </svg>
+
+        <div class="art-caption">
+          <span class="pulse-dot"></span>
+          <strong>Pause. Inhale. Learn.</strong>
+        </div>
+      </div>
+
+      <div class="floating-note note-top">
+        <span>01</span>
+        <p>Understand your lungs</p>
+      </div>
+
+      <div class="floating-note note-bottom">
+        <span>02</span>
+        <p>Build healthier habits</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="breath-strip" aria-label="Journal themes">
+  <div class="container breath-strip-inner">
+    <span>Breathing</span>
+    <i></i>
+    <span>Prevention</span>
+    <i></i>
+    <span>Recovery</span>
+    <i></i>
+    <span>Everyday wellbeing</span>
+  </div>
+</section>
+
+{% assign featured_posts = site.posts | where: 'featured', true %}
+{% assign featured = featured_posts.first | default: site.posts.first %}
+
+{% if featured %}
+<section class="featured-section">
+  <div class="container">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">Featured reading</span>
+        <h2>A calmer way to understand lung health</h2>
+      </div>
+
+      <p>Start with one practical idea, then build from there.</p>
+    </div>
+
+    <article class="featured-card">
+      <div class="featured-visual{% if featured.image %} has-image{% endif %}">
+        {% if featured.image %}
+          <img
+            src="{{ featured.image }}"
+            alt="{{ featured.image_alt | default: featured.title | escape }}"
+          >
+        {% else %}
+          <div class="featured-sun"></div>
+
+          <svg viewBox="0 0 520 380" aria-hidden="true">
+            <path
+              d="M40 310c78-93 157-123 236-90 86 36 139 2 204-75v235H40Z"
+              fill="#b9d9c3"
+            />
+
+            <path
+              d="M20 350c93-69 180-76 259-22 74 50 143 39 221-22v74H20Z"
+              fill="#6b9f86"
+            />
+
+            <path
+              d="M254 95v106"
+              stroke="#346653"
+              stroke-width="13"
+              stroke-linecap="round"
+            />
+
+            <path
+              d="M242 128c-38 9-74 45-82 86-9 48 12 85 46 86 34 0 51-36 51-82v-73c0-13-5-20-15-17Z"
+              fill="#e79a8c"
+            />
+
+            <path
+              d="M266 128c38 9 74 45 82 86 9 48-12 85-46 86-34 0-51-36-51-82v-73c0-13 5-20 15-17Z"
+              fill="#e79a8c"
+            />
+
+            <path
+              d="M173 110c-31-24-60-22-79 3 20 29 47 38 81 26"
+              fill="#7fae91"
+            />
+
+            <path
+              d="M335 110c31-24 60-22 79 3-20 29-47 38-81 26"
+              fill="#7fae91"
+            />
+          </svg>
+        {% endif %}
+      </div>
+
+      <div class="featured-content">
+        <div class="post-card-meta">
+          <span>{{ featured.category | default: 'Lung wellbeing' }}</span>
+          <span>{{ featured.date | date: '%B %-d, %Y' }}</span>
+          <span>{{ featured.read_time | default: 5 }} min read</span>
+        </div>
+
+        <h3>
+          <a href="{{ featured.url | relative_url }}">
+            {{ featured.title }}
+          </a>
+        </h3>
+
+        <p>
+          {{ featured.description | default: featured.excerpt | strip_html | truncate: 180 }}
+        </p>
+
+        <a class="text-link" href="{{ featured.url | relative_url }}">
+          Read the article
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </article>
+  </div>
+</section>
+{% endif %}
+
+<section class="journal-section" id="articles">
+  <div class="container">
+    <div class="section-heading journal-heading">
+      <div>
+        <span class="eyebrow">The journal</span>
+        <h2>Practical guidance for healthier breathing</h2>
+      </div>
+
+      <div class="article-search">
+        <label class="search-box">
+          <span class="sr-only">Search articles</span>
+
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="6.5"></circle>
+            <path d="m16 16 4 4"></path>
+          </svg>
+
+          <input
+            type="search"
+            placeholder="Search the journal"
+            data-search-input
+          >
+        </label>
+      </div>
+    </div>
+
+    <div
+      class="filter-row"
+      role="group"
+      aria-label="Filter articles by category"
+      data-filter-row
+    >
+      <button
+        class="filter-chip is-active"
+        type="button"
+        data-filter="all"
+      >
+        All topics
+      </button>
+
+      {% assign all_categories = site.posts | map: 'category' | compact | uniq | sort %}
+
+      {% for category in all_categories %}
+        <button
+          class="filter-chip"
+          type="button"
+          data-filter="{{ category | slugify }}"
+        >
+          {{ category }}
+        </button>
+      {% endfor %}
+    </div>
+
+    <div class="post-grid" data-post-grid>
+      {% for post in site.posts %}
+        <article
+          class="post-card"
+          data-post-card
+          data-category="{{ post.category | slugify }}"
+          data-search="{{ post.title | append: ' ' | append: post.description | append: ' ' | append: post.category | append: ' ' | append: post.tags | downcase | escape }}"
+        >
+          <a
+            class="post-card-art category-{{ post.category | slugify }}{% if post.image %} has-image{% endif %}"
+            href="{{ post.url | relative_url }}"
+            aria-label="Read {{ post.title | escape }}"
+          >
+            {% if post.image %}
+              <img
+                src="{{ post.image }}"
+                alt="{{ post.image_alt | default: post.title | escape }}"
+              >
+            {% else %}
+              <span>
+                {{ post.category | default: 'Breathe' | slice: 0 }}
+              </span>
+
+              <div class="card-leaf leaf-a"></div>
+              <div class="card-leaf leaf-b"></div>
+            {% endif %}
+          </a>
+
+          <div class="post-card-body">
+            <div class="post-card-meta">
+              <span>{{ post.category | default: 'Wellbeing' }}</span>
+              <span>{{ post.read_time | default: 5 }} min</span>
+            </div>
+
+            <h3>
+              <a href="{{ post.url | relative_url }}">
+                {{ post.title }}
+              </a>
+            </h3>
+
+            <p>
+              {{ post.description | default: post.excerpt | strip_html | truncate: 145 }}
+            </p>
+
+            <div class="post-card-footer">
+              <span>{{ post.date | date: '%b %-d, %Y' }}</span>
+
+              <a
+                href="{{ post.url | relative_url }}"
+                aria-label="Read {{ post.title | escape }}"
+              >
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+
+    <div class="empty-state" hidden data-empty-state>
+      <div aria-hidden="true">⌁</div>
+      <h3>No articles found</h3>
+      <p>Try another word or choose a different topic.</p>
+    </div>
+  </div>
+</section>
+
+<section class="author-section">
+  <div class="container author-card">
+    <div class="author-art" aria-hidden="true">
+      <div class="author-monogram">AK</div>
+      <span class="leaf-stroke leaf-stroke-one"></span>
+      <span class="leaf-stroke leaf-stroke-two"></span>
+    </div>
+
+    <div class="author-copy">
+      <span class="eyebrow">About the author</span>
+
+      <h2>
+        Health writing with clarity, warmth, and room to breathe.
+      </h2>
+
+      <p>
+        Abdullah Bin Khurram created Lung Health Journal to make
+        respiratory health information feel approachable, useful,
+        and encouraging—one thoughtful article at a time.
+      </p>
+
+      <a class="text-link" href="{{ '/about/' | relative_url }}">
+        Read the journal story
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</section>
