@@ -33,7 +33,7 @@ jobs:
 
       - name: Generate GA4 article ranking when configured
         env:
-          GA4_PROPERTY_ID: ${{ vars.GA4_PROPERTY_ID }}
+          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
           GA4_CREDENTIALS_B64: ${{ secrets.GA4_CREDENTIALS_B64 }}
         shell: bash
         run: |
