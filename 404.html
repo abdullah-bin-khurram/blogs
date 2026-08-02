@@ -1,25 +1,13 @@
 ---
 layout: default
 title: Page not found
+title_ur: صفحہ نہیں ملا
 permalink: /404.html
 ---
-
 <section class="not-found">
-  <div class="container not-found-inner">
-    <div class="not-found-mark" aria-hidden="true">404</div>
-
-    <span class="eyebrow">A quiet pause</span>
-
-    <h1>This page has drifted away.</h1>
-
-    <p>
-      The link may be old or the article may have moved. Return to the
-      journal and continue exploring.
-    </p>
-
-    <a class="button button-primary" href="{{ '/' | relative_url }}">
-      Return home
-      <span aria-hidden="true">→</span>
-    </a>
-  </div>
+  <div class="not-found-mark" aria-hidden="true">404</div>
+  <span class="eyebrow" data-lang="en">A quiet pause</span><span class="eyebrow" data-lang="ur">ایک مختصر وقفہ</span>
+  <h1 data-lang="en">This page has drifted away.</h1><h1 data-lang="ur">یہ صفحہ دستیاب نہیں ہے۔</h1>
+  <p data-lang="en">The link may be old or the content may have moved.</p><p data-lang="ur">ممکن ہے لنک پرانا ہو یا مواد منتقل کر دیا گیا ہو۔</p>
+  <a class="button button-primary" href="{{ '/' | relative_url }}"><span data-lang="en">Return home</span><span data-lang="ur">ہوم پر واپس جائیں</span><span aria-hidden="true">→</span></a>
 </section>

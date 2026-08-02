@@ -1,0 +1,57 @@
+<aside class="widget-rail" aria-label="Portal widgets">
+  <div class="widget-rail-heading">
+    <span class="eyebrow" data-lang="en">At a glance</span><span class="eyebrow" data-lang="ur">ایک نظر میں</span>
+    <h2 data-lang="en">Live health tools</h2><h2 data-lang="ur">صحت کے لائیو ٹولز</h2>
+  </div>
+
+  {% assign enabled_widget_count = 0 %}
+  {% for widget in site.data.widgets.widgets %}
+    {% if widget.enabled != false %}
+      {% assign enabled_widget_count = enabled_widget_count | plus: 1 %}
+      <section class="portal-widget" data-widget-kind="{{ widget.type | default: 'html' }}">
+        <header class="widget-header">
+          <span class="widget-number">0{{ enabled_widget_count }}</span>
+          <h3><span data-lang="en">{{ widget.title_en | default: 'Portal widget' }}</span><span data-lang="ur">{{ widget.title_ur | default: 'پورٹل ویجیٹ' }}</span></h3>
+        </header>
+
+        {% if widget.type == 'aqi' %}
+          <div class="aqi-widget" data-aqi-widget>
+            <label>
+              <span data-lang="en">Pakistani city</span><span data-lang="ur">پاکستانی شہر</span>
+              <select data-aqi-city>
+                <option value="karachi" data-lat="24.8607" data-lon="67.0011">Karachi · کراچی</option>
+                <option value="lahore" data-lat="31.5204" data-lon="74.3587">Lahore · لاہور</option>
+                <option value="islamabad" data-lat="33.6844" data-lon="73.0479">Islamabad · اسلام آباد</option>
+                <option value="rawalpindi" data-lat="33.5651" data-lon="73.0169">Rawalpindi · راولپنڈی</option>
+                <option value="peshawar" data-lat="34.0151" data-lon="71.5249">Peshawar · پشاور</option>
+                <option value="quetta" data-lat="30.1798" data-lon="66.9750">Quetta · کوئٹہ</option>
+                <option value="faisalabad" data-lat="31.4504" data-lon="73.1350">Faisalabad · فیصل آباد</option>
+                <option value="multan" data-lat="30.1575" data-lon="71.5249">Multan · ملتان</option>
+                <option value="gujranwala" data-lat="32.1877" data-lon="74.1945">Gujranwala · گوجرانوالہ</option>
+                <option value="hyderabad" data-lat="25.3960" data-lon="68.3578">Hyderabad · حیدرآباد</option>
+              </select>
+            </label>
+            <div class="aqi-reading" data-aqi-reading aria-live="polite">
+              <span class="aqi-value" data-aqi-value>—</span>
+              <div>
+                <strong data-aqi-label><span data-lang="en">Loading air quality…</span><span data-lang="ur">فضائی معیار لوڈ ہو رہا ہے…</span></strong>
+                <small>AQI (US)</small>
+              </div>
+            </div>
+            <div class="pollutant-grid">
+              <div><span>PM2.5</span><strong data-aqi-pm25>—</strong></div>
+              <div><span>PM10</span><strong data-aqi-pm10>—</strong></div>
+            </div>
+            <p class="widget-source"><span data-lang="en">Forecast data:</span><span data-lang="ur">پیش گوئی کا ڈیٹا:</span> <a href="https://open-meteo.com/en/docs/air-quality-api" target="_blank" rel="noopener">Open-Meteo / CAMS</a></p>
+          </div>
+        {% else %}
+          <iframe class="custom-widget-frame" title="{{ widget.title_en | default: 'Portal widget' | escape }}" sandbox="allow-scripts allow-forms allow-popups" loading="lazy" srcdoc="{{ widget.html | escape }}"></iframe>
+        {% endif %}
+      </section>
+    {% endif %}
+  {% endfor %}
+
+  {% if enabled_widget_count == 0 %}
+    <div class="widget-empty"><p data-lang="en">Live tools will appear here when enabled.</p><p data-lang="ur">فعال ہونے پر لائیو ٹولز یہاں ظاہر ہوں گے۔</p></div>
+  {% endif %}
+</aside>

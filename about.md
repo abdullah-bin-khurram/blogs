@@ -1,136 +1,39 @@
 ---
 layout: default
-title: About
-description: The story and purpose behind Lung Health Journal by Abdullah Bin Khurram.
+title: About the portal
+title_ur: پورٹل کے بارے میں
+description: The purpose and educational values behind the ABK Lung Health Education Portal.
+description_ur: اے بی کے پھیپھڑوں کی صحت کے تعلیمی پورٹل کا مقصد اور تعلیمی اقدار۔
 permalink: /about/
 ---
 
-<section class="page-hero about-hero">
-  <div class="container page-hero-grid">
-    <div>
-      <span class="eyebrow">About the journal</span>
+<section class="page-hero">
+  <div>
+    <span class="eyebrow" data-lang="en">About the portal</span><span class="eyebrow" data-lang="ur">پورٹل کے بارے میں</span>
+    <h1 data-lang="en">Respiratory education made clearer, calmer, and more useful.</h1><h1 data-lang="ur">سانس کی صحت کی تعلیم، زیادہ واضح، پُرسکون اور مفید انداز میں۔</h1>
+    <p data-lang="en">The ABK Lung Health Education Portal turns complex respiratory topics into practical guidance for everyday people.</p><p data-lang="ur">اے بی کے پھیپھڑوں کی صحت کا تعلیمی پورٹل پیچیدہ موضوعات کو عام لوگوں کے لیے عملی رہنمائی میں تبدیل کرتا ہے۔</p>
+  </div>
+  <img src="{{ '/assets/images/portal-pic.webp' | relative_url }}" alt="ABK Lung Health Education Portal emblem">
+</section>
 
-      <h1>
-        A thoughtful space for understanding the lungs that carry us
-        through life.
-      </h1>
-
-      <p>
-        Lung Health Journal turns complex respiratory topics into clear,
-        calm, and practical reading for everyday people.
-      </p>
-    </div>
-
-    <div class="about-symbol" aria-hidden="true">
-      <div class="about-symbol-inner">AK</div>
-      <span></span>
-      <span></span>
-      <span></span>
+<section class="about-story content-section">
+  <div class="about-grid">
+    <div><span class="eyebrow" data-lang="en">The purpose</span><span class="eyebrow" data-lang="ur">مقصد</span><h2 data-lang="en">Better understanding can make healthier choices feel possible.</h2><h2 data-lang="ur">بہتر سمجھ صحت مند انتخاب کو ممکن بنا سکتی ہے۔</h2></div>
+    <div class="prose-like">
+      <p data-lang="en">Lung health can feel complicated when medical language becomes technical or alarming. This portal offers a gentler path: useful explanations, realistic habits, downloadable resources, and balanced perspectives.</p>
+      <p data-lang="ur">جب طبی زبان بہت تکنیکی یا خوف زدہ کرنے والی ہو تو پھیپھڑوں کی صحت پیچیدہ محسوس ہو سکتی ہے۔ یہ پورٹل مفید وضاحتوں، حقیقت پسندانہ عادات، قابل ڈاؤن لوڈ وسائل اور متوازن نقطۂ نظر کے ذریعے ایک آسان راستہ پیش کرتا ہے۔</p>
+      <blockquote data-lang="en">Good health education should leave people clearer, calmer, and ready to take one useful next step.</blockquote>
+      <blockquote data-lang="ur">اچھی صحت کی تعلیم لوگوں کو زیادہ واضح، پُرسکون اور اگلا مفید قدم اٹھانے کے لیے تیار چھوڑتی ہے۔</blockquote>
     </div>
   </div>
 </section>
 
-<section class="about-story">
-  <div class="container about-grid">
-    <div class="about-intro">
-      <span class="eyebrow">The purpose</span>
-
-      <h2>
-        Better understanding can make healthier choices feel possible.
-      </h2>
-    </div>
-
-    <div class="about-copy prose-like">
-      <p>
-        Lung health can feel complicated, especially when medical
-        language becomes technical or alarming. This journal was created
-        to offer a gentler path: useful explanations, practical habits,
-        and balanced perspectives presented in language that is easier
-        to live with.
-      </p>
-
-      <p>
-        Every article is shaped around one idea—helping readers feel more
-        informed and more confident about caring for their breathing and
-        respiratory wellbeing.
-      </p>
-
-      <blockquote>
-        “Good health writing should leave the reader clearer, calmer,
-        and ready to take one useful next step.”
-      </blockquote>
-    </div>
-  </div>
-</section>
-
-<section class="values-section">
-  <div class="container">
-    <div class="section-heading compact">
-      <div>
-        <span class="eyebrow">Editorial values</span>
-        <h2>How the journal approaches health</h2>
-      </div>
-    </div>
-
-    <div class="values-grid">
-      <article>
-        <span>01</span>
-        <h3>Clarity first</h3>
-        <p>
-          Plain language, useful structure, and explanations that respect
-          the reader.
-        </p>
-      </article>
-
-      <article>
-        <span>02</span>
-        <h3>Calm perspective</h3>
-        <p>
-          Health information presented without unnecessary fear or
-          sensationalism.
-        </p>
-      </article>
-
-      <article>
-        <span>03</span>
-        <h3>Practical value</h3>
-        <p>
-          Ideas that connect knowledge with realistic everyday action.
-        </p>
-      </article>
-
-      <article>
-        <span>04</span>
-        <h3>Human warmth</h3>
-        <p>
-          A comforting voice that remembers there is a person behind
-          every question.
-        </p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="about-author-section">
-  <div class="container about-author-card">
-    <div class="about-author-mark">ABK</div>
-
-    <div>
-      <span class="eyebrow">The author</span>
-      <h2>Abdullah Bin Khurram</h2>
-
-      <p>
-        Author and creator of Lung Health Journal, writing to make lung
-        health knowledge feel more natural, approachable, and useful.
-      </p>
-
-      <a
-        class="button button-primary"
-        href="{{ '/' | relative_url }}#articles"
-      >
-        Read the journal
-        <span aria-hidden="true">→</span>
-      </a>
-    </div>
+<section class="values-section content-section">
+  <div class="section-heading compact"><div><span class="eyebrow" data-lang="en">Educational values</span><span class="eyebrow" data-lang="ur">تعلیمی اقدار</span><h2 data-lang="en">How information is presented</h2><h2 data-lang="ur">معلومات کیسے پیش کی جاتی ہیں</h2></div></div>
+  <div class="values-grid">
+    <article><span>01</span><h3 data-lang="en">Clarity first</h3><h3 data-lang="ur">وضاحت پہلے</h3><p data-lang="en">Plain language and useful structure.</p><p data-lang="ur">سادہ زبان اور مفید ترتیب۔</p></article>
+    <article><span>02</span><h3 data-lang="en">Calm perspective</h3><h3 data-lang="ur">پُرسکون نقطۂ نظر</h3><p data-lang="en">Health information without unnecessary fear.</p><p data-lang="ur">غیر ضروری خوف کے بغیر صحت کی معلومات۔</p></article>
+    <article><span>03</span><h3 data-lang="en">Practical value</h3><h3 data-lang="ur">عملی افادیت</h3><p data-lang="en">Ideas that connect knowledge with action.</p><p data-lang="ur">ایسے خیالات جو علم کو عمل سے جوڑیں۔</p></article>
+    <article><span>04</span><h3 data-lang="en">Human warmth</h3><h3 data-lang="ur">انسانی ہمدردی</h3><p data-lang="en">A voice that respects every reader.</p><p data-lang="ur">ایک انداز جو ہر قاری کا احترام کرے۔</p></article>
   </div>
 </section>

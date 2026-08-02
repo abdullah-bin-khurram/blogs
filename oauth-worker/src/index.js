@@ -443,7 +443,7 @@ export default {
     name="viewport"
     content="width=device-width,initial-scale=1"
   >
-  <title>Lung Health Journal OAuth</title>
+  <title>ABK Lung Health Education Portal OAuth</title>
 
   <style>
     body {
@@ -472,7 +472,7 @@ export default {
 
 <body>
   <div class="card">
-    <strong>Lung Health Journal OAuth</strong>
+    <strong>ABK Lung Health Education Portal OAuth</strong>
     The authentication service is online.
   </div>
 </body>

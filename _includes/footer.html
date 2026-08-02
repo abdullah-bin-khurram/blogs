@@ -1,41 +1,22 @@
 <footer class="site-footer">
-  <div class="container footer-grid">
-    <div>
-      <a class="footer-brand" href="{{ '/' | relative_url }}">
-        <img
-          src="{{ '/assets/images/logo.svg' | relative_url }}"
-          alt=""
-          width="38"
-          height="38"
-        >
-        <span>Lung Health Journal</span>
-      </a>
-
-      <p>
-        A gentle place to understand breathing, prevention, recovery,
-        and everyday lung wellbeing.
-      </p>
+  <div class="footer-inner">
+    <div class="footer-brand-block">
+      <img src="{{ '/assets/images/portal-pic.webp' | relative_url }}" alt="" width="52" height="52">
+      <div>
+        <strong data-lang="en">ABK Lung Health Education Portal</strong><strong data-lang="ur">اے بی کے پھیپھڑوں کی صحت کا تعلیمی پورٹل</strong>
+        <p data-lang="en">Created by Abdullah Bin Khurram.</p><p data-lang="ur">عبداللہ بن خرم کی جانب سے پیش کردہ۔</p>
+      </div>
     </div>
-
-    <div class="footer-links">
-      <strong>Explore</strong>
-      <a href="{{ '/' | relative_url }}#articles">All articles</a>
-      <a href="{{ '/about/' | relative_url }}">About the journal</a>
-      <a href="{{ '/admin/' | relative_url }}">Admin</a>
-    </div>
-
-    <div class="footer-note">
-      <span class="eyebrow">Written by</span>
-      <strong>Abdullah Bin Khurram</strong>
-      <p>Clear ideas for calmer, healthier breathing.</p>
-    </div>
+    <nav class="social-links" aria-label="Social media links">
+      <a href="https://www.youtube.com/@hafizhoot" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://x.com/abkpk7" target="_blank" rel="noopener">X</a>
+      <a href="https://www.facebook.com/abdullah.khurram" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://api.whatsapp.com/send?phone=923315115661" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://www.linkedin.com/in/abkpk-5405b325/" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
   </div>
-
-  <div class="container footer-bottom">
-    <span>
-      &copy; <span data-year>{{ 'now' | date: '%Y' }}</span>
-      Lung Health Journal.
-    </span>
-    <span>Made with care for every breath.</span>
+  <div class="footer-bottom">
+    <span>&copy; <span data-year>{{ 'now' | date: '%Y' }}</span> Abdullah Bin Khurram</span>
+    <span data-lang="en">Educational information, not a substitute for personal medical care.</span><span data-lang="ur">تعلیمی معلومات، ذاتی طبی نگہداشت کا متبادل نہیں۔</span>
   </div>
 </footer>

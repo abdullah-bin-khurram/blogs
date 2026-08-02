@@ -1,5 +1,7 @@
-title: Lung Health Journal
-description: Calm, practical guidance for healthier lungs and more confident breathing.
+title: ABK Lung Health Education Portal
+title_ur: اے بی کے پھیپھڑوں کی صحت کا تعلیمی پورٹل
+description: Clear, practical lung-health education, articles, resources, and respiratory-care connections from Abdullah Bin Khurram.
+description_ur: عبداللہ بن خرم کی جانب سے پھیپھڑوں کی صحت سے متعلق واضح اور عملی معلومات، مضامین، وسائل اور نگہداشت سے رابطے۔
 author: Abdullah Bin Khurram
 url: "https://abdullah-bin-khurram.github.io"
 baseurl: "/blogs"
@@ -14,6 +16,10 @@ kramdown:
   input: GFM
   hard_wrap: false
 
+collections:
+  resources:
+    output: false
+
 defaults:
   - scope:
       path: ""
@@ -21,10 +27,14 @@ defaults:
     values:
       layout: post
       author: Abdullah Bin Khurram
+      author_ur: عبداللہ بن خرم
       published: true
 
 exclude:
   - README.md
+  - worklist.md
   - oauth-worker
   - node_modules
   - vendor
+  - downloads
+  - scripts

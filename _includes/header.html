@@ -1,56 +1,19 @@
-<header class="site-header" data-header>
-  <div class="container header-inner">
-    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Lung Health Journal home">
-      <img
-        class="brand-mark"
-        src="{{ '/assets/images/logo.svg' | relative_url }}"
-        alt=""
-        width="44"
-        height="44"
-      >
-
+<header class="site-header">
+  <div class="header-inner">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="portal-navigation" data-menu-toggle>
+      <span class="sr-only" data-lang="en">Open navigation</span><span class="sr-only" data-lang="ur">نیویگیشن کھولیں</span>
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="ABK Lung Health Education Portal home">
+      <img class="brand-mark" src="{{ '/assets/images/portal-pic.webp' | relative_url }}" alt="" width="48" height="48">
       <span class="brand-copy">
-        <strong>Lung Health Journal</strong>
-        <small>By Abdullah Bin Khurram</small>
+        <strong data-lang="en">ABK Lung Health</strong><strong data-lang="ur">اے بی کے پھیپھڑوں کی صحت</strong>
+        <small data-lang="en">Education Portal</small><small data-lang="ur">تعلیمی پورٹل</small>
       </span>
     </a>
-
-    <button
-      class="menu-toggle"
-      type="button"
-      aria-expanded="false"
-      aria-controls="site-navigation"
-      data-menu-toggle
-    >
-      <span class="sr-only">Toggle navigation</span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <nav
-      class="site-nav"
-      id="site-navigation"
-      aria-label="Main navigation"
-      data-nav
-    >
-      <a
-        href="{{ '/' | relative_url }}"
-        {% if page.url == '/' %}aria-current="page"{% endif %}
-      >
-        Journal
-      </a>
-
-      <a
-        href="{{ '/about/' | relative_url }}"
-        {% if page.url == '/about/' %}aria-current="page"{% endif %}
-      >
-        About
-      </a>
-
-      <a class="nav-admin" href="{{ '/admin/' | relative_url }}">
-        Writer login
-      </a>
-    </nav>
+    <div class="language-switcher" role="group" aria-label="Choose language">
+      <button type="button" data-language-button="en" aria-pressed="true">EN</button>
+      <button type="button" data-language-button="ur" aria-pressed="false">اردو</button>
+    </div>
   </div>
 </header>

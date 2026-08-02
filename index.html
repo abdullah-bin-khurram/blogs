@@ -1,422 +1,139 @@
 ---
 layout: default
 title:
-description: Calm, practical guidance for healthier lungs and more confident breathing.
+title_ur:
+description: Clear, practical lung-health education, articles, downloadable resources, and respiratory-care connections.
+description_ur: پھیپھڑوں کی صحت سے متعلق واضح اور عملی تعلیم، مضامین، قابل ڈاؤن لوڈ وسائل اور سانس کی نگہداشت سے رابطے۔
 ---
 
-<section class="hero">
-  <div class="hero-cloud hero-cloud-one"></div>
-  <div class="hero-cloud hero-cloud-two"></div>
-
-  <div class="container hero-grid">
-    <div class="hero-copy">
-      <div class="hero-kicker">
-        <span></span>
-        A journal for easier breathing
-      </div>
-
-      <h1>
-        Knowledge that helps every breath feel <em>lighter.</em>
-      </h1>
-
-      <p>
-        Lung Health Journal shares thoughtful, approachable guidance
-        about breathing, prevention, recovery, and everyday respiratory
-        wellbeing.
-      </p>
-
-      <div class="hero-actions">
-        <a class="button button-primary" href="#articles">
-          Explore the journal
-          <span aria-hidden="true">→</span>
-        </a>
-
-        <a
-          class="button button-quiet"
-          href="{{ '/about/' | relative_url }}"
-        >
-          Meet the author
-        </a>
-      </div>
-
-      <div class="hero-trust">
-        <div class="trust-mark" aria-hidden="true">ABK</div>
-
-        <div>
-          <strong>Written by Abdullah Bin Khurram</strong>
-          <span>Clear, caring, and practical health writing</span>
-        </div>
-      </div>
+<section class="hero" id="top">
+  <div class="hero-copy">
+    <div class="hero-kicker"><span></span><b data-lang="en">A clearer path to respiratory health</b><b data-lang="ur">سانس کی بہتر صحت کی جانب ایک واضح راستہ</b></div>
+    <h1 data-lang="en">Knowledge that helps every breath feel <em>lighter.</em></h1>
+    <h1 data-lang="ur">وہ علم جو ہر سانس کو <em>آسان</em> بنائے۔</h1>
+    <p data-lang="en">Explore practical, approachable education about breathing, prevention, recovery, air quality, and everyday respiratory wellbeing.</p>
+    <p data-lang="ur">سانس، بچاؤ، بحالی، فضائی معیار اور روزمرہ نظامِ تنفس کی صحت کے بارے میں عملی اور آسان معلومات حاصل کریں۔</p>
+    <div class="hero-actions">
+      <a class="button button-primary" href="#articles"><span data-lang="en">Explore articles</span><span data-lang="ur">مضامین دیکھیں</span><span aria-hidden="true">→</span></a>
+      <a class="button button-secondary" href="#contact"><span data-lang="en">Book an appointment</span><span data-lang="ur">اپائنٹمنٹ بُک کریں</span></a>
     </div>
+    <div class="hero-trust">
+      <img src="{{ '/assets/images/personal-pic.webp' | relative_url }}" alt="Abdullah Bin Khurram" width="54" height="54">
+      <div><strong data-lang="en">By Abdullah Bin Khurram</strong><strong data-lang="ur">عبداللہ بن خرم کی جانب سے</strong><span data-lang="en">Respiratory education with clarity and care</span><span data-lang="ur">وضاحت اور توجہ کے ساتھ نظامِ تنفس کی تعلیم</span></div>
+    </div>
+  </div>
 
-    <div
-      class="hero-art"
-      aria-label="Stylized illustration of healthy lungs surrounded by leaves"
-    >
-      <div class="hero-art-card">
-        <div class="soft-ring ring-one"></div>
-        <div class="soft-ring ring-two"></div>
-
-        <svg
-          class="lungs-illustration"
-          viewBox="0 0 460 460"
-          role="img"
-          aria-hidden="true"
-        >
-          <defs>
-            <linearGradient id="lungFill" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#f5a995"/>
-              <stop offset="1" stop-color="#d77f79"/>
-            </linearGradient>
-
-            <linearGradient id="stemFill" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#427d68"/>
-              <stop offset="1" stop-color="#275d50"/>
-            </linearGradient>
-          </defs>
-
-          <path
-            d="M230 76v148"
-            fill="none"
-            stroke="url(#stemFill)"
-            stroke-width="19"
-            stroke-linecap="round"
-          />
-
-          <path
-            d="M230 130c-36 10-66 34-83 70"
-            fill="none"
-            stroke="#3f7663"
-            stroke-width="10"
-            stroke-linecap="round"
-          />
-
-          <path
-            d="M230 130c36 10 66 34 83 70"
-            fill="none"
-            stroke="#3f7663"
-            stroke-width="10"
-            stroke-linecap="round"
-          />
-
-          <path
-            d="M210 146c-38 8-79 39-99 91-26 67-6 128 39 139 46 12 72-37 72-102V170c0-17-4-27-12-24Z"
-            fill="url(#lungFill)"
-          />
-
-          <path
-            d="M250 146c38 8 79 39 99 91 26 67 6 128-39 139-46 12-72-37-72-102V170c0-17 4-27 12-24Z"
-            fill="url(#lungFill)"
-          />
-
-          <path
-            d="M204 183c-34 12-54 38-64 70"
-            fill="none"
-            stroke="#f8c6b8"
-            stroke-width="8"
-            stroke-linecap="round"
-            opacity=".8"
-          />
-
-          <path
-            d="M256 183c34 12 54 38 64 70"
-            fill="none"
-            stroke="#f8c6b8"
-            stroke-width="8"
-            stroke-linecap="round"
-            opacity=".8"
-          />
-
-          <path
-            d="M120 143c-41-29-79-27-104 2 24 37 60 50 104 34"
-            fill="#8dbb9d"
-          />
-
-          <path
-            d="M340 143c41-29 79-27 104 2-24 37-60 50-104 34"
-            fill="#8dbb9d"
-          />
-
-          <path
-            d="M99 336c-37 3-60 22-69 56 37 12 65 2 82-31"
-            fill="#b4d7bd"
-          />
-
-          <path
-            d="M361 336c37 3 60 22 69 56-37 12-65 2-82-31"
-            fill="#b4d7bd"
-          />
-        </svg>
-
-        <div class="art-caption">
-          <span class="pulse-dot"></span>
-          <strong>Pause. Inhale. Learn.</strong>
-        </div>
-      </div>
-
-      <div class="floating-note note-top">
-        <span>01</span>
-        <p>Understand your lungs</p>
-      </div>
-
-      <div class="floating-note note-bottom">
-        <span>02</span>
-        <p>Build healthier habits</p>
-      </div>
+  <div class="hero-visual">
+    <div class="hero-image-card">
+      <div class="hero-halo" aria-hidden="true"></div>
+      <img src="{{ '/assets/images/portal-pic.webp' | relative_url }}" alt="ABK Lung Health Education Portal emblem" width="640" height="640">
+      <div class="hero-note note-one"><strong>01</strong><span data-lang="en">Understand</span><span data-lang="ur">سمجھیں</span></div>
+      <div class="hero-note note-two"><strong>02</strong><span data-lang="en">Act</span><span data-lang="ur">عمل کریں</span></div>
+      <div class="hero-note note-three"><strong>03</strong><span data-lang="en">Breathe</span><span data-lang="ur">سانس لیں</span></div>
     </div>
   </div>
 </section>
 
-<section class="breath-strip" aria-label="Journal themes">
-  <div class="container breath-strip-inner">
-    <span>Breathing</span>
-    <i></i>
-    <span>Prevention</span>
-    <i></i>
-    <span>Recovery</span>
-    <i></i>
-    <span>Everyday wellbeing</span>
+<section class="content-section top-articles" id="articles" data-top-articles-section>
+  <div class="section-heading">
+    <div><span class="eyebrow" data-lang="en">Most visited</span><span class="eyebrow" data-lang="ur">سب سے زیادہ پڑھے گئے</span><h2 data-lang="en">Top lung-health articles</h2><h2 data-lang="ur">پھیپھڑوں کی صحت کے نمایاں مضامین</h2></div>
+    <p data-lang="en">Popular reading, refreshed from recent portal visits.</p><p data-lang="ur">حالیہ پورٹل وزٹس کی بنیاد پر مقبول مطالعہ۔</p>
   </div>
-</section>
 
-{% assign featured_posts = site.posts | where: 'featured', true %}
-{% assign featured = featured_posts.first | default: site.posts.first %}
-
-{% if featured %}
-<section class="featured-section">
-  <div class="container">
-    <div class="section-heading">
-      <div>
-        <span class="eyebrow">Featured reading</span>
-        <h2>A calmer way to understand lung health</h2>
-      </div>
-
-      <p>Start with one practical idea, then build from there.</p>
-    </div>
-
-    <article class="featured-card">
-      <div class="featured-visual{% if featured.image %} has-image{% endif %}">
-        {% if featured.image %}
-          <img
-            src="{{ featured.image }}"
-            alt="{{ featured.image_alt | default: featured.title | escape }}"
-          >
-        {% else %}
-          <div class="featured-sun"></div>
-
-          <svg viewBox="0 0 520 380" aria-hidden="true">
-            <path
-              d="M40 310c78-93 157-123 236-90 86 36 139 2 204-75v235H40Z"
-              fill="#b9d9c3"
-            />
-
-            <path
-              d="M20 350c93-69 180-76 259-22 74 50 143 39 221-22v74H20Z"
-              fill="#6b9f86"
-            />
-
-            <path
-              d="M254 95v106"
-              stroke="#346653"
-              stroke-width="13"
-              stroke-linecap="round"
-            />
-
-            <path
-              d="M242 128c-38 9-74 45-82 86-9 48 12 85 46 86 34 0 51-36 51-82v-73c0-13-5-20-15-17Z"
-              fill="#e79a8c"
-            />
-
-            <path
-              d="M266 128c38 9 74 45 82 86 9 48-12 85-46 86-34 0-51-36-51-82v-73c0-13 5-20 15-17Z"
-              fill="#e79a8c"
-            />
-
-            <path
-              d="M173 110c-31-24-60-22-79 3 20 29 47 38 81 26"
-              fill="#7fae91"
-            />
-
-            <path
-              d="M335 110c31-24 60-22 79 3-20 29-47 38-81 26"
-              fill="#7fae91"
-            />
-          </svg>
-        {% endif %}
-      </div>
-
-      <div class="featured-content">
-        <div class="post-card-meta">
-          <span>{{ featured.category | default: 'Lung wellbeing' }}</span>
-          <span>{{ featured.date | date: '%B %-d, %Y' }}</span>
-          <span>{{ featured.read_time | default: 5 }} min read</span>
-        </div>
-
-        <h3>
-          <a href="{{ featured.url | relative_url }}">
-            {{ featured.title }}
-          </a>
-        </h3>
-
-        <p>
-          {{ featured.description | default: featured.excerpt | strip_html | truncate: 180 }}
-        </p>
-
-        <a class="text-link" href="{{ featured.url | relative_url }}">
-          Read the article
-          <span aria-hidden="true">→</span>
-        </a>
-      </div>
-    </article>
-  </div>
-</section>
-{% endif %}
-
-<section class="journal-section" id="articles">
-  <div class="container">
-    <div class="section-heading journal-heading">
-      <div>
-        <span class="eyebrow">The journal</span>
-        <h2>Practical guidance for healthier breathing</h2>
-      </div>
-
-      <div class="article-search">
-        <label class="search-box">
-          <span class="sr-only">Search articles</span>
-
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <circle cx="11" cy="11" r="6.5"></circle>
-            <path d="m16 16 4 4"></path>
-          </svg>
-
-          <input
-            type="search"
-            placeholder="Search the journal"
-            data-search-input
-          >
-        </label>
-      </div>
-    </div>
-
-    <div
-      class="filter-row"
-      role="group"
-      aria-label="Filter articles by category"
-      data-filter-row
-    >
-      <button
-        class="filter-chip is-active"
-        type="button"
-        data-filter="all"
-      >
-        All topics
-      </button>
-
-      {% assign all_categories = site.posts | map: 'category' | compact | uniq | sort %}
-
-      {% for category in all_categories %}
-        <button
-          class="filter-chip"
-          type="button"
-          data-filter="{{ category | slugify }}"
-        >
-          {{ category }}
-        </button>
-      {% endfor %}
-    </div>
-
-    <div class="post-grid" data-post-grid>
+  <div class="article-tools">
+    <label class="search-box">
+      <span class="search-symbol" aria-hidden="true">⌕</span>
+      <span class="sr-only" data-lang="en">Search all articles</span><span class="sr-only" data-lang="ur">تمام مضامین تلاش کریں</span>
+      <input type="search" placeholder="Search all articles" data-search-input>
+    </label>
+    <div class="filter-row" data-filter-row>
+      <button class="filter-chip is-active" type="button" data-article-filter="all"><span data-lang="en">All topics</span><span data-lang="ur">تمام موضوعات</span></button>
       {% for post in site.posts %}
-        <article
-          class="post-card"
-          data-post-card
-          data-category="{{ post.category | slugify }}"
-          data-search="{{ post.title | append: ' ' | append: post.description | append: ' ' | append: post.category | append: ' ' | append: post.tags | downcase | escape }}"
-        >
-          <a
-            class="post-card-art category-{{ post.category | slugify }}{% if post.image %} has-image{% endif %}"
-            href="{{ post.url | relative_url }}"
-            aria-label="Read {{ post.title | escape }}"
-          >
-            {% if post.image %}
-              <img
-                src="{{ post.image }}"
-                alt="{{ post.image_alt | default: post.title | escape }}"
-              >
-            {% else %}
-              <span>
-                {{ post.category | default: 'Breathe' | slice: 0 }}
-              </span>
-
-              <div class="card-leaf leaf-a"></div>
-              <div class="card-leaf leaf-b"></div>
-            {% endif %}
-          </a>
-
-          <div class="post-card-body">
-            <div class="post-card-meta">
-              <span>{{ post.category | default: 'Wellbeing' }}</span>
-              <span>{{ post.read_time | default: 5 }} min</span>
-            </div>
-
-            <h3>
-              <a href="{{ post.url | relative_url }}">
-                {{ post.title }}
-              </a>
-            </h3>
-
-            <p>
-              {{ post.description | default: post.excerpt | strip_html | truncate: 145 }}
-            </p>
-
-            <div class="post-card-footer">
-              <span>{{ post.date | date: '%b %-d, %Y' }}</span>
-
-              <a
-                href="{{ post.url | relative_url }}"
-                aria-label="Read {{ post.title | escape }}"
-              >
-                <span aria-hidden="true">↗</span>
-              </a>
-            </div>
-          </div>
-        </article>
+        {% for tag in post.tags %}
+          {% assign tag_index = forloop.index0 %}
+          <button class="filter-chip" type="button" data-article-filter="{{ tag | slugify }}"><span data-lang="en">{{ tag }}</span><span data-lang="ur">{{ post.tags_ur[tag_index] | default: tag }}</span></button>
+        {% endfor %}
       {% endfor %}
     </div>
+  </div>
 
-    <div class="empty-state" hidden data-empty-state>
-      <div aria-hidden="true">⌁</div>
-      <h3>No articles found</h3>
-      <p>Try another word or choose a different topic.</p>
+  <div class="carousel" data-carousel>
+    <div class="carousel-controls">
+      <button type="button" data-carousel-prev aria-label="Previous articles">←</button>
+      <button type="button" data-carousel-next aria-label="Next articles">→</button>
+    </div>
+    <div class="card-rail" data-carousel-track data-top-article-track>
+      {% for post in site.posts %}{% include post-card.html post=post %}{% endfor %}
     </div>
   </div>
+  <div class="empty-state" hidden data-article-empty><strong data-lang="en">No matching articles</strong><strong data-lang="ur">کوئی متعلقہ مضمون نہیں ملا</strong><p data-lang="en">Try another search term or topic.</p><p data-lang="ur">کوئی دوسرا لفظ یا موضوع آزمائیں۔</p></div>
 </section>
 
-<section class="author-section">
-  <div class="container author-card">
-    <div class="author-art" aria-hidden="true">
-      <div class="author-monogram">AK</div>
-      <span class="leaf-stroke leaf-stroke-one"></span>
-      <span class="leaf-stroke leaf-stroke-two"></span>
+<div class="category-sections">
+  {% for category_pair in site.data.categories %}
+    {% assign category_item = category_pair[1] %}
+    {% assign category_posts = site.posts | where: 'category', category_item.slug %}
+    {% if category_posts.size > 0 %}
+      <section class="content-section category-section" id="category-{{ category_item.slug }}" data-category-order="{{ category_item.order | default: 999 }}">
+        <div class="section-heading compact">
+          <div><span class="eyebrow" data-lang="en">Browse by category</span><span class="eyebrow" data-lang="ur">زمرے کے لحاظ سے دیکھیں</span><h2 data-lang="en">{{ category_item.name_en }}</h2><h2 data-lang="ur">{{ category_item.name_ur }}</h2></div>
+        </div>
+        <div class="carousel" data-carousel>
+          <div class="carousel-controls"><button type="button" data-carousel-prev aria-label="Previous articles">←</button><button type="button" data-carousel-next aria-label="Next articles">→</button></div>
+          <div class="card-rail compact-rail" data-carousel-track>{% for post in category_posts %}{% include post-card.html post=post %}{% endfor %}</div>
+        </div>
+      </section>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<section class="content-section resources-section" id="resources" data-resources-section>
+  {% assign published_resources = site.resources | where: 'published', true %}
+  <div class="section-heading">
+    <div><span class="eyebrow" data-lang="en">Download and keep</span><span class="eyebrow" data-lang="ur">ڈاؤن لوڈ کریں اور محفوظ رکھیں</span><h2 data-lang="en">Practical resources</h2><h2 data-lang="ur">عملی وسائل</h2></div>
+    <p data-lang="en">Guides, images, and useful material stored openly on GitHub.</p><p data-lang="ur">گائیڈز، تصاویر اور مفید مواد جو GitHub پر دستیاب ہے۔</p>
+  </div>
+  <div class="resource-tools">
+    <label class="search-box"><span class="search-symbol" aria-hidden="true">⌕</span><span class="sr-only">Search resources</span><input type="search" placeholder="Search resources" data-resource-search></label>
+    {% if published_resources.size > 0 %}<button class="button button-secondary show-all-button" type="button" data-resource-show-all><span data-lang="en">Show all</span><span data-lang="ur">سب دکھائیں</span></button>{% endif %}
+  </div>
+  {% if published_resources.size > 0 %}
+    <div class="carousel resource-carousel" data-carousel>
+      <div class="carousel-controls"><button type="button" data-carousel-prev aria-label="Previous resources">←</button><button type="button" data-carousel-next aria-label="Next resources">→</button></div>
+      <div class="resource-rail" data-carousel-track data-resource-track>
+        {% assign sorted_resources = published_resources | sort: 'date' | reverse %}
+        {% for resource in sorted_resources %}
+          {% assign file_prefix = resource.file | slice: 0, 4 %}
+          {% if file_prefix == 'http' %}{% assign download_url = resource.file %}{% else %}{% capture download_url %}https://github.com/abdullah-bin-khurram/blogs/raw/refs/heads/main{{ resource.file }}{% endcapture %}{% endif %}
+          <article class="resource-card" data-resource-card data-search-en="{{ resource.title | append: ' ' | append: resource.description | append: ' ' | append: resource.resource_type | downcase | escape }}" data-search-ur="{{ resource.title_ur | append: ' ' | append: resource.description_ur | escape }}">
+            <div class="resource-type">{{ resource.resource_type | default: 'Resource' }}</div>
+            <h3 data-lang="en">{{ resource.title }}</h3><h3 data-lang="ur">{{ resource.title_ur | default: resource.title }}</h3>
+            <p data-lang="en">{{ resource.description }}</p><p data-lang="ur">{{ resource.description_ur | default: resource.description }}</p>
+            <a href="{{ download_url | strip }}" target="_blank" rel="noopener"><span data-lang="en">Download from GitHub</span><span data-lang="ur">GitHub سے ڈاؤن لوڈ کریں</span><span aria-hidden="true">↓</span></a>
+          </article>
+        {% endfor %}
+      </div>
     </div>
+  {% else %}
+    <div class="resource-empty"><span aria-hidden="true">↓</span><h3 data-lang="en">Resources are being prepared</h3><h3 data-lang="ur">وسائل تیار کیے جا رہے ہیں</h3><p data-lang="en">New downloadable material will appear here soon.</p><p data-lang="ur">نیا قابل ڈاؤن لوڈ مواد جلد یہاں دستیاب ہوگا۔</p></div>
+  {% endif %}
+</section>
 
-    <div class="author-copy">
-      <span class="eyebrow">About the author</span>
-
-      <h2>
-        Health writing with clarity, warmth, and room to breathe.
-      </h2>
-
-      <p>
-        Abdullah Bin Khurram created Lung Health Journal to make
-        respiratory health information feel approachable, useful,
-        and encouraging—one thoughtful article at a time.
-      </p>
-
-      <a class="text-link" href="{{ '/about/' | relative_url }}">
-        Read the journal story
-        <span aria-hidden="true">→</span>
-      </a>
+<section class="appointment-section" id="contact">
+  <div class="appointment-profile">
+    <img src="{{ '/assets/images/personal-pic.webp' | relative_url }}" alt="Abdullah Bin Khurram" loading="lazy">
+    <div class="profile-badge"><span data-lang="en">Respiratory health education</span><span data-lang="ur">نظامِ تنفس کی صحت کی تعلیم</span></div>
+  </div>
+  <div class="appointment-copy">
+    <span class="eyebrow" data-lang="en">Connect with Abdullah</span><span class="eyebrow" data-lang="ur">عبداللہ سے رابطہ کریں</span>
+    <h2 data-lang="en">Book an appointment or keep learning.</h2><h2 data-lang="ur">اپائنٹمنٹ بُک کریں یا سیکھنے کا سفر جاری رکھیں۔</h2>
+    <p data-lang="en">Choose the connection that fits your needs—from in-person and online appointments to respiratory tips and published work.</p><p data-lang="ur">اپنی ضرورت کے مطابق رابطہ منتخب کریں—بالمشافہ یا آن لائن اپائنٹمنٹ سے لے کر سانس کی صحت کے مشوروں اور شائع شدہ کام تک۔</p>
+    <div class="appointment-links">
+      <a href="https://abdullahbinkhurram.setmore.com/abdullah" target="_blank" rel="noopener"><strong data-lang="en">In-person appointments</strong><strong data-lang="ur">بالمشافہ اپائنٹمنٹ</strong><span aria-hidden="true">↗</span></a>
+      <a href="https://www.marham.pk/personal/18223" target="_blank" rel="noopener"><strong data-lang="en">Online appointments</strong><strong data-lang="ur">آن لائن اپائنٹمنٹ</strong><span aria-hidden="true">↗</span></a>
+      <a href="https://www.whatsapp.com/channel/0029VbBkdRz0rGiDT2pHOm3I" target="_blank" rel="noopener"><strong data-lang="en">Respiratory tips and guides</strong><strong data-lang="ur">سانس کی صحت کے مشورے اور گائیڈز</strong><span aria-hidden="true">↗</span></a>
+      <a href="https://linktr.ee/abkpk" target="_blank" rel="noopener"><strong data-lang="en">Social media</strong><strong data-lang="ur">سوشل میڈیا</strong><span aria-hidden="true">↗</span></a>
+      <a href="https://www.researchgate.net/profile/Abdullah-Bin-Khurram" target="_blank" rel="noopener"><strong data-lang="en">Publications</strong><strong data-lang="ur">تحقیقی اشاعتیں</strong><span aria-hidden="true">↗</span></a>
     </div>
   </div>
 </section>

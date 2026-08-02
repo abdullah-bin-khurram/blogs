@@ -1,0 +1,41 @@
+{% assign post = include.post %}
+{% assign category_name_en = post.category %}
+{% assign category_name_ur = post.category %}
+{% for category_pair in site.data.categories %}
+  {% assign category_item = category_pair[1] %}
+  {% if category_item.slug == post.category %}
+    {% assign category_name_en = category_item.name_en %}
+    {% assign category_name_ur = category_item.name_ur %}
+  {% endif %}
+{% endfor %}
+
+<article
+  class="post-card"
+  data-post-card
+  data-post-url="{{ post.url }}"
+  data-search-en="{{ post.title | append: ' ' | append: post.description | append: ' ' | append: category_name_en | append: ' ' | append: post.tags | downcase | escape }}"
+  data-search-ur="{{ post.title_ur | append: ' ' | append: post.description_ur | append: ' ' | append: category_name_ur | append: ' ' | append: post.tags_ur | escape }}"
+  data-tags="{% for tag in post.tags %}{{ tag | slugify }} {% endfor %}"
+>
+  <a class="post-card-art category-{{ post.category | slugify }}{% if post.image %} has-image{% endif %}" href="{{ post.url | relative_url }}">
+    {% if post.image %}
+      <img src="{{ post.image }}" alt="{{ post.image_alt | default: post.title | escape }}" loading="lazy">
+    {% else %}
+      <span aria-hidden="true">{{ category_name_en | default: 'Breathe' | slice: 0 }}</span>
+      <i class="card-orbit orbit-one"></i><i class="card-orbit orbit-two"></i>
+    {% endif %}
+  </a>
+  <div class="post-card-body">
+    <div class="post-card-meta">
+      <span data-lang="en">{{ category_name_en }}</span><span data-lang="ur">{{ category_name_ur }}</span>
+      <span><b>{{ post.read_time | default: 5 }}</b> <span data-lang="en">min</span><span data-lang="ur">منٹ</span></span>
+    </div>
+    <h3><a href="{{ post.url | relative_url }}"><span data-lang="en">{{ post.title }}</span><span data-lang="ur">{{ post.title_ur | default: post.title }}</span></a></h3>
+    <p data-lang="en">{{ post.description | default: post.excerpt | strip_html | truncate: 145 }}</p>
+    <p data-lang="ur">{{ post.description_ur | default: post.description | strip_html | truncate: 145 }}</p>
+    <div class="post-card-footer">
+      <time datetime="{{ post.date | date_to_xmlschema }}" data-localized-date="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%b %-d, %Y' }}</time>
+      <a href="{{ post.url | relative_url }}" aria-label="Read article"><span data-lang="en">Read</span><span data-lang="ur">پڑھیں</span><span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</article>

@@ -2,30 +2,46 @@ backend:
   name: github
   repo: abdullah-bin-khurram/blogs
   branch: main
-
-  # Replace this after deploying the Cloudflare Worker.
   base_url: https://lung-health-journal-oauth.abdullah-lung-health.workers.dev
   auth_endpoint: /auth
-
   commit_messages:
-    create: "Create article: {{slug}}"
-    update: "Update article: {{slug}}"
-    delete: "Delete article: {{slug}}"
+    create: "Create {{collection}}: {{slug}}"
+    update: "Update {{collection}}: {{slug}}"
+    delete: "Delete {{collection}}: {{slug}}"
     uploadMedia: "Upload media: {{path}}"
     deleteMedia: "Delete media: {{path}}"
 
 site_url: https://abdullah-bin-khurram.github.io/blogs/
 display_url: https://abdullah-bin-khurram.github.io/blogs/
-logo_url: https://abdullah-bin-khurram.github.io/blogs/assets/images/logo.svg
-
+logo_url: https://abdullah-bin-khurram.github.io/blogs/assets/images/portal-pic.webp
 media_folder: assets/images/uploads
 public_folder: /blogs/assets/images/uploads
-
 publish_mode: simple
 show_preview_links: false
 locale: en
 
 collections:
+  - name: categories
+    label: Categories
+    label_singular: Category
+    folder: _data/categories
+    create: true
+    delete: true
+    extension: yml
+    format: yml
+    identifier_field: slug
+    slug: "{{slug}}"
+    summary: "{{name_en}} · {{name_ur}}"
+    fields:
+      - label: Permanent slug
+        name: slug
+        widget: string
+        pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', 'Use lowercase letters, numbers, and hyphens only.']
+        hint: This is the permanent category ID. Reassign every affected article before changing or deleting it.
+      - { label: English name, name: name_en, widget: string }
+      - { label: Urdu name, name: name_ur, widget: string }
+      - { label: Display order, name: order, widget: number, value_type: int, min: 1 }
+
   - name: posts
     label: Articles
     label_singular: Article
@@ -36,39 +52,16 @@ collections:
     format: frontmatter
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     summary: "{{title}} — {{category}}"
-
-    sortable_fields:
-      - date
-      - title
-      - category
-      - featured
-      - commit_date
-
+    sortable_fields: [date, title, category, featured, commit_date]
     view_filters:
-      - label: Featured
-        field: featured
-        pattern: true
-
-      - label: Drafts
-        field: published
-        pattern: false
-
+      - { label: Featured, field: featured, pattern: true }
+      - { label: Drafts, field: published, pattern: false }
     fields:
-      - label: Layout
-        name: layout
-        widget: hidden
-        default: post
-
-      - label: Article title
-        name: title
-        widget: string
-        hint: Keep it clear, helpful, and natural.
-
-      - label: Short description
-        name: description
-        widget: text
-        hint: Used on the home page, search results, and social previews.
-
+      - { label: Layout, name: layout, widget: hidden, default: post }
+      - { label: English title, name: title, widget: string }
+      - { label: Urdu title, name: title_ur, widget: string }
+      - { label: English description, name: description, widget: text }
+      - { label: Urdu description, name: description_ur, widget: text }
       - label: Publication date
         name: date
         widget: datetime
@@ -76,73 +69,90 @@ collections:
         date_format: "YYYY-MM-DD"
         time_format: "HH:mm"
         format: "YYYY-MM-DD HH:mm:ss ZZ"
-
-      - label: Author
-        name: author
-        widget: string
-        default: Abdullah Bin Khurram
-
+      - { label: English author name, name: author, widget: string, default: Abdullah Bin Khurram }
+      - { label: Urdu author name, name: author_ur, widget: string, default: عبداللہ بن خرم }
       - label: Category
         name: category
-        widget: select
-        options:
-          - Breathing Basics
-          - Prevention
-          - Recovery
-          - Air Quality
-          - Lifestyle
-          - Lung Conditions
-        default: Breathing Basics
-
-      - label: Tags
+        widget: relation
+        collection: categories
+        search_fields: [name_en, name_ur, slug]
+        value_field: slug
+        display_fields: [name_en, name_ur]
+      - label: English tags
         name: tags
         widget: list
         required: false
-        allow_add: true
-        collapsed: false
-        field:
-          label: Tag
-          name: tag
-          widget: string
-
-      - label: Cover image
-        name: image
-        widget: image
+        hint: Keep the same order as the Urdu tags.
+        field: { label: English tag, name: tag, widget: string }
+      - label: Urdu tags
+        name: tags_ur
+        widget: list
         required: false
-        choose_url: false
-        media_library:
-          config:
-            multiple: false
+        hint: Add one Urdu tag for each English tag in the same order.
+        field: { label: Urdu tag, name: tag_ur, widget: string }
+      - { label: Cover image, name: image, widget: image, required: false, choose_url: false }
+      - { label: English image description, name: image_alt, widget: string, required: false }
+      - { label: Urdu image description, name: image_alt_ur, widget: string, required: false }
+      - { label: Estimated reading time, name: read_time, widget: number, value_type: int, min: 1, max: 60, default: 5 }
+      - { label: Feature on home page, name: featured, widget: boolean, default: false }
+      - { label: Publish this article, name: published, widget: boolean, default: true }
+      - { label: English article body, name: body, widget: markdown, modes: [rich_text, raw] }
+      - { label: Urdu article body, name: body_ur, widget: markdown, modes: [rich_text, raw] }
 
-      - label: Cover image description
-        name: image_alt
-        widget: string
-        required: false
-        hint: Describe the image for people using screen readers.
+  - name: resources
+    label: Downloadable Resources
+    label_singular: Resource
+    folder: _resources
+    create: true
+    delete: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    media_folder: /downloads
+    public_folder: /downloads
+    summary: "{{title}} · {{resource_type}}"
+    fields:
+      - { label: English title, name: title, widget: string }
+      - { label: Urdu title, name: title_ur, widget: string }
+      - { label: English description, name: description, widget: text }
+      - { label: Urdu description, name: description_ur, widget: text }
+      - { label: Resource type, name: resource_type, widget: select, options: [PDF, Image, Guide, Checklist, Other] }
+      - label: File
+        name: file
+        widget: file
+        choose_url: true
+        hint: Upload a file under 100 MB or provide an existing public URL.
+      - { label: Publication date, name: date, widget: datetime, default: "{{now}}", date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+      - { label: Published, name: published, widget: boolean, default: true }
 
-      - label: Estimated reading time
-        name: read_time
-        widget: number
-        value_type: int
-        min: 1
-        max: 60
-        default: 5
-
-      - label: Feature on home page
-        name: featured
-        widget: boolean
-        default: false
-
-      - label: Publish this article
-        name: published
-        widget: boolean
-        default: true
-        hint: Turn this off to keep the article as a draft.
-
-      - label: Article body
-        name: body
-        widget: markdown
-        modes:
-          - rich_text
-          - raw
-        minimal: false
+  - name: portal_settings
+    label: Portal Settings
+    files:
+      - label: Right-side widgets
+        name: widgets
+        file: _data/widgets.yml
+        fields:
+          - label: Widgets
+            name: widgets
+            widget: list
+            collapsed: false
+            summary: "{{fields.title_en}} · {{fields.type}}"
+            fields:
+              - label: Widget type
+                name: type
+                widget: select
+                options:
+                  - { label: Pakistan City AQI, value: aqi }
+                  - { label: Custom HTML, value: html }
+                default: html
+              - { label: Enabled, name: enabled, widget: boolean, default: true }
+              - { label: English title, name: title_en, widget: string }
+              - { label: Urdu title, name: title_ur, widget: string }
+              - label: Embedded HTML
+                name: html
+                widget: code
+                default_language: html
+                allow_language_selection: false
+                output_code_only: true
+                required: false
+                hint: Used only for Custom HTML widgets. It is displayed inside an isolated sandbox.

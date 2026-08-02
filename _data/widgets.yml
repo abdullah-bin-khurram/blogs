@@ -1,0 +1,6 @@
+widgets:
+  - type: aqi
+    enabled: true
+    title_en: Pakistan City AQI
+    title_ur: پاکستانی شہروں کا فضائی معیار
+    html: ""
