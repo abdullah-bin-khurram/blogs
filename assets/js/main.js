@@ -130,11 +130,18 @@
     });
     if (articleEmpty) articleEmpty.hidden = visibleCount > 0;
   };
-  const requestedFilter = new URLSearchParams(window.location.search).get("tag");
-  const initialFilterButton = requestedFilter && uniqueFilterButtons.find((button) => button.dataset.articleFilter === requestedFilter);
-  if (initialFilterButton) {
-    activeFilter = initialFilterButton.dataset.articleFilter;
-    uniqueFilterButtons.forEach((button) => button.classList.toggle("is-active", button === initialFilterButton));
+  const normalizeFilter = (value) => (value || "")
+    .trim()
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+  const requestedFilter = normalizeFilter(new URLSearchParams(window.location.search).get("tag"));
+  const filterExists = requestedFilter && topCards.some((card) => (card.dataset.tags || "").split(/\s+/).includes(requestedFilter));
+  if (filterExists) {
+    activeFilter = requestedFilter;
+    uniqueFilterButtons.forEach((button) => button.classList.toggle("is-active", button.dataset.articleFilter === requestedFilter));
   }
   uniqueFilterButtons.forEach((button) => button.addEventListener("click", () => {
     activeFilter = button.dataset.articleFilter || "all";
