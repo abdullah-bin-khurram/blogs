@@ -59,7 +59,7 @@ html[dir="rtl"] .brand { margin-right: 0; margin-left: auto; }
 .menu-toggle { display: none; width: 44px; height: 44px; padding: 11px; border: 1px solid var(--line); border-radius: 13px; background: white; flex-direction: column; justify-content: center; gap: 5px; }
 .menu-toggle > span:not(.sr-only) { width: 100%; height: 2px; background: var(--ink); border-radius: 2px; }
 
-.portal-layout { width: min(calc(100% - 24px), 1680px); margin: 0 auto; display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 32px; align-items: start; }
+.portal-layout { width: min(calc(100% - 24px), 1680px); margin: 0 auto; display: grid; grid-template-columns: 350px minmax(0, 1fr); gap: 32px; align-items: start; }
 .portal-main { width: 100%; min-width: 0; }
 .portal-sidebar { position: relative; align-self: stretch; overflow-anchor: none; }
 .sidebar-inner { height: 100%; padding: 24px 14px 32px; }
@@ -254,7 +254,7 @@ html[data-language="ur"] .article-heading h1 { font-family: var(--urdu); line-he
 .nav-backdrop { position: fixed; inset: 78px 0 0; z-index: 89; background: rgba(16,43,37,.42); backdrop-filter: blur(3px); }
 
 @media (max-width: 1280px) {
-  .portal-layout { grid-template-columns: 220px minmax(0,1fr); gap: 26px; }
+  .portal-layout { grid-template-columns: 308px minmax(0,1fr); gap: 26px; }
   .hero { grid-template-columns: 1fr; }.hero-copy { padding-top: 20px; }.hero-visual { max-width: 650px; width: 100%; margin: auto; }
   .card-rail, .resource-rail { grid-auto-columns: minmax(250px,48%); }
   .appointment-section { grid-template-columns: .8fr 1.2fr; }
