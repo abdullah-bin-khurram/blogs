@@ -74,9 +74,19 @@
 
   const desktopSidebarQuery = window.matchMedia("(min-width: 1041px)");
   let sidebarFrame = 0;
+  let sidebarCompact = false;
+  const setSidebarCompact = (compact) => {
+    sidebarCompact = compact;
+    sidebar?.classList.toggle("is-compact", compact);
+  };
   const updateSidebarNavigation = () => {
     sidebarFrame = 0;
-    sidebar?.classList.toggle("is-compact", desktopSidebarQuery.matches && window.scrollY > 160);
+    if (!desktopSidebarQuery.matches) {
+      setSidebarCompact(false);
+      return;
+    }
+    if (!sidebarCompact && window.scrollY >= 220) setSidebarCompact(true);
+    if (sidebarCompact && window.scrollY <= 80) setSidebarCompact(false);
   };
   const queueSidebarNavigationUpdate = () => {
     if (!sidebarFrame) sidebarFrame = window.requestAnimationFrame(updateSidebarNavigation);
