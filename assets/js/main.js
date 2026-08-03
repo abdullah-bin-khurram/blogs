@@ -28,6 +28,17 @@
     searchInput?.dispatchEvent(new Event("input"));
     resourceSearch?.dispatchEvent(new Event("input"));
   };
+  const updateCarouselControls = () => {
+    const isUrdu = activeLanguage === "ur";
+    document.querySelectorAll("[data-carousel-prev]").forEach((button) => {
+      button.textContent = isUrdu ? "→" : "←";
+      button.setAttribute("aria-label", isUrdu ? "پچھلی اشیاء" : "Previous items");
+    });
+    document.querySelectorAll("[data-carousel-next]").forEach((button) => {
+      button.textContent = isUrdu ? "←" : "→";
+      button.setAttribute("aria-label", isUrdu ? "اگلی اشیاء" : "Next items");
+    });
+  };
 
   const setLanguage = (language) => {
     activeLanguage = language === "ur" ? "ur" : "en";
@@ -40,6 +51,7 @@
     if (resourceSearch) resourceSearch.placeholder = activeLanguage === "ur" ? "وسائل تلاش کریں" : "Search resources";
     formatDates();
     updateDocumentMetadata();
+    updateCarouselControls();
     refreshLanguageDependentViews();
   };
 
@@ -66,7 +78,10 @@
       const previous = carousel.querySelector("[data-carousel-prev]");
       const next = carousel.querySelector("[data-carousel-next]");
       if (!track) return;
-      const move = (direction) => track.scrollBy({ left: direction * Math.max(track.clientWidth * .82, 260), behavior: "smooth" });
+      const move = (direction) => {
+        const languageDirection = activeLanguage === "ur" ? -1 : 1;
+        track.scrollBy({ left: direction * languageDirection * Math.max(track.clientWidth * .82, 260), behavior: "smooth" });
+      };
       previous?.addEventListener("click", () => move(-1));
       next?.addEventListener("click", () => move(1));
     });
@@ -115,12 +130,23 @@
     });
     if (articleEmpty) articleEmpty.hidden = visibleCount > 0;
   };
+  const requestedFilter = new URLSearchParams(window.location.search).get("tag");
+  const initialFilterButton = requestedFilter && uniqueFilterButtons.find((button) => button.dataset.articleFilter === requestedFilter);
+  if (initialFilterButton) {
+    activeFilter = initialFilterButton.dataset.articleFilter;
+    uniqueFilterButtons.forEach((button) => button.classList.toggle("is-active", button === initialFilterButton));
+  }
   uniqueFilterButtons.forEach((button) => button.addEventListener("click", () => {
     activeFilter = button.dataset.articleFilter || "all";
     uniqueFilterButtons.forEach((item) => item.classList.toggle("is-active", item === button));
     applyArticleFilters();
+    const url = new URL(window.location.href);
+    if (activeFilter === "all") url.searchParams.delete("tag"); else url.searchParams.set("tag", activeFilter);
+    url.hash = "articles";
+    window.history.replaceState({}, "", url);
   }));
   searchInput?.addEventListener("input", applyArticleFilters);
+  applyArticleFilters();
 
   const resourceCards = [...document.querySelectorAll("[data-resource-card]")];
   const applyResourceSearch = () => {

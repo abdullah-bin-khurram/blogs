@@ -14,7 +14,7 @@ const listField = (frontMatter, name) => {
   const values = [];
   for (const line of lines.slice(start + 1)) {
     const item = line.match(/^\s+-\s+(.+)$/);
-    if (item) values.push(item[1].trim());
+    if (item) values.push(item[1].trim().replace(/^(["'])(.*)\1$/, "$2"));
     else if (/^\S/.test(line) && line.trim()) break;
   }
   return values;
@@ -43,15 +43,28 @@ for (const name of categoryFiles) {
 }
 
 const postFiles = (await readdir("_posts")).filter((name) => /\.md$/i.test(name));
-for (const name of postFiles) {
-  const file = path.join("_posts", name);
-  const { source, frontMatter } = await readFrontMatter(file);
+const posts = await Promise.all(postFiles.map(async (name) => {
+  const { source, frontMatter } = await readFrontMatter(path.join("_posts", name));
+  const filenameSlug = name.replace(/\.md$/i, "");
+  const jekyllSlug = filenameSlug.replace(/^\d{4}-\d{2}-\d{2}-/, "");
+  return { name, source, frontMatter, filenameSlug, jekyllSlug };
+}));
+const availablePostKeys = new Set(posts.flatMap(({ filenameSlug, jekyllSlug }) => [filenameSlug, jekyllSlug]));
+
+for (const { name, source, frontMatter, filenameSlug, jekyllSlug } of posts) {
   const category = field(frontMatter, "category");
   if (!categorySlugs.has(category)) errors.push(`${name}: category '${category || "missing"}' does not exist`);
   for (const required of ["title", "title_ur", "description", "description_ur", "author", "author_ur", "body_ur"]) requireField(frontMatter, required, name, errors);
   const englishTags = listField(frontMatter, "tags");
   const urduTags = listField(frontMatter, "tags_ur");
   if (englishTags.length !== urduTags.length) errors.push(`${name}: English and Urdu tag counts must match`);
+  const relatedArticles = listField(frontMatter, "related_articles");
+  if (relatedArticles.length > 3) errors.push(`${name}: related_articles must contain at most three articles`);
+  if (new Set(relatedArticles).size !== relatedArticles.length) errors.push(`${name}: related_articles contains duplicate entries`);
+  for (const relatedArticle of relatedArticles) {
+    if (!availablePostKeys.has(relatedArticle)) errors.push(`${name}: related article '${relatedArticle}' does not exist`);
+    if (relatedArticle === filenameSlug || relatedArticle === jekyllSlug) errors.push(`${name}: an article cannot relate to itself`);
+  }
   if (!source.replace(/^---[\s\S]*?---/, "").trim()) errors.push(`${name}: missing English article body`);
 }
 

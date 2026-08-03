@@ -96,6 +96,21 @@ collections:
       - { label: Estimated reading time, name: read_time, widget: number, value_type: int, min: 1, max: 60, default: 5 }
       - { label: Feature on home page, name: featured, widget: boolean, default: false }
       - { label: Publish this article, name: published, widget: boolean, default: true }
+      - label: Related articles
+        name: related_articles
+        widget: list
+        max: 3
+        required: false
+        hint: Select up to three articles. Leave empty to choose automatically from shared tags.
+        field:
+          label: Article
+          name: article
+          widget: relation
+          collection: posts
+          search_fields: [title, title_ur, description, tags]
+          value_field: "{{slug}}"
+          display_fields: [title, title_ur]
+          options_length: 50
       - { label: English article body, name: body, widget: markdown, modes: [rich_text, raw] }
       - { label: Urdu article body, name: body_ur, widget: markdown, modes: [rich_text, raw] }
 

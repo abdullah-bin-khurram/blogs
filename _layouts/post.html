@@ -38,7 +38,7 @@ layout: default
       <div class="aside-card">
         <span class="eyebrow" data-lang="en">Topics</span><span class="eyebrow" data-lang="ur">موضوعات</span>
         <div class="tag-list">
-          {% for tag in page.tags %}{% assign tag_index = forloop.index0 %}<span><b data-lang="en">{{ tag }}</b><b data-lang="ur">{{ page.tags_ur[tag_index] | default: tag }}</b></span>{% endfor %}
+          {% for tag in page.tags %}{% assign tag_index = forloop.index0 %}<a href="{{ '/' | relative_url }}?tag={{ tag | slugify | url_encode }}#articles"><b data-lang="en">{{ tag }}</b><b data-lang="ur">{{ page.tags_ur[tag_index] | default: tag }}</b></a>{% endfor %}
         </div>
         <button class="copy-link" type="button" data-copy-link><span aria-hidden="true">↗</span><span data-copy-label data-lang="en">Copy article link</span><span data-copy-label data-lang="ur">مضمون کا لنک کاپی کریں</span></button>
       </div>
@@ -57,5 +57,50 @@ layout: default
 
 <section class="more-reading content-section">
   <div class="section-heading compact"><div><span class="eyebrow" data-lang="en">Keep exploring</span><span class="eyebrow" data-lang="ur">مزید جانیں</span><h2 data-lang="en">More lung-health articles</h2><h2 data-lang="ur">پھیپھڑوں کی صحت کے مزید مضامین</h2></div></div>
-  <div class="carousel" data-carousel><div class="carousel-controls"><button type="button" data-carousel-prev>←</button><button type="button" data-carousel-next>→</button></div><div class="card-rail compact-rail" data-carousel-track>{% assign related_count = 0 %}{% for post in site.posts %}{% if post.url != page.url and related_count < 3 %}{% include post-card.html post=post %}{% assign related_count = related_count | plus: 1 %}{% endif %}{% endfor %}</div></div>
+  <div class="carousel" data-carousel>
+    <div class="carousel-controls"><button type="button" data-carousel-prev aria-label="Previous articles">←</button><button type="button" data-carousel-next aria-label="Next articles">→</button></div>
+    <div class="card-rail compact-rail" data-carousel-track>
+      {% assign related_count = 0 %}
+      {% assign related_markers = '|' | append: page.url | append: '|' %}
+      {% if page.related_articles and page.related_articles.size > 0 %}
+        {% for related_key in page.related_articles limit: 3 %}
+          {% for related_post in site.posts %}
+            {% assign related_filename = related_post.path | split: '/' | last | remove: '.md' %}
+            {% if related_post.url != page.url %}
+              {% if related_post.slug == related_key or related_filename == related_key %}
+                {% include post-card.html post=related_post %}
+                {% assign related_count = related_count | plus: 1 %}
+                {% break %}
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      {% else %}
+        {% for tag in page.tags %}
+          {% for related_post in site.posts %}
+            {% capture related_marker %}|{{ related_post.url }}|{% endcapture %}
+            {% unless related_markers contains related_marker %}
+              {% if related_count < 3 and related_post.url != page.url and related_post.tags contains tag %}
+                {% include post-card.html post=related_post %}
+                {% assign related_count = related_count | plus: 1 %}
+                {% assign related_markers = related_markers | append: related_post.url | append: '|' %}
+              {% endif %}
+            {% endunless %}
+          {% endfor %}
+        {% endfor %}
+        {% if related_count < 3 %}
+          {% for related_post in site.posts %}
+            {% capture related_marker %}|{{ related_post.url }}|{% endcapture %}
+            {% unless related_markers contains related_marker %}
+              {% if related_count < 3 and related_post.url != page.url %}
+                {% include post-card.html post=related_post %}
+                {% assign related_count = related_count | plus: 1 %}
+                {% assign related_markers = related_markers | append: related_post.url | append: '|' %}
+              {% endif %}
+            {% endunless %}
+          {% endfor %}
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
 </section>
