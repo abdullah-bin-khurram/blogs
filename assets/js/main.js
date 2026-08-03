@@ -72,6 +72,19 @@
   sidebar?.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setMenu(false)));
   window.addEventListener("keydown", (event) => { if (event.key === "Escape") setMenu(false); });
 
+  const desktopSidebarQuery = window.matchMedia("(min-width: 1041px)");
+  let sidebarFrame = 0;
+  const updateSidebarNavigation = () => {
+    sidebarFrame = 0;
+    sidebar?.classList.toggle("is-compact", desktopSidebarQuery.matches && window.scrollY > 160);
+  };
+  const queueSidebarNavigationUpdate = () => {
+    if (!sidebarFrame) sidebarFrame = window.requestAnimationFrame(updateSidebarNavigation);
+  };
+  updateSidebarNavigation();
+  window.addEventListener("scroll", queueSidebarNavigationUpdate, { passive: true });
+  desktopSidebarQuery.addEventListener?.("change", updateSidebarNavigation);
+
   const initializeCarousels = () => {
     document.querySelectorAll("[data-carousel]").forEach((carousel) => {
       const track = carousel.querySelector("[data-carousel-track]");
