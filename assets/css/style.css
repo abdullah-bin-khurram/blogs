@@ -202,14 +202,9 @@ html[data-language="ur"] .post-card h3 { font-family: var(--urdu); line-height: 
 .appointment-copy h2 { color: white; }
 .appointment-copy > p { max-width: 650px; color: rgba(255,255,255,.72); }
 .appointment-links { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 28px; }
-.appointment-links > a, .appointment-link-group { min-height: 64px; display: flex; align-items: center; gap: 12px; padding: 14px 16px; border: 1px solid rgba(255,255,255,.15); border-radius: 15px; background: rgba(255,255,255,.07); }
-.appointment-links > a:hover, .appointment-link-group:hover { background: rgba(255,255,255,.13); }
-.appointment-links > a > strong, .appointment-link-group > strong { flex: 1; font-size: 12px; }
-.appointment-link-group { grid-column: 1 / -1; }
-.appointment-inline-actions { display: flex; align-items: center; gap: 7px; margin-inline-start: auto; }
-.appointment-inline-actions a { min-height: 34px; display: inline-flex; align-items: center; justify-content: center; gap: 5px; padding: 7px 10px; border: 1px solid rgba(255,255,255,.18); border-radius: 10px; background: rgba(255,255,255,.08); font-size: 10px; font-weight: 800; white-space: nowrap; }
-.appointment-inline-actions a:hover, .appointment-inline-actions a:focus-visible { background: rgba(255,255,255,.18); }
-.appointment-inline-actions .material-symbols-outlined { font-size: 16px; }
+.appointment-links a { min-height: 64px; display: flex; align-items: center; gap: 12px; padding: 14px 16px; border: 1px solid rgba(255,255,255,.15); border-radius: 15px; background: rgba(255,255,255,.07); }
+.appointment-links a:hover { background: rgba(255,255,255,.13); }
+.appointment-links strong { flex: 1; font-size: 12px; }
 .contact-icon { width: 34px; height: 34px; display: grid; place-items: center; flex: 0 0 auto; border-radius: 10px; color: var(--forest-deep); background: var(--sage-soft); font-size: 20px; }
 .contact-arrow { flex: 0 0 auto; opacity: .7; }
 
@@ -298,7 +293,7 @@ html[data-language="ur"] .article-heading h1 { font-family: var(--urdu); line-he
   .section-heading h2, .appointment-copy h2, .about-grid h2 { font-size: 2.65rem; }.content-section { padding-block: 58px; }
   .card-rail, .compact-rail, .resource-rail { grid-auto-columns: 88%; }.post-card-art { height: 175px; }
   .resource-tools { align-items: stretch; flex-direction: column; }.show-all-button { width: 100%; }.resources-section.is-expanded .resource-rail { grid-template-columns: 1fr; }
-  .appointment-profile { min-height: 360px; }.appointment-copy { padding: 34px 22px; }.appointment-link-group { flex-wrap: wrap; }.appointment-inline-actions { width: 100%; margin-inline-start: 46px; }.appointment-inline-actions a { flex: 1; }
+  .appointment-profile { min-height: 360px; }.appointment-copy { padding: 34px 22px; }
   .article-heading h1 { font-size: 3.25rem; }.article-content-grid { padding-top: 50px; }.prose { font-size: 17px; }.prose h2 { font-size: 2rem; }
   .aside-card { display: block; }.tag-list { margin: 12px 0 18px; }.copy-link { width: 100%; border-top: 1px solid var(--line); padding-top: 9px; }
   .values-grid { grid-template-columns: 1fr; }
