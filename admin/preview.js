@@ -40,14 +40,17 @@
           ]),
           h("h1", { key: "title" }, title),
           h("p", { className: "article-deck", key: "description" }, description),
+          h("div", { className: "cms-preview-author", key: "author" }, author),
           h("div", { className: "cms-preview-visual", key: "visual" }, imageUrl
             ? h("img", { src: imageUrl, alt: value(entry, urdu ? "image_alt_ur" : "image_alt", title) })
             : h("img", { src: "/blogs/assets/images/portal-pic.webp", alt: "" })),
-          h("div", { className: "cms-preview-details", key: "details" }, [
-            h("strong", { key: "author" }, author),
-            h("div", { className: "tag-list", key: "tags" }, (tags || []).map((tag, index) => h("span", { key: `${tag}-${index}` }, tag)))
-          ]),
-          h("div", { className: "prose cms-preview-prose", key: "body" }, this.props.widgetFor(urdu ? "body_ur" : "body"))
+          h("div", { className: "cms-preview-content", key: "content" }, [
+            h("div", { className: "prose cms-preview-prose", key: "body" }, this.props.widgetFor(urdu ? "body_ur" : "body")),
+            h("aside", { className: "cms-preview-details", key: "details" }, [
+              h("strong", { key: "topics" }, urdu ? "موضوعات" : "Topics"),
+              h("div", { className: "tag-list", key: "tags" }, (tags || []).map((tag, index) => h("span", { key: `${tag}-${index}` }, tag)))
+            ])
+          ])
         ])
       ]);
     }
