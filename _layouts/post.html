@@ -34,6 +34,15 @@ layout: default
   </header>
 
   <div class="article-content-grid">
+    <div class="prose" data-article-body>
+      <div data-lang="en">{{ content }}</div>
+      <div data-lang="ur" class="urdu-prose">{% if page.body_ur %}{{ page.body_ur | markdownify }}{% else %}{{ content }}{% endif %}</div>
+      <div class="article-signoff">
+        <span aria-hidden="true">✦</span>
+        <div><strong data-lang="en">A useful next step</strong><strong data-lang="ur">اگلا مفید قدم</strong><p data-lang="en">If a breathing change is persistent, worsening, or worrying, seek advice from a qualified healthcare professional.</p><p data-lang="ur">اگر سانس میں تبدیلی مسلسل ہو، بڑھ رہی ہو یا تشویش کا باعث ہو تو مستند طبی ماہر سے مشورہ کریں۔</p></div>
+      </div>
+    </div>
+
     <aside class="article-aside">
       <div class="aside-card">
         <span class="eyebrow" data-lang="en">Topics</span><span class="eyebrow" data-lang="ur">موضوعات</span>
@@ -43,15 +52,6 @@ layout: default
         <button class="copy-link" type="button" data-copy-link><span aria-hidden="true">↗</span><span data-copy-label data-lang="en">Copy article link</span><span data-copy-label data-lang="ur">مضمون کا لنک کاپی کریں</span></button>
       </div>
     </aside>
-
-    <div class="prose" data-article-body>
-      <div data-lang="en">{{ content }}</div>
-      <div data-lang="ur" class="urdu-prose">{% if page.body_ur %}{{ page.body_ur | markdownify }}{% else %}{{ content }}{% endif %}</div>
-      <div class="article-signoff">
-        <span aria-hidden="true">✦</span>
-        <div><strong data-lang="en">A useful next step</strong><strong data-lang="ur">اگلا مفید قدم</strong><p data-lang="en">If a breathing change is persistent, worsening, or worrying, seek advice from a qualified healthcare professional.</p><p data-lang="ur">اگر سانس میں تبدیلی مسلسل ہو، بڑھ رہی ہو یا تشویش کا باعث ہو تو مستند طبی ماہر سے مشورہ کریں۔</p></div>
-      </div>
-    </div>
   </div>
 </article>
 
