@@ -67,6 +67,8 @@ html[dir="rtl"] .brand { margin-right: 0; margin-left: auto; }
 .sidebar-nav { position: sticky; top: 94px; z-index: 6; width: 100%; margin-inline: auto; display: grid; grid-template-columns: 1fr; gap: 7px; padding: 4px 0; background: rgba(251,250,246,.96); transition: width .3s cubic-bezier(.22,.8,.22,1), padding .3s cubic-bezier(.22,.8,.22,1), gap .3s cubic-bezier(.22,.8,.22,1), border-color .2s ease, border-radius .3s ease, box-shadow .3s ease; }
 .sidebar-nav a { min-width: 0; display: flex; align-items: center; gap: 12px; padding: 11px 13px; overflow: hidden; border-radius: 14px; font-weight: 600; transition: width .28s cubic-bezier(.22,.8,.22,1), height .28s cubic-bezier(.22,.8,.22,1), gap .24s ease, padding .28s cubic-bezier(.22,.8,.22,1), background-color .2s ease; }
 .sidebar-nav a > [data-lang] { max-width: 150px; overflow: hidden; white-space: nowrap; opacity: 1; transform: translateX(0); transition: max-width .22s ease, opacity .16s ease, transform .22s ease; }
+html[data-language="ur"] .portal-sidebar:not(.is-compact) .sidebar-nav a { overflow: visible; padding-block: 7px; }
+html[data-language="ur"] .portal-sidebar:not(.is-compact) .sidebar-nav a > [data-lang="ur"] { overflow: visible; line-height: 2.1; }
 .sidebar-nav a:hover, .sidebar-nav a:focus-visible { background: var(--mint-deep); }
 .nav-icon { width: 30px; height: 30px; display: grid; place-items: center; flex: 0 0 auto; border: 1px solid var(--line); border-radius: 10px; color: var(--forest); background: white; font-family: var(--sans); font-size: 12px; font-weight: 800; transition: transform .24s ease, border-radius .24s ease, background-color .2s ease; }
 .sidebar-card { position: relative; margin-top: 28px; padding: 22px 18px; overflow: hidden; border-radius: var(--radius-md); color: white; background: var(--forest); }
@@ -117,7 +119,8 @@ html[dir="rtl"] .brand { margin-right: 0; margin-left: auto; }
 .hero-kicker { display: flex; align-items: center; gap: 12px; color: var(--forest); font-size: 11px; text-transform: uppercase; letter-spacing: .15em; }
 .hero-kicker > span { width: 28px; height: 1px; background: var(--forest); }
 .hero h1, .page-hero h1, .not-found h1 { margin: 22px 0; font: 600 clamp(3.6rem, 6.4vw, 6.8rem)/.87 var(--serif); letter-spacing: -.055em; }
-html[data-language="ur"] .hero h1, html[data-language="ur"] .page-hero h1 { font-family: var(--urdu); font-size: clamp(3rem, 5.5vw, 5.6rem); line-height: 1.55; letter-spacing: 0; }
+html[data-language="ur"] .hero h1 { font-family: var(--urdu); font-size: clamp(2.8rem, 4.8vw, 5rem); line-height: 2; letter-spacing: 0; text-wrap: balance; }
+html[data-language="ur"] .page-hero h1 { font-family: var(--urdu); font-size: clamp(3rem, 5.5vw, 5.6rem); line-height: 1.55; letter-spacing: 0; }
 .hero h1 em { color: var(--coral); font-weight: inherit; }
 .hero-copy > p { max-width: 650px; margin: 0; color: var(--ink-soft); font-size: 18px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
