@@ -70,51 +70,516 @@ body_ur: >
 
   صحت مند اندرونی ماحول کے لیے کامل ہوا کا تعاقب ضروری نہیں۔ پہلے واضح ذرائع، مفید وینٹی لیشن، نمی پر قابو اور باقاعدہ دیکھ بھال پر توجہ دیں۔
 ---
-Do we often think about pollution as something outside, yet most people
-spend a large part of the day indoors. Indoor air quality is influenced
-by ventilation, moisture, cooking, cleaning products, smoke, dust,
-building materials, pets, and outdoor air entering the home.
+Asthma
 
-<!--more-->
 
-## Start with sources, not gadgets
 
-Air purifiers can be useful in certain situations, but the first
-questions are usually simpler:
+\> Patient education page compiled by Dr Abdullah Bin Khurram.
 
-* Is something producing smoke, dust, fumes, or excess moisture?
-* Can that source be removed, reduced, repaired, or moved?
-* Is fresh air entering and stale air leaving appropriately?
 
-Controlling a source is often more effective than trying to filter
-everything after it spreads.
 
-## The kitchen
 
-Cooking can create particles, steam, odors, and combustion gases. Use an
-extractor that vents outdoors when available, open a suitable window, and
-keep fuel-burning appliances maintained. Avoid leaving food to burn or
-oil to smoke.
 
-## Bedrooms and living spaces
 
-Dust builds up in soft furnishings, surfaces, filters, and cluttered
-areas. A realistic cleaning routine, washable bedding, and attention to
-visible dampness can improve comfort. Strongly fragranced sprays may
-irritate some people even when they make a room smell “clean.”
 
-## Bathrooms and moisture-prone areas
+\> 
 
-Persistent condensation and dampness can encourage mold growth. Use
-ventilation during and after showers, repair leaks, dry wet materials,
-and investigate recurring moisture rather than repeatedly covering it.
 
-## Match ventilation to outdoor conditions
 
-Opening windows is helpful only when outdoor air is reasonably suitable.
-During heavy pollution, smoke, dust storms, or extreme weather, it may
-be better to limit outdoor air temporarily and use other strategies.
+⚠ (This page serves as an adjunct to the advice given in the clinic, it does not replace clincal judgement and personalized prescriptions)
 
-A healthier indoor environment does not require chasing perfect air.
-Focus first on obvious sources, useful ventilation, moisture control,
-and regular maintenance.
+
+
+What is Asthma
+
+
+
+Asthma is a chronic (long-term) condition of the airways that causes them to become inflamed, sensitive, and narrowed, making breathing harder at times. This can lead to symptoms such as wheezing (whistling sound), shortness of breath, chest tightness, and cough. With proper treatment and lifestyle changes, most people with asthma can live full and active lives.
+
+
+
+https://www.youtube.com/watch?v=LaxgJGFizJ0&list=PLxdDQiAI50j-3AJixgoz_tPKqpWashCNS&index=50
+
+
+
+
+
+\---
+
+
+
+https://www.youtube.com/watch?v=hOk_QOn6PaQ&list=PLxdDQiAI50j-3AJixgoz_tPKqpWashCNS&index=48
+
+
+
+
+
+\---
+
+
+
+🚨 Symptoms to Watch
+
+
+
+Typical symptoms include:
+
+
+
+Wheezing or whistling when breathing
+
+
+
+Shortness of breath
+
+
+
+Chest tightness
+
+
+
+Cough, especially at night or early morning
+
+
+
+Symptoms that vary over time and get worse with triggers
+
+
+
+
+
+🔥 Common Triggers
+
+
+
+Asthma symptoms can be triggered by:
+
+
+
+🐶 Allergens: dust mites, pet dander, pollen, mold
+
+
+
+🚬 Smoke (tobacco smoke, pollution)
+
+
+
+🥶 Cold air or weather changes
+
+
+
+💪 Exercise in some people
+
+
+
+😷 Respiratory infections (cold, flu)
+
+
+
+😟 Emotional stress
+
+
+
+
+
+
+
+\---
+
+
+
+🗂 Tests & Diagnosis
+
+
+
+How doctors confirm asthma
+
+
+
+“Spirometry / lung function tests” — measures how well you can breathe out air.
+
+
+
+A Variation in the “Peak flow chart” can also help diagnose asthma.
+
+
+
+
+
+
+
+\---
+
+
+
+Monitoring Asthma Control
+
+
+
+Asthma is best monitored using the “Asthma control test” or “peak flow charting”
+
+
+
+Adult Quiz
+
+
+
+Smart Asthma: Forecast Asthma - Apps on Google Play
+
+
+
+Your_peak_flow_diary_A5_DIGITAL.pdf
+
+
+
+woolcock Peak Flow Chart.pdf
+
+
+
+How to use a peak flow meter - by American Lung Association
+
+
+
+How to use a peak flow meter - by American Lung Association
+
+
+
+💊 Treatment Basics
+
+
+
+Asthma is not curable, but it can be controlled with the right treatment:
+
+
+
+Medications
+
+
+
+Controller medications — taken daily to reduce inflammation
+
+
+
+Usually inhaled corticosteroids or combination inhalers
+
+
+
+
+
+Reliever medications — fast-acting relief during flare-ups
+
+
+
+Short-acting bronchodilators that open the airways
+
+
+
+
+
+Inhaler Technique
+
+
+
+How to use a metered dose inhaler - (pump, inhaler) - by American Lung Association
+
+
+
+How to use a metered dose inhaler - (pump, inhaler) - by American Lung Association
+
+
+
+How to use a metered dose inhaler with a valve holding chamber - (Spacer, bottle) - by American Lung Association
+
+
+
+How to use a metered dose inhaler with a valve holding chamber - (Spacer, bottle) - by American Lung Association
+
+
+
+
+
+\---
+
+
+
+Nebulizer - use and care
+
+
+
+How to properly use a nebulizer - by American Lung Association
+
+
+
+How to properly use a nebulizer - by American Lung Association
+
+
+
+How to clean the nebulizer - by American Lung Association
+
+
+
+How to clean the nebulizer - by American Lung Association
+
+
+
+Nebuliser and inhaler guide - European Lung Foundation
+
+
+
+Prevention
+
+
+
+REMOVE ASTHMA TRIGGERS AT HOME
+
+
+
+“Removing Asthma Triggers in Home” is a good and practical guidance by American Lung Association. See the playlist below:
+
+
+
+https://www.youtube.com/playlist?list=PLxdDQiAI50j99BOlTOn_1NO-_Hc4ASP_I
+
+
+
+
+
+\---
+
+
+
+KEEP AN EYE ON AQI
+
+
+
+https://apption.co/embeds/61fc31af
+
+
+
+Poor air quality can irritate your lungs and make breathing problems worse, especially if you have asthma, COPD, allergies, or other respiratory conditions.
+
+
+
+1. 🏠 Stay indoors as much as possible, especially during the hottest part of the day.
+
+
+
+
+
+2. 🚶 Avoid strenuous outdoor activities such as jogging, cycling, or heavy exercise.
+
+
+
+
+
+3. 🚪 Keep windows and doors closed if outdoor air quality is poor.
+
+
+
+
+
+4. 😷 If you must go outside, consider wearing a well-fitting N95 or KN95 mask, particularly during smoke or severe pollution events
+
+
+
+
+
+5. 💊 Continue taking your prescribed inhalers and medications. Do not stop them because you feel well
+
+
+
+
+
+6. 💨 Keep your reliever inhaler with you if you have asthma or COPD.
+
+
+
+
+
+7. 🚭 Avoid smoking, second-hand smoke, and burning wood or rubbish, which further worsen indoor air quality
+
+
+
+
+
+8. 🚗 If travelling, use your vehicle's recirculation mode when driving through heavy traffic.
+
+
+
+
+
+9. 🚨 Seek medical attention promptly if you develop severe breathlessness, chest pain, blue lips, confusion, or if your reliever inhaler is not providing the usual relief.
+
+
+
+
+
+
+
+UNDERSTANDING THE AIR QUALITY INDEX (AQI)
+
+
+
+🟢 Good (0–50): Outdoor activities are generally safe.
+
+
+
+🟡 Moderate (51–100): Most people can continue normal activities. Sensitive individuals should monitor symptoms.
+
+
+
+🟠 Unhealthy for Sensitive Groups (101–150): People with asthma, COPD, heart disease, older adults, pregnant women, and young children should reduce prolonged outdoor activity.
+
+
+
+🔴 Unhealthy (151–200): Everyone should limit prolonged outdoor exertion. People with lung disease should stay indoors whenever possible.
+
+
+
+🟣 Very Unhealthy (201–300): Avoid outdoor activities. Keep windows closed and follow your doctor's advice.
+
+
+
+🟤 Hazardous (301+): Remain indoors if possible, avoid all outdoor exertion, and follow local public health advice.
+
+
+
+Learn More About Asthma
+
+
+
+Helpful Websites for more information
+
+
+
+GINA-Patient-Guide-2021-copy.pdf
+
+
+
+Asthma + Lung UK
+
+
+
+Asthma Canada
+
+
+
+Breathing Freely
+
+
+
+Adult Asthma | Symptoms & Treatment | ELF
+
+
+
+Severe and difficult-to-treat asthma - European Lung Foundation
+
+
+
+Asthma and pregnancy - European Lung Foundation
+
+
+
+
+
+\---
+
+
+
+Know someone with asthma?
+
+
+
+GIft for someone with asthma.pdf
+
+
+
+Share this page with them: https://romantic-keyboard-3e6.notion.site/Asthma-2fa10876c375806d86caf635e62f72bf
+
+
+
+Contact Clinic
+
+
+
+In case of any query or unusual symptoms, visit Dr. Abdullah Bin Khurram at:
+
+
+
+<aside>💡
+
+
+
+ARIF MEDICAL COMPLEX
+
+
+
+Google Maps
+
+
+
+For appointment, book using the following link or contact 051-5148373, 0343-9282179
+
+
+
+Pulmonology Clinic, Arif Medical Complex | Islamabad \[ Book now ]
+
+
+
+</aside><aside>💡
+
+
+
+ONLINE CONSULTATION
+
+
+
+Dr. Abdullah Bin Khurram - General Practitioner at Online Clinic Islamabad, Islamabad | Marham
+
+
+
+</aside>
+
+\---
+
+
+
+Follow me
+
+
+
+Follow me on my social media sites:
+
+
+
+
+
+
+
+
+
+\---
+
+
+
+Go back to the Main page:
+
+
+
+Pulmonology Clinic
+
+
+
+Smoking Cessation
+
+
+
+Living with a Lung Condition
+
+
+
+Chronic Obstructive Pulmonary Disease (COPD)
+
+
+
+Welcome to Notion
