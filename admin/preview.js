@@ -8,6 +8,20 @@
 
   const ArticlePreview = createClass({
     getInitialState() { return { language: "en" }; },
+    componentDidMount() { this.scheduleRichLinks(); },
+    componentDidUpdate() { this.scheduleRichLinks(); },
+    componentWillUnmount() {
+      const view = this.previewBody?.ownerDocument.defaultView || window;
+      if (this.richLinkFrame) view.cancelAnimationFrame(this.richLinkFrame);
+    },
+    scheduleRichLinks() {
+      const view = this.previewBody?.ownerDocument.defaultView || window;
+      if (this.richLinkFrame) view.cancelAnimationFrame(this.richLinkFrame);
+      this.richLinkFrame = view.requestAnimationFrame(() => {
+        window.ABKRichLinks?.enhance(this.previewBody);
+        this.richLinkFrame = 0;
+      });
+    },
     render() {
       const entry = this.props.entry;
       const urdu = this.state.language === "ur";
@@ -45,7 +59,7 @@
             ? h("img", { src: imageUrl, alt: value(entry, urdu ? "image_alt_ur" : "image_alt", title) })
             : h("img", { src: "/blogs/assets/images/portal-pic.webp", alt: "" })),
           h("div", { className: "cms-preview-content", key: "content" }, [
-            h("div", { className: "prose cms-preview-prose", key: "body" }, this.props.widgetFor(urdu ? "body_ur" : "body")),
+            h("div", { className: "prose cms-preview-prose", key: "body", ref: (node) => { this.previewBody = node; } }, this.props.widgetFor(urdu ? "body_ur" : "body")),
             h("aside", { className: "cms-preview-details", key: "details" }, [
               h("strong", { key: "topics" }, urdu ? "موضوعات" : "Topics"),
               h("div", { className: "tag-list", key: "tags" }, (tags || []).map((tag, index) => h("span", { key: `${tag}-${index}` }, tag)))
@@ -53,6 +67,25 @@
           ])
         ])
       ]);
+    }
+  });
+
+  const escapeMarkdownLinkPipes = (markdown) => String(markdown || "").replace(
+    /\[([^\]\n]+)\]\((https?:\/\/[^\s)]+(?:\s+"[^"]*")?)\)/g,
+    (match, label, destination) => label.includes("|")
+      ? `[${label.replace(/(^|[^\\])\|/g, "$1\\|")}](${destination})`
+      : match
+  );
+
+  CMS.registerEventListener({
+    name: "preSave",
+    handler: ({ entry }) => {
+      let data = entry.get("data");
+      ["body", "body_ur"].forEach((field) => {
+        const value = data.get(field);
+        if (typeof value === "string") data = data.set(field, escapeMarkdownLinkPipes(value));
+      });
+      return data;
     }
   });
 

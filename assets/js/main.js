@@ -384,7 +384,7 @@
       });
     });
   };
-  enhanceRichLinks();
+  window.ABKRichLinks?.enhance(articleBody);
 
   const readingProgress = document.querySelector("[data-reading-progress]");
   if (readingProgress && articleBody) {
