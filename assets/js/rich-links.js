@@ -120,6 +120,10 @@
       description.textContent = metadata.description;
       description.hidden = false;
     }
+    card.classList.toggle(
+      "has-description",
+      Boolean(description.textContent.trim())
+    );
     if (metadata.siteName) siteName.textContent = metadata.siteName;
     if (media && metadata.image && card.dataset.hasAuthoredImage !== "true" && card.dataset.lockPreviewImage !== "true") {
       media.querySelectorAll(".rich-link-card-image,.rich-link-card-logo").forEach((image) => image.remove());
@@ -180,6 +184,10 @@
     description.dataset.richLinkDescription = "";
     description.textContent = sourceLink.title || "";
     description.hidden = !description.textContent;
+    card.classList.toggle(
+      "has-description",
+      Boolean(description.textContent.trim())
+    );
     const action = doc.createElement("span");
     action.className = "rich-link-card-action";
     action.innerHTML = '<span data-lang="en">Open link</span><span data-lang="ur">لنک کھولیں</span><span aria-hidden="true">↗</span>';
@@ -201,27 +209,72 @@
     return links.every((link) => { try { return /^https?:$/.test(new URL(link.href, link.ownerDocument.location.href).protocol); } catch { return false; } }) ? links : [];
   };
 
+  const layoutGrid = (grid) => {
+    const cards = [...grid.querySelectorAll(".rich-link-card")];
+    const rowSizes = [];
+    let remaining = cards.length;
+
+    while (remaining > 0) {
+      // Avoid leaving one card alone: 4 becomes 2+2,
+      // 7 becomes 3+2+2, 10 becomes 3+3+2+2, etc.
+      if (remaining === 4) {
+        rowSizes.push(2, 2);
+        break;
+      }
+
+      const rowSize = Math.min(3, remaining);
+      rowSizes.push(rowSize);
+      remaining -= rowSize;
+    }
+
+    grid.replaceChildren();
+
+    let cardIndex = 0;
+
+    rowSizes.forEach((rowSize) => {
+      const row = grid.ownerDocument.createElement("div");
+      row.className = `rich-link-row cards-${rowSize}`;
+      row.append(...cards.slice(cardIndex, cardIndex + rowSize));
+      grid.append(row);
+      cardIndex += rowSize;
+    });
+  };
+
   const enhanceContainer = (container, observer) => {
     let currentGrid = null;
+
     [...container.children].forEach((block) => {
       const links = standaloneLinks(block);
-      if (!links.length) { currentGrid = null; return; }
+
+      if (!links.length) {
+        currentGrid = null;
+        return;
+      }
+
       if (!currentGrid) {
         currentGrid = container.ownerDocument.createElement("div");
-        currentGrid.className = "rich-link-grid is-single";
+        currentGrid.className = "rich-link-grid";
         block.before(currentGrid);
       }
+
       links.forEach((link) => {
         const card = createCard(link);
         if (!card) return;
+
         currentGrid.append(card);
-        currentGrid.classList.toggle("is-single", currentGrid.childElementCount === 1);
-        if (observer) observer.observe(card);
-        else fetchMetadata(card.href, card.dataset.previewKind).then((metadata) => applyMetadata(card, metadata));
+
+        if (observer) {
+          observer.observe(card);
+        } else {
+          fetchMetadata(card.href, card.dataset.previewKind)
+            .then((metadata) => applyMetadata(card, metadata));
+        }
       });
+
+      layoutGrid(currentGrid);
       block.remove();
     });
-  };
+};
 
   const enhance = (root) => {
     if (!root) return;
