@@ -153,9 +153,7 @@
     );
 
     const androidYouTubeUrl = isAndroidYouTube
-      ? `intent://www.youtube.com/watch?v=${encodeURIComponent(videoId)}` +
-        `#Intent;scheme=https;package=com.google.android.youtube;` +
-        `S.browser_fallback_url=${encodeURIComponent(browserUrl)};end`
+      ? `vnd.youtube:${encodeURIComponent(videoId)}`
       : "";
 
     const card = doc.createElement("a");
