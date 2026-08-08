@@ -308,6 +308,10 @@ html[data-language="ur"] .article-appointment-cta .button { padding-block: 5px; 
 }
 
 @media (max-width: 780px) {
+  .article-aside { width: 100%; max-width: none; justify-self: stretch; }
+  .article-aside .aside-card { width: 100%; }
+  .article-aside .tag-list { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; gap: 6px; }
+  .article-aside .tag-list > a { max-width: 100%; white-space: normal; }
   .header-inner { width: min(calc(100% - 24px),1540px); }
   .brand-copy small { display: none; }.brand-copy strong { font-size: 12px; }
   .language-switcher button { min-width: 42px; padding-inline: 8px; }

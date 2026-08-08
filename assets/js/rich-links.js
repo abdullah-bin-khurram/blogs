@@ -146,15 +146,30 @@
     const driveId = googleDriveFileId(url);
     const isDocument = Boolean(driveId || /\.pdf(?:$|[?#])/i.test(url.href) || /\.pdf\b/i.test(suppliedLabel));
 
+    const view = doc.defaultView || window;
+    const browserUrl = url.href;
+    const isAndroidYouTube = Boolean(
+      videoId && /Android/i.test(view.navigator.userAgent)
+    );
+
+    const androidYouTubeUrl = isAndroidYouTube
+      ? `intent://www.youtube.com/watch?v=${encodeURIComponent(videoId)}` +
+        `#Intent;scheme=https;package=com.google.android.youtube;` +
+        `S.browser_fallback_url=${encodeURIComponent(browserUrl)};end`
+      : "";
+
     const card = doc.createElement("a");
     card.className = "rich-link-card";
-    card.href = url.href;
+    card.href = isAndroidYouTube ? androidYouTubeUrl : browserUrl;
+    card.dataset.previewUrl = browserUrl;
     card.setAttribute("aria-busy", "true");
     card.dataset.useMetadataTitle = String(labelLooksLikeUrl);
     card.dataset.hasAuthoredImage = String(Boolean(authoredImage));
     card.dataset.lockPreviewImage = String(Boolean(authoredImage || videoId));
     card.dataset.previewKind = isDocument ? "document" : "page";
-    if (sourceLink.target) card.target = sourceLink.target;
+    if (!isAndroidYouTube && sourceLink.target) {
+      card.target = sourceLink.target;
+    }
     if (sourceLink.rel) card.rel = sourceLink.rel;
     if (sourceLink.download) card.download = sourceLink.download;
 
@@ -266,7 +281,10 @@
         if (observer) {
           observer.observe(card);
         } else {
-          fetchMetadata(card.href, card.dataset.previewKind)
+          fetchMetadata(
+            card.dataset.previewUrl || card.href,
+            card.dataset.previewKind
+          )
             .then((metadata) => applyMetadata(card, metadata));
         }
       });
@@ -283,7 +301,10 @@
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
         instance.unobserve(entry.target);
-        fetchMetadata(entry.target.href, entry.target.dataset.previewKind).then((metadata) => applyMetadata(entry.target, metadata));
+        fetchMetadata(
+          entry.target.dataset.previewUrl || entry.target.href,
+          entry.target.dataset.previewKind
+        ).then((metadata) => applyMetadata(entry.target, metadata));
       });
     }, { rootMargin: "240px 0px" }) : null;
     const languageContainers = [...root.querySelectorAll(":scope > [data-lang]")];
