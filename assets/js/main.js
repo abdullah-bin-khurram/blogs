@@ -195,8 +195,198 @@
     showAllButton.querySelector('[data-lang="ur"]').textContent = expanded ? "کیروسل دکھائیں" : "سب دکھائیں";
   });
 
-  const readingProgress = document.querySelector("[data-reading-progress]");
   const articleBody = document.querySelector("[data-article-body]");
+  const linkMetadataRequests = new Map();
+  const linkMetadataCacheKey = "abk-rich-link-metadata-v1";
+  const linkMetadataQueue = [];
+  let activeLinkMetadataRequests = 0;
+  let linkMetadataCache = {};
+  try { linkMetadataCache = JSON.parse(localStorage.getItem(linkMetadataCacheKey) || "{}"); } catch { linkMetadataCache = {}; }
+
+  const runLinkMetadataQueue = () => {
+    while (activeLinkMetadataRequests < 2 && linkMetadataQueue.length) {
+      const { task, resolve } = linkMetadataQueue.shift();
+      activeLinkMetadataRequests += 1;
+      task().then(resolve, () => resolve(null)).finally(() => {
+        activeLinkMetadataRequests -= 1;
+        runLinkMetadataQueue();
+      });
+    }
+  };
+  const scheduleLinkMetadata = (task) => new Promise((resolve) => {
+    linkMetadataQueue.push({ task, resolve });
+    runLinkMetadataQueue();
+  });
+
+  const storeLinkMetadata = (url, metadata) => {
+    linkMetadataCache[url] = { time: Date.now(), metadata };
+    linkMetadataCache = Object.fromEntries(Object.entries(linkMetadataCache)
+      .sort(([, first], [, second]) => second.time - first.time)
+      .slice(0, 40));
+    try { localStorage.setItem(linkMetadataCacheKey, JSON.stringify(linkMetadataCache)); } catch { /* Cards still work without caching. */ }
+  };
+
+  const fetchLinkMetadata = (url) => {
+    const cached = linkMetadataCache[url];
+    if (cached && Date.now() - cached.time < 7 * 24 * 60 * 60 * 1000) return Promise.resolve(cached.metadata);
+    if (linkMetadataRequests.has(url)) return linkMetadataRequests.get(url);
+    const request = scheduleLinkMetadata(async () => {
+      const controller = new AbortController();
+      const timeout = window.setTimeout(() => controller.abort(), 8000);
+      try {
+        const response = await fetch(`https://api.microlink.io?url=${encodeURIComponent(url)}`, { signal: controller.signal });
+        if (!response.ok) throw new Error(`Link preview request failed: ${response.status}`);
+        const payload = await response.json();
+        if (payload.status !== "success" || !payload.data) throw new Error("Link preview metadata was unavailable.");
+        const data = payload.data;
+        const cleanText = (value, length) => String(value || "").trim().slice(0, length);
+        const cleanAssetUrl = (value) => {
+          try { const asset = new URL(value); return /^https?:$/.test(asset.protocol) ? asset.href : ""; } catch { return ""; }
+        };
+        const image = cleanAssetUrl(typeof data.image === "string" ? data.image : data.image?.url);
+        const logo = cleanAssetUrl(typeof data.logo === "string" ? data.logo : data.logo?.url);
+        const metadata = {
+          title: cleanText(data.title, 240),
+          description: cleanText(data.description, 520),
+          siteName: cleanText(data.publisher || data.siteName, 100),
+          image,
+          logo
+        };
+        storeLinkMetadata(url, metadata);
+        return metadata;
+      } finally { window.clearTimeout(timeout); }
+    }).catch((error) => { console.warn("Rich link preview could not be loaded.", error); return null; });
+    linkMetadataRequests.set(url, request);
+    return request;
+  };
+
+  const addRichLinkImage = (media, source, className) => {
+    if (!source) return;
+    const image = document.createElement("img");
+    image.className = className;
+    image.alt = "";
+    image.loading = "lazy";
+    image.decoding = "async";
+    image.referrerPolicy = "no-referrer";
+    image.addEventListener("load", () => media.classList.add("has-image"), { once: true });
+    image.addEventListener("error", () => image.remove(), { once: true });
+    image.src = source;
+    media.append(image);
+  };
+
+  const applyRichLinkMetadata = (card, metadata) => {
+    card.removeAttribute("aria-busy");
+    if (!metadata) return;
+    const title = card.querySelector("[data-rich-link-title]");
+    const description = card.querySelector("[data-rich-link-description]");
+    const siteName = card.querySelector("[data-rich-link-site]");
+    const media = card.querySelector("[data-rich-link-media]");
+    if (card.dataset.useMetadataTitle === "true" && metadata.title) title.textContent = metadata.title;
+    if (metadata.description && !description.textContent.trim()) {
+      description.textContent = metadata.description;
+      description.hidden = false;
+    }
+    if (metadata.siteName) siteName.textContent = metadata.siteName;
+    if (media && card.dataset.hasAuthoredImage !== "true") addRichLinkImage(media, metadata.image || metadata.logo, metadata.image ? "rich-link-card-image" : "rich-link-card-logo");
+  };
+
+  const createRichLinkCard = (sourceLink) => {
+    let url;
+    try { url = new URL(sourceLink.href, window.location.href); } catch { return null; }
+    if (!/^https?:$/.test(url.protocol)) return null;
+    const hostname = url.hostname.replace(/^www\./, "");
+    const authoredImage = sourceLink.querySelector("img");
+    const suppliedLabel = sourceLink.textContent.trim() || authoredImage?.alt?.trim() || "";
+    const labelLooksLikeUrl = !suppliedLabel || /^https?:\/\//i.test(suppliedLabel) || suppliedLabel === sourceLink.href;
+    const titleText = labelLooksLikeUrl ? hostname : suppliedLabel;
+
+    const card = document.createElement("a");
+    card.className = "rich-link-card";
+    card.href = url.href;
+    card.setAttribute("aria-busy", "true");
+    card.dataset.useMetadataTitle = String(labelLooksLikeUrl);
+    card.dataset.hasAuthoredImage = String(Boolean(authoredImage));
+    if (sourceLink.target) card.target = sourceLink.target;
+    if (sourceLink.rel) card.rel = sourceLink.rel;
+
+    const media = document.createElement("span");
+    media.className = "rich-link-card-media";
+    media.dataset.richLinkMedia = "";
+    const fallback = document.createElement("span");
+    fallback.className = "rich-link-card-fallback";
+    fallback.textContent = (hostname[0] || "↗").toUpperCase();
+    media.append(fallback);
+    if (authoredImage?.src) addRichLinkImage(media, authoredImage.src, "rich-link-card-image");
+
+    const content = document.createElement("span");
+    content.className = "rich-link-card-content";
+    const site = document.createElement("span");
+    site.className = "rich-link-card-site";
+    site.dataset.richLinkSite = "";
+    site.textContent = hostname;
+    const title = document.createElement("strong");
+    title.className = "rich-link-card-title";
+    title.dataset.richLinkTitle = "";
+    title.textContent = titleText;
+    const description = document.createElement("span");
+    description.className = "rich-link-card-description";
+    description.dataset.richLinkDescription = "";
+    description.textContent = sourceLink.title || "";
+    description.hidden = !description.textContent;
+    const action = document.createElement("span");
+    action.className = "rich-link-card-action";
+    action.innerHTML = '<span data-lang="en">Open link</span><span data-lang="ur">لنک کھولیں</span><span aria-hidden="true">↗</span>';
+    content.append(site, title, description, action);
+    card.append(media, content);
+    return card;
+  };
+
+  const previewObserver = "IntersectionObserver" in window ? new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      observer.unobserve(entry.target);
+      fetchLinkMetadata(entry.target.href).then((metadata) => applyRichLinkMetadata(entry.target, metadata));
+    });
+  }, { rootMargin: "240px 0px" }) : null;
+
+  const standaloneLinks = (paragraph) => {
+    if (paragraph.tagName !== "P") return [];
+    const allowed = [...paragraph.childNodes].every((node) => {
+      if (node.nodeType === Node.TEXT_NODE) return !node.textContent.trim();
+      if (node.nodeType === Node.COMMENT_NODE) return true;
+      return node.nodeType === Node.ELEMENT_NODE && ["A", "BR"].includes(node.tagName);
+    });
+    if (!allowed) return [];
+    const links = [...paragraph.children].filter((element) => element.tagName === "A");
+    if (!links.length) return [];
+    return links.every((link) => { try { return /^https?:$/.test(new URL(link.href, window.location.href).protocol); } catch { return false; } }) ? links : [];
+  };
+
+  const enhanceRichLinks = () => {
+    articleBody?.querySelectorAll(":scope > [data-lang]").forEach((languageBody) => {
+      let currentGrid = null;
+      [...languageBody.children].forEach((block) => {
+        const links = standaloneLinks(block);
+        if (!links.length) { currentGrid = null; return; }
+        if (!currentGrid) {
+          currentGrid = document.createElement("div");
+          currentGrid.className = "rich-link-grid";
+          block.before(currentGrid);
+        }
+        links.forEach((link) => {
+          const card = createRichLinkCard(link);
+          if (!card) return;
+          currentGrid.append(card);
+          if (previewObserver) previewObserver.observe(card);
+          else fetchLinkMetadata(card.href).then((metadata) => applyRichLinkMetadata(card, metadata));
+        });
+        block.remove();
+      });
+    });
+  };
+  enhanceRichLinks();
+
+  const readingProgress = document.querySelector("[data-reading-progress]");
   if (readingProgress && articleBody) {
     const updateProgress = () => {
       const top = articleBody.getBoundingClientRect().top + window.scrollY;
