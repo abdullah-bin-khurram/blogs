@@ -230,7 +230,7 @@ html[data-language="ur"] .article-heading h1 { font-family: var(--urdu); font-si
 .article-byline strong, .article-byline span { display: block; }.article-byline strong { font-size: 12px; }.article-byline span { color: var(--ink-soft); font-size: 10px; }
 .article-visual { min-height: 390px; display: grid; place-items: center; overflow: hidden; border-radius: var(--radius-lg); background: linear-gradient(145deg,var(--mint-deep),var(--sage-soft)); }
 .article-visual img { width: 72%; max-height: 330px; object-fit: contain; }
-.article-visual.has-image img { width: 100%; height: 100%; max-height: none; object-fit: cover; }
+.article-visual.has-image img { width: 100%; height: auto; max-height: none; object-fit: contain; }
 .article-content-grid { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 42px; padding: 70px clamp(14px,3vw,44px) 90px; }
 .article-aside { position: sticky; top: 110px; width: max-content; max-width: 260px; align-self: start; }
 .aside-card { width: max-content; max-width: 100%; padding: 18px; border: 1px solid var(--line); border-radius: var(--radius-md); background: white; }
@@ -249,7 +249,7 @@ html[data-language="ur"] .article-heading h1 { font-family: var(--urdu); font-si
 .prose p { margin: 0 0 1.25em; }.prose li { margin-bottom: .5em; }.prose a { color: var(--forest); text-decoration: underline; }.prose blockquote { margin: 1.7em 0; padding: 22px 26px; border-left: 4px solid var(--coral); border-radius: 0 16px 16px 0; background: var(--mint); font-family: var(--serif); font-size: 1.2em; }
 .rich-link-grid { display: flex; flex-direction: column; gap: 14px; margin: 1.7em 0; }
 .rich-link-row { width: 100%; display: grid; gap: 14px; margin-inline: auto; }
-.rich-link-row.cards-1 { width: 70%; grid-template-columns: minmax(0, 1fr); }
+.rich-link-row.cards-1 { width: 60%; grid-template-columns: minmax(0, 1fr); }
 .rich-link-row.cards-2 { width: 85%; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .rich-link-row.cards-3 { width: 100%; grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .prose .rich-link-card { min-width: 0; display: flex; flex-direction: column; overflow: hidden; color: var(--ink); border: 1px solid var(--line); border-radius: 20px; background: white; box-shadow: 0 12px 30px rgba(31,77,66,.07); text-decoration: none; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
