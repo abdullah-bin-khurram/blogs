@@ -17,6 +17,7 @@ tags_ur:
   - سانس
   - ڈایافرام
   - سکون
+image: /blogs/assets/images/uploads/109696.png
 read_time: 6
 featured: true
 published: true
