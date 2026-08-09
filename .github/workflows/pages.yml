@@ -31,6 +31,17 @@ jobs:
       - name: Validate bilingual content and categories
         run: node scripts/validate-content.mjs
 
+      - name: Generate YouTube playlist previews when configured
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        shell: bash
+        run: |
+          if [ -n "$YOUTUBE_API_KEY" ]; then
+            node scripts/fetch-youtube-playlists.mjs
+          else
+            echo "YouTube API key is not configured; playlist cards will use the normal metadata fallback."
+          fi
+
       - name: Generate GA4 article ranking when configured
         env:
           GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}

@@ -2,8 +2,13 @@
   const metadataRequests = new Map();
   const metadataQueue = [];
   const cacheKey = "abk-rich-link-metadata-v2";
+  const scriptSource = document.currentScript?.src;
+  const playlistMetadataUrl = scriptSource
+    ? new URL("../data/youtube-playlists.json", scriptSource).href
+    : new URL("/blogs/assets/data/youtube-playlists.json", window.location.origin).href;
   let activeRequests = 0;
   let metadataCache = {};
+  let playlistMetadataPromise;
   try { metadataCache = JSON.parse(localStorage.getItem(cacheKey) || "{}"); } catch { metadataCache = {}; }
 
   const runQueue = () => {
@@ -35,6 +40,21 @@
       const asset = new URL(value);
       return /^https?:$/.test(asset.protocol) ? asset.href : "";
     } catch { return ""; }
+  };
+
+  const loadPlaylistMetadata = () => {
+    if (!playlistMetadataPromise) {
+      playlistMetadataPromise = fetch(playlistMetadataUrl, { credentials: "same-origin" })
+        .then((response) => {
+          if (!response.ok) throw new Error(`Playlist metadata request failed: ${response.status}`);
+          return response.json();
+        })
+        .catch((error) => {
+          console.warn("Generated YouTube playlist metadata could not be loaded.", error);
+          return {};
+        });
+    }
+    return playlistMetadataPromise;
   };
 
   const fetchMetadata = (url, kind) => {
@@ -86,6 +106,21 @@
       }
     }
     return /^[A-Za-z0-9_-]{6,}$/.test(id) ? id : "";
+  };
+
+  const youtubePlaylistId = (url) => {
+    const host = url.hostname.replace(/^www\./, "");
+    const path = url.pathname.replace(/\/+$/, "");
+    if (!["youtube.com", "m.youtube.com", "music.youtube.com"].includes(host) || path !== "/playlist") return "";
+    const id = url.searchParams.get("list") || "";
+    return /^[A-Za-z0-9_-]{10,}$/.test(id) ? id : "";
+  };
+
+  const fetchRichMetadata = (url, kind) => {
+    let playlistId = "";
+    try { playlistId = youtubePlaylistId(new URL(url)); } catch { /* Use the normal metadata fallback. */ }
+    if (!playlistId) return fetchMetadata(url, kind);
+    return loadPlaylistMetadata().then((playlists) => playlists[playlistId] || fetchMetadata(url, kind));
   };
 
   const googleDriveFileId = (url) => {
@@ -279,7 +314,7 @@
         if (observer) {
           observer.observe(card);
         } else {
-          fetchMetadata(
+          fetchRichMetadata(
             card.dataset.previewUrl || card.href,
             card.dataset.previewKind
           )
@@ -299,7 +334,7 @@
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
         instance.unobserve(entry.target);
-        fetchMetadata(
+        fetchRichMetadata(
           entry.target.dataset.previewUrl || entry.target.href,
           entry.target.dataset.previewKind
         ).then((metadata) => applyMetadata(entry.target, metadata));
