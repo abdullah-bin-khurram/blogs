@@ -69,7 +69,12 @@ for (let index = 0; index < ids.length; index += 50) {
   endpoint.searchParams.set("key", apiKey);
 
   const response = await fetch(endpoint);
-  if (!response.ok) throw new Error(`YouTube playlist metadata request failed with status ${response.status}.`);
+  if (!response.ok) {
+    const errorPayload = await response.json().catch(() => ({}));
+    const reason = errorPayload.error?.errors?.[0]?.reason || "unknown reason";
+    const message = errorPayload.error?.message || "Google did not provide additional details.";
+    throw new Error(`YouTube playlist metadata request failed (${response.status}, ${reason}): ${message}`);
+  }
   const payload = await response.json();
 
   for (const playlist of payload.items || []) {

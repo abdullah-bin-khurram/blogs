@@ -37,7 +37,10 @@ jobs:
         shell: bash
         run: |
           if [ -n "$YOUTUBE_API_KEY" ]; then
-            node scripts/fetch-youtube-playlists.mjs
+            if ! node scripts/fetch-youtube-playlists.mjs; then
+              echo "::warning::YouTube playlist metadata could not be refreshed; deploying with the normal card fallback."
+              printf '{}\n' > assets/data/youtube-playlists.json
+            fi
           else
             echo "YouTube API key is not configured; playlist cards will use the normal metadata fallback."
           fi
