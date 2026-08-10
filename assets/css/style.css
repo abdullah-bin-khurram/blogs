@@ -241,11 +241,14 @@ html[data-language="ur"] .article-heading h1 { font-family: var(--urdu); font-si
 .copy-link { width: 100%; display: flex; align-items: center; gap: 7px; padding: 9px 0 0; border: 0; border-top: 1px solid var(--line); background: transparent; font-size: 10px; font-weight: 800; }
 .article-aside .copy-link [data-copy-label] { display: block; max-width: 12ch; line-height: 1.45; text-align: start; white-space: normal; }
 .prose { min-width: 0; font: 19px/1.86 var(--sans); }
-.urdu-prose { font-family: var(--urdu); font-size: 20px; line-height: 2.25; }
 .prose > div > :first-child { margin-top: 0; }
-.prose h2 { margin: 2.1em 0 .65em; font: 600 2.45rem/1.08 var(--serif); letter-spacing: -.025em; }
-.urdu-prose h2 { font-family: var(--urdu); line-height: 1.65; letter-spacing: 0; }
-.prose h3 { margin-top: 1.8em; font-size: 1.35rem; }
+.prose h1 { margin: 2.2em 0 .7em; font: 600 clamp(2.8rem, 4vw, 3.5rem)/1 var(--serif); letter-spacing: -.035em; }
+.prose h2 { margin: 2.1em 0 .65em; font: 600 clamp(2rem, 3vw, 2.45rem)/1.08 var(--serif); letter-spacing: -.025em; }
+.prose h3 { margin: 1.8em 0 .6em; font: 600 1.55rem/1.2 var(--serif); }
+.urdu-prose { font-family: var(--urdu); font-size: 20px; line-height: 2.25; }
+.urdu-prose h1 { font-family: var(--urdu); font-size: clamp(2.6rem,4vw,3.3rem); line-height: 1.85; letter-spacing: 0; }
+.urdu-prose h2 { font-family: var(--urdu); font-size: clamp(2.05rem,3vw,2.55rem); line-height: 1.9; letter-spacing: 0; }
+.urdu-prose h3 { font-family: var(--urdu); font-size: 1.65rem; line-height: 2; letter-spacing: 0; }
 .prose p { margin: 0 0 1.25em; }.prose li { margin-bottom: .5em; }.prose a { color: var(--forest); text-decoration: underline; }.prose blockquote { margin: 1.7em 0; padding: 22px 26px; border-left: 4px solid var(--coral); border-radius: 0 16px 16px 0; background: var(--mint); font-family: var(--serif); font-size: 1.2em; }
 .rich-link-grid { display: flex; flex-direction: column; gap: 14px; margin: 1.7em 0; }
 .rich-link-row { width: 100%; display: grid; gap: 14px; margin-inline: auto; }
