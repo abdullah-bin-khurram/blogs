@@ -26,8 +26,8 @@ tags_ur:
   - انہیلر
   - ماحولیاتی آلودگی سے متعلق امراض
 image: /blogs/assets/images/uploads/chatgpt-image-aug-23-2026-09_00_45-pm.png
-image_alt: A medical illustration for COPD showing damaged and healthier
-  lungs   surrounded by common COPD-related factors, including cigarettes,
+image_alt: A medical illustration for COPD showing damaged and healthier lungs
+  surrounded by common COPD-related factors, including cigarettes,
   huqqa,   cigars, smoke, wood burning, air pollution, tuberculosis bacteria,
   and genetic   factors represented by DNA. Red MDI inhalers are shown to
   represent inhaled   treatment. The ABK Lung Health Education Portal logo is
