@@ -126,31 +126,36 @@ Treatment usually includes:
 
 👉 Medicines work best **only if inhalers are used correctly**.
 
-
-
 ## Inhaler Technique
 
+All 1st line medication in COPD are usually delivered through the inhalational route. Mastering the technique of the inhaler prescribed to you is the most important step you can take to control your asthma. I hope to have similar videos on every type of inhaler soon on my portal for your convenience.
+
+### How to use a metered-dose inhaler
+
+A step-by-step video showing how to use a metered-dose inhaler correctly. Good inhaler technique helps ensure that your medicine reaches your lungs properly.
 [How to use a metered dose inhaler - (*pump, inhaler*) - by American Lung Association](https://www.youtube.com/watch?v=2i9_DelNqs4&list=PLxdDQiAI50j-3AJixgoz_tPKqpWashCNS&index=59)
 
-How to use a metered dose inhaler - (*pump, inhaler*) - by American Lung Association
+### How to use an inhaler with a spacer
+
+Learn how to use a metered-dose inhaler together with a spacer (valved holding chamber). A spacer can make it easier to inhale the medicine correctly and help more of the medicine reach your lungs.
 
 [How to use a metered dose inhaler with a valve holding chamber - (*Spacer, bottle*) - by American Lung Association](https://www.youtube.com/watch?v=sQUUJHzO-XQ&list=PLxdDQiAI50j-3AJixgoz_tPKqpWashCNS&index=60)
-
-How to use a metered dose inhaler with a valve holding chamber - (*Spacer, bottle*) - by American Lung Association
 
 - - -
 
 ## Nebulizer - use and care
 
-[How to properly use a nebulizer - by American Lung Association](https://youtube.com/watch?v=pEKFKZiLNaA&si=OYutceRbZK9Ul-G4)
-
-How to properly use a nebulizer - by American Lung Association
-
-[How to clean the nebulizer - by American Lung Association](https://youtube.com/watch?v=TevhZlJzfiM&si=skhMHmwr7_gUraQy)
-
-How to clean the nebulizer - by American Lung Association
+A nebulizer is a machine used to generate aerosols for facilitated delivery of medicine straight to the lungs. If you have been prescribed a nebulizer either in regular usage or as per requirement needs, you would surely benefit from this guide by the European Lung Foundation.
 
 [Nebuliser and inhaler guide - European Lung Foundation](https://europeanlung.org/en/information-hub/living-with-a-lung-condition/nebulisers/)
+
+This video guide by American Lung Association (ALA) is also a good guide for first time users.
+
+[How to properly use a nebulizer - by American Lung Association](https://youtube.com/watch?v=pEKFKZiLNaA&si=OYutceRbZK9Ul-G4)
+
+ALA also has a video on how to clean your nebulizer regularly. A nebulizer never cleaned can accumulate germs that may pass into the lungs with the aerosol.
+
+[How to clean the nebulizer - by American Lung Association](https://youtube.com/watch?v=TevhZlJzfiM&si=skhMHmwr7_gUraQy)
 
 - - -
 
@@ -158,7 +163,9 @@ How to clean the nebulizer - by American Lung Association
 
 ## Keep an eye on AQI
 
-<https://apption.co/embeds/61fc31af>
+`<div name="airvisual_widget" key="6a643d802a5d3d8e6a6bade4"></div>`
+
+`    <script type="text/javascript" src="https://cdn.airvisual.net/assets/widgets/widget_v3.0.js"></script>`
 
 Poor air quality can irritate your lungs and make breathing problems worse, especially if you have asthma, COPD, allergies, or other respiratory conditions.
 
@@ -182,6 +189,8 @@ Poor air quality can irritate your lungs and make breathing problems worse, espe
 🟤 Hazardous (301+): Remain indoors if possible, avoid all outdoor exertion, and follow local public health advice.
 
 # 📚 Learn more about COPD
+
+Other reliable organisations also have resources for people with COPD. Further reading and learning can be pursued by visiting their websites. Following are resources accumulated from the internet for further reading.
 
 [Chronic Obstructive Pulmonary Disease (COPD)\|Symptoms & Treatment\|ELF](https://europeanlung.org/en/information-hub/lung-conditions/copd/)
 
