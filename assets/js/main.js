@@ -19,7 +19,7 @@
     if (!frame || !event.data || typeof event.data !== "object") return;
     if (event.data.type === "abk-tool-ready") sendPortalLanguage(frame);
     if (event.data.type === "abk-tool-height" && frame.classList.contains("interactive-resource-frame")) {
-      const height = Math.min(Math.max(Number(event.data.height) || 0, 560), 6000);
+      const height = Math.min(Math.max((Number(event.data.height) || 0) + 32, 560), 6000);
       frame.style.height = `${height}px`;
     }
   });
