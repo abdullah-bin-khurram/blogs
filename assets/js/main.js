@@ -4,6 +4,25 @@
   const languageButtons = [...document.querySelectorAll("[data-language-button]")];
   const preferredLanguage = localStorage.getItem("abk-portal-language") || "en";
   let activeLanguage = preferredLanguage === "ur" ? "ur" : "en";
+  const portalEmbeds = [...document.querySelectorAll("[data-portal-embed]")];
+
+  const sendPortalLanguage = (frame) => {
+    frame.contentWindow?.postMessage({ type: "abk-language", language: activeLanguage }, "*");
+  };
+  const syncPortalEmbeds = () => portalEmbeds.forEach(sendPortalLanguage);
+  portalEmbeds.forEach((frame) => {
+    frame.addEventListener("load", () => sendPortalLanguage(frame));
+    sendPortalLanguage(frame);
+  });
+  window.addEventListener("message", (event) => {
+    const frame = portalEmbeds.find((item) => item.contentWindow === event.source);
+    if (!frame || !event.data || typeof event.data !== "object") return;
+    if (event.data.type === "abk-tool-ready") sendPortalLanguage(frame);
+    if (event.data.type === "abk-tool-height" && frame.classList.contains("interactive-resource-frame")) {
+      const height = Math.min(Math.max(Number(event.data.height) || 0, 560), 6000);
+      frame.style.height = `${height}px`;
+    }
+  });
 
   const formatDates = () => {
     const locale = activeLanguage === "ur" ? "ur-PK" : "en-US";
@@ -53,6 +72,7 @@
     updateDocumentMetadata();
     updateCarouselControls();
     refreshLanguageDependentViews();
+    syncPortalEmbeds();
   };
 
   languageButtons.forEach((button) => button.addEventListener("click", () => setLanguage(button.dataset.languageButton)));

@@ -2,8 +2,8 @@
 layout: default
 title:
 title_ur:
-description: Clear, practical lung-health education, articles, downloadable resources, and respiratory-care connections.
-description_ur: پھیپھڑوں کی صحت سے متعلق واضح اور عملی تعلیم، مضامین، قابل ڈاؤن لوڈ وسائل اور سانس کی نگہداشت سے رابطے۔
+description: Clear, practical lung-health education, articles, resources, and respiratory-care connections.
+description_ur: پھیپھڑوں کی صحت سے متعلق واضح اور عملی تعلیم، مضامین، وسائل اور سانس کی نگہداشت سے رابطے۔
 ---
 
 <section class="hero" id="top">
@@ -89,8 +89,8 @@ description_ur: پھیپھڑوں کی صحت سے متعلق واضح اور ع�
 <section class="content-section resources-section" id="resources" data-resources-section>
   {% assign published_resources = site.resources | where: 'published', true %}
   <div class="section-heading">
-    <div><span class="eyebrow" data-lang="en">Download and keep</span><span class="eyebrow" data-lang="ur">ڈاؤن لوڈ کریں اور محفوظ رکھیں</span><h2 data-lang="en">Practical resources</h2><h2 data-lang="ur">عملی وسائل</h2></div>
-    <p data-lang="en">Guides, images, and useful material</p><p data-lang="ur">رہنما مواد، تصاویر اور مفید معلومات</p>
+    <div><span class="eyebrow" data-lang="en">Learn and use</span><span class="eyebrow" data-lang="ur">سیکھیں اور استعمال کریں</span><h2 data-lang="en">Practical resources</h2><h2 data-lang="ur">عملی وسائل</h2></div>
+    <p data-lang="en">Interactive tools, guides, images, and useful material</p><p data-lang="ur">انٹرایکٹو ٹولز، رہنما مواد، تصاویر اور مفید معلومات</p>
   </div>
   <div class="resource-tools">
     <label class="search-box"><span class="search-symbol" aria-hidden="true">⌕</span><span class="sr-only">Search resources</span><input type="search" placeholder="Search resources" data-resource-search></label>
@@ -102,19 +102,27 @@ description_ur: پھیپھڑوں کی صحت سے متعلق واضح اور ع�
       <div class="resource-rail" data-carousel-track data-resource-track>
         {% assign sorted_resources = published_resources | sort: 'date' | reverse %}
         {% for resource in sorted_resources %}
+          {% assign resource_kind = resource.resource_kind | default: 'download' %}
           {% assign file_prefix = resource.file | slice: 0, 4 %}
           {% if file_prefix == 'http' %}{% assign download_url = resource.file %}{% else %}{% capture download_url %}https://github.com/abdullah-bin-khurram/blogs/raw/refs/heads/main{{ resource.file }}{% endcapture %}{% endif %}
-          <article class="resource-card" data-resource-card data-search-en="{{ resource.title | append: ' ' | append: resource.description | append: ' ' | append: resource.resource_type | downcase | escape }}" data-search-ur="{{ resource.title_ur | append: ' ' | append: resource.description_ur | escape }}">
-            <div class="resource-type">{{ resource.resource_type | default: 'Resource' }}</div>
+          <article class="resource-card" data-resource-card data-search-en="{{ resource.title | append: ' ' | append: resource.description | append: ' ' | append: resource.resource_type | append: ' ' | append: resource_kind | downcase | escape }}" data-search-ur="{{ resource.title_ur | append: ' ' | append: resource.description_ur | escape }}">
+            <div class="resource-type">
+              <span data-lang="en">{% if resource_kind == 'interactive' %}Interactive tool{% else %}{{ resource.resource_type | default: 'Resource' }}{% endif %}</span>
+              <span data-lang="ur">{% if resource_kind == 'interactive' %}انٹرایکٹو ٹول{% else %}{{ resource.resource_type | default: 'وسیلہ' }}{% endif %}</span>
+            </div>
             <h3 data-lang="en">{{ resource.title }}</h3><h3 data-lang="ur">{{ resource.title_ur | default: resource.title }}</h3>
             <p data-lang="en">{{ resource.description }}</p><p data-lang="ur">{{ resource.description_ur | default: resource.description }}</p>
-            <a href="{{ download_url | strip }}" target="_blank" rel="noopener"><span data-lang="en">Download</span><span data-lang="ur">ڈاؤن لوڈ کریں</span><span aria-hidden="true">↓</span></a>
+            {% if resource_kind == 'interactive' %}
+              <a href="{{ resource.url | relative_url }}"><span data-lang="en">Open</span><span data-lang="ur">کھولیں</span><span aria-hidden="true">→</span></a>
+            {% else %}
+              <a href="{{ download_url | strip }}" target="_blank" rel="noopener"><span data-lang="en">Download</span><span data-lang="ur">ڈاؤن لوڈ کریں</span><span aria-hidden="true">↓</span></a>
+            {% endif %}
           </article>
         {% endfor %}
       </div>
     </div>
   {% else %}
-    <div class="resource-empty"><span aria-hidden="true">↓</span><h3 data-lang="en">Resources are being prepared</h3><h3 data-lang="ur">وسائل تیار کیے جا رہے ہیں</h3><p data-lang="en">New downloadable material will appear here soon.</p><p data-lang="ur">نیا قابل ڈاؤن لوڈ مواد جلد یہاں دستیاب ہوگا۔</p></div>
+    <div class="resource-empty"><span aria-hidden="true">↓</span><h3 data-lang="en">Resources are being prepared</h3><h3 data-lang="ur">وسائل تیار کیے جا رہے ہیں</h3><p data-lang="en">New resources will appear here soon.</p><p data-lang="ur">نئے وسائل جلد یہاں دستیاب ہوں گے۔</p></div>
   {% endif %}
 </section>
 

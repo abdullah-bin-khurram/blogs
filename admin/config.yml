@@ -115,7 +115,7 @@ collections:
       - { label: Urdu article body, name: body_ur, widget: markdown, modes: [rich_text, raw] }
 
   - name: resources
-    label: Downloadable Resources
+    label: Resources
     label_singular: Resource
     folder: _resources
     create: true
@@ -125,18 +125,40 @@ collections:
     slug: "{{slug}}"
     media_folder: /downloads
     public_folder: /downloads
-    summary: "{{title}} · {{resource_type}}"
+    summary: "{{title}} · {{resource_kind}}"
     fields:
       - { label: English title, name: title, widget: string }
       - { label: Urdu title, name: title_ur, widget: string }
       - { label: English description, name: description, widget: text }
       - { label: Urdu description, name: description_ur, widget: text }
-      - { label: Resource type, name: resource_type, widget: select, options: [PDF, Image, Guide, Checklist, Other] }
+      - label: Resource kind
+        name: resource_kind
+        widget: select
+        options:
+          - { label: Downloadable resource, value: download }
+          - { label: Interactive tool, value: interactive }
+        default: download
+      - label: Download type
+        name: resource_type
+        widget: select
+        options: [PDF, Image, Guide, Checklist, Other]
+        default: PDF
+        required: false
+        hint: Used only for downloadable resources.
       - label: File
         name: file
         widget: file
         choose_url: true
-        hint: Upload a file under 100 MB or provide an existing public URL.
+        required: false
+        hint: For downloadable resources, upload a file under 100 MB or provide an existing public URL. Leave empty for interactive tools.
+      - label: Interactive HTML
+        name: interactive_html
+        widget: code
+        default_language: html
+        allow_language_selection: false
+        output_code_only: true
+        required: false
+        hint: For interactive tools, paste one complete, self-contained HTML fragment. It runs inside an isolated full-width frame. Leave empty for downloads.
       - { label: Publication date, name: date, widget: datetime, default: "{{now}}", date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
       - { label: Published, name: published, widget: boolean, default: true }
 

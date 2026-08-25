@@ -44,7 +44,7 @@
             <p class="widget-source"><span data-lang="en">Forecast data:</span><span data-lang="ur">پیش گوئی کا ڈیٹا:</span> <a href="https://open-meteo.com/en/docs/air-quality-api" target="_blank" rel="noopener">Open-Meteo / CAMS</a></p>
           </div>
         {% else %}
-          <iframe class="custom-widget-frame" title="{{ widget.title_en | default: 'Portal widget' | escape }}" sandbox="allow-scripts allow-forms allow-popups" loading="lazy" srcdoc="{{ widget.html | escape }}"></iframe>
+          <iframe class="custom-widget-frame" data-portal-embed title="{{ widget.title_en | default: 'Portal widget' | escape }}" sandbox="allow-scripts allow-forms allow-popups" loading="lazy" srcdoc="{{ widget.html | escape }}"></iframe>
         {% endif %}
       </section>
     {% endif %}

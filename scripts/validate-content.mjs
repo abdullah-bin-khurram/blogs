@@ -68,8 +68,20 @@ for (const { name, source, frontMatter, filenameSlug, jekyllSlug } of posts) {
   if (!source.replace(/^---[\s\S]*?---/, "").trim()) errors.push(`${name}: missing English article body`);
 }
 
+const resourceFiles = (await readdir("_resources")).filter((name) => /\.md$/i.test(name));
+for (const name of resourceFiles) {
+  const { frontMatter } = await readFrontMatter(path.join("_resources", name));
+  for (const required of ["title", "title_ur", "description", "description_ur", "resource_kind", "date", "published"]) {
+    requireField(frontMatter, required, name, errors);
+  }
+  const resourceKind = field(frontMatter, "resource_kind");
+  if (!new Set(["download", "interactive"]).has(resourceKind)) errors.push(`${name}: invalid resource_kind '${resourceKind || "missing"}'`);
+  if (resourceKind === "download") requireField(frontMatter, "file", name, errors);
+  if (resourceKind === "interactive") requireField(frontMatter, "interactive_html", name, errors);
+}
+
 if (errors.length) {
   console.error(`Content validation failed:\n- ${errors.join("\n- ")}`);
   process.exit(1);
 }
-console.log(`Validated ${categorySlugs.size} categories and ${postFiles.length} bilingual articles.`);
+console.log(`Validated ${categorySlugs.size} categories, ${postFiles.length} bilingual articles, and ${resourceFiles.length} resources.`);

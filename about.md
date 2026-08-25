@@ -20,7 +20,7 @@ permalink: /about/
   <div class="about-grid">
     <div><span class="eyebrow" data-lang="en">The purpose</span><span class="eyebrow" data-lang="ur">مقصد</span><h2 data-lang="en">Better understanding can make healthier choices feel possible.</h2><h2 data-lang="ur">بہتر سمجھ صحت مند انتخاب کو ممکن بنا سکتی ہے۔</h2></div>
     <div class="prose-like">
-      <p data-lang="en">Lung health can feel complicated when medical language becomes technical or alarming. This portal offers a gentler path: useful explanations, realistic habits, downloadable resources, and balanced perspectives.</p>
+      <p data-lang="en">Lung health can feel complicated when medical language becomes technical or alarming. This portal offers a gentler path: useful explanations, realistic habits, practical resources, and balanced perspectives.</p>
       <p data-lang="ur">جب طبی زبان بہت تکنیکی یا خوف زدہ کرنے والی ہو تو پھیپھڑوں کی صحت پیچیدہ محسوس ہو سکتی ہے۔ یہ پورٹل مفید وضاحتوں، حقیقت پسندانہ عادات، قابل ڈاؤن لوڈ وسائل اور متوازن نقطۂ نظر کے ذریعے ایک آسان راستہ پیش کرتا ہے۔</p>
       <blockquote data-lang="en">Good health education should leave people clearer, calmer, and ready to take one useful next step.</blockquote>
       <blockquote data-lang="ur">اچھی صحت کی تعلیم لوگوں کو زیادہ واضح، پُرسکون اور اگلا مفید قدم اٹھانے کے لیے تیار چھوڑتی ہے۔</blockquote>

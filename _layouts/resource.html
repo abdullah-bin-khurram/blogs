@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+{% assign resource_kind = page.resource_kind | default: 'download' %}
+<section class="resource-page{% if resource_kind == 'interactive' %} interactive-resource-page{% endif %}">
+  <a class="back-link" href="{{ '/' | relative_url }}#resources">
+    <span aria-hidden="true">←</span>
+    <span data-lang="en">Back to resources</span><span data-lang="ur">وسائل پر واپس جائیں</span>
+  </a>
+
+  <header class="resource-page-header">
+    <span class="eyebrow" data-lang="en">{% if resource_kind == 'interactive' %}Interactive tool{% else %}Resource{% endif %}</span>
+    <span class="eyebrow" data-lang="ur">{% if resource_kind == 'interactive' %}انٹرایکٹو ٹول{% else %}وسیلہ{% endif %}</span>
+    <h1 data-lang="en">{{ page.title }}</h1>
+    <h1 data-lang="ur">{{ page.title_ur | default: page.title }}</h1>
+    <p data-lang="en">{{ page.description }}</p>
+    <p data-lang="ur">{{ page.description_ur | default: page.description }}</p>
+  </header>
+
+  {% if resource_kind == 'interactive' %}
+    {% if page.interactive_html and page.interactive_html != '' %}
+      <iframe
+        class="interactive-resource-frame"
+        data-portal-embed
+        title="{{ page.title | escape }}"
+        sandbox="allow-scripts allow-forms allow-popups"
+        srcdoc="{{ page.interactive_html | escape }}"
+      ></iframe>
+    {% else %}
+      <div class="resource-empty">
+        <h3 data-lang="en">This tool is being prepared</h3>
+        <h3 data-lang="ur">یہ ٹول تیار کیا جا رہا ہے</h3>
+      </div>
+    {% endif %}
+  {% else %}
+    {% assign file_prefix = page.file | slice: 0, 4 %}
+    {% if file_prefix == 'http' %}{% assign download_url = page.file %}{% else %}{% capture download_url %}https://github.com/abdullah-bin-khurram/blogs/raw/refs/heads/main{{ page.file }}{% endcapture %}{% endif %}
+    <a class="button button-primary resource-page-download" href="{{ download_url | strip }}" target="_blank" rel="noopener">
+      <span data-lang="en">Download</span><span data-lang="ur">ڈاؤن لوڈ کریں</span><span aria-hidden="true">↓</span>
+    </a>
+  {% endif %}
+</section>

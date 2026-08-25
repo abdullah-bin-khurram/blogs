@@ -18,7 +18,8 @@ kramdown:
 
 collections:
   resources:
-    output: false
+    output: true
+    permalink: /:name/
 
 defaults:
   - scope:
@@ -29,6 +30,11 @@ defaults:
       author: Abdullah Bin Khurram
       author_ur: عبداللہ بن خرم
       published: true
+  - scope:
+      path: ""
+      type: resources
+    values:
+      layout: resource
 
 exclude:
   - README.md
