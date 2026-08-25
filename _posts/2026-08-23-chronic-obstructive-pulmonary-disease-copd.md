@@ -47,7 +47,6 @@ body_ur: |-
 
   یہ صفحہ ابھی زیر تعمیر ہے
 ---
-#### *This page is under construction*
 
 # What is COPD?
 
