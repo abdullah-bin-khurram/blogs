@@ -1,14 +1,18 @@
 ---
 title: Asthma Control Test
 title_ur: دمہ کنٹرول ٹیسٹ
-description: Answer five questions about your asthma during the past four weeks and calculate your Asthma Control Test score.
-description_ur: پچھلے چار ہفتوں کے دوران اپنے دمے کے بارے میں پانچ سوالات کے جواب دیں اور اپنا دمہ کنٹرول ٹیسٹ اسکور معلوم کریں۔
+description: >-
+  Asthma Control Test (ACT) — English & Urdu
+
+  Use this five-question Asthma Control Test to assess how well your asthma has been controlled during the past four weeks. The test is available in English and Urdu and provides a score from 5 to 25.
+description_ur: دمہ کے قابو کا متحان ۔ انگریزی اور اردو۔ چار ہفتوں کے دوران اپنے
+  دمے کے بارے میں پانچ سوالات کے جواب دیں اور اپنا دمہ کنٹرول ٹیسٹ اسکور معلوم
+  کریں۔ یہ امتحان دونوں انگریزی اور اردو میں موجود ہیں اور 5 سے 25 تک آپ کے دمہ
+  کے درجات بتاتے ہیں۔
 resource_kind: interactive
-date: 2026-08-25
-published: true
 interactive_html: >-
   <!-- ABK HELP - Asthma Control Test (ACT) -->
-  
+
   <div id="abk-act">
     <style>
       #abk-act {
@@ -21,18 +25,18 @@ interactive_html: >-
         --abk-green-bg: #dcfce7;
         --abk-orange: #9a3412;
         --abk-orange-bg: #ffedd5;
-  
+
         font-family: Arial, "Noto Nastaliq Urdu", "Noto Sans Arabic", sans-serif;
         color: var(--abk-text);
         max-width: 760px;
         margin: 20px auto;
         line-height: 1.55;
       }
-  
+
       #abk-act * {
         box-sizing: border-box;
       }
-  
+
       .act-card {
         background: #ffffff;
         border: 1px solid var(--abk-border);
@@ -40,24 +44,24 @@ interactive_html: >-
         padding: 24px;
         box-shadow: 0 4px 18px rgba(0,0,0,0.06);
       }
-  
+
       .act-header {
         text-align: center;
         margin-bottom: 22px;
       }
-  
+
       .act-header h2 {
         margin: 0 0 6px;
         color: var(--abk-blue);
         font-size: 27px;
       }
-  
+
       .act-header p {
         margin: 0;
         color: var(--abk-muted);
         font-size: 15px;
       }
-  
+
       .act-question {
         margin: 0 0 24px;
         padding: 18px;
@@ -65,13 +69,13 @@ interactive_html: >-
         border: 1px solid #e2eef5;
         border-radius: 14px;
       }
-  
+
       .question-title {
         font-size: 17px;
         font-weight: 700;
         margin-bottom: 14px;
       }
-  
+
       .question-number {
         display: inline-flex;
         align-items: center;
@@ -85,26 +89,26 @@ interactive_html: >-
         font-size: 14px;
         flex-shrink: 0;
       }
-  
+
       .question-text {
         display: inline;
       }
-  
+
       .options {
         display: grid;
         gap: 9px;
       }
-  
+
       .option {
         position: relative;
       }
-  
+
       .option input {
         position: absolute;
         opacity: 0;
         pointer-events: none;
       }
-  
+
       .option label {
         display: block;
         padding: 13px 14px;
@@ -115,24 +119,24 @@ interactive_html: >-
         transition: all 0.15s ease;
         font-size: 15px;
       }
-  
+
       .option label:hover {
         border-color: var(--abk-blue);
         background: var(--abk-light-blue);
       }
-  
+
       .option input:checked + label {
         border-color: var(--abk-blue);
         background: var(--abk-light-blue);
         box-shadow: 0 0 0 2px rgba(7,89,133,0.12);
         font-weight: 700;
       }
-  
+
       .score-area {
         margin-top: 24px;
         text-align: center;
       }
-  
+
       .calculate-btn,
       .reset-btn {
         border: none;
@@ -142,17 +146,17 @@ interactive_html: >-
         font-weight: 700;
         cursor: pointer;
       }
-  
+
       .calculate-btn {
         background: var(--abk-blue);
         color: white;
         width: 100%;
       }
-  
+
       .calculate-btn:hover {
         opacity: 0.92;
       }
-  
+
       .result {
         display: none;
         margin-top: 20px;
@@ -160,106 +164,106 @@ interactive_html: >-
         border-radius: 14px;
         text-align: center;
       }
-  
+
       .result.controlled {
         background: var(--abk-green-bg);
         color: var(--abk-green);
         border: 1px solid #86efac;
       }
-  
+
       .result.uncontrolled {
         background: var(--abk-orange-bg);
         color: var(--abk-orange);
         border: 1px solid #fdba74;
       }
-  
+
       .score-number {
         font-size: 38px;
         font-weight: 800;
         margin: 4px 0;
       }
-  
+
       .result-title {
         font-size: 20px;
         font-weight: 800;
         margin-bottom: 7px;
       }
-  
+
       .result-text {
         font-size: 15px;
       }
-  
+
       .reset-btn {
         margin-top: 15px;
         background: white;
         color: var(--abk-blue);
         border: 1px solid var(--abk-blue);
       }
-  
+
       .act-note {
         margin-top: 20px;
         font-size: 12px;
         color: var(--abk-muted);
         text-align: center;
       }
-  
+
       .rtl {
         direction: rtl;
         text-align: right;
       }
-  
+
       .rtl .question-number {
         margin-right: 0;
         margin-left: 8px;
       }
-  
+
       .rtl .question-title {
         text-align: right;
       }
-  
+
       .rtl .options {
         text-align: right;
       }
-  
+
       .rtl .result {
         text-align: center;
       }
-  
+
       @media (max-width: 600px) {
         #abk-act {
           margin: 10px auto;
         }
-  
+
         .act-card {
           padding: 16px;
           border-radius: 14px;
         }
-  
+
         .act-header h2 {
           font-size: 23px;
         }
-  
+
         .question-title {
           font-size: 16px;
         }
-  
+
         .option label {
           padding: 12px;
         }
       }
     </style>
-  
+
     <div class="act-card" id="act-card">
-  
+
       <div class="act-header">
         <h2 id="act-title">Asthma Control Test</h2>
         <p id="act-subtitle">
           Answer these five questions about your asthma during the past 4 weeks.
         </p>
       </div>
-  
+
           <form id="act-form">
-  
+
         <!-- QUESTION 1 -->
         <div class="act-question">
           <div class="question-title">
@@ -268,7 +272,7 @@ interactive_html: >-
               data-ur="پچھلے 4 ہفتوں میں، آپ کی دمہ کی وجہ سے آپ کتنی بار کام، اسکول یا گھر کے کام میں اتنا نہیں کر سکے جتنا آپ کرنا چاہتے تھے؟">
             </span>
           </div>
-  
+
           <div class="options" data-question="1">
             <div class="option"><input type="radio" name="q1" value="1" id="q1a"><label for="q1a" data-en="All of the time" data-ur="ہمیشہ"></label></div>
             <div class="option"><input type="radio" name="q1" value="2" id="q1b"><label for="q1b" data-en="Most of the time" data-ur="زیادہ تر وقت"></label></div>
@@ -277,7 +281,7 @@ interactive_html: >-
             <div class="option"><input type="radio" name="q1" value="5" id="q1e"><label for="q1e" data-en="Not at all" data-ur="بالکل نہیں"></label></div>
           </div>
         </div>
-  
+
         <!-- QUESTION 2 -->
         <div class="act-question">
           <div class="question-title">
@@ -286,7 +290,7 @@ interactive_html: >-
               data-ur="پچھلے 4 ہفتوں کے دوران، کتنی بار آپ کو سانس لینے میں دشواری ہوئی؟">
             </span>
           </div>
-  
+
           <div class="options">
             <div class="option"><input type="radio" name="q2" value="1" id="q2a"><label for="q2a" data-en="More than once a day" data-ur="دن میں ایک بار سے زیادہ"></label></div>
             <div class="option"><input type="radio" name="q2" value="2" id="q2b"><label for="q2b" data-en="Once a day" data-ur="دن میں ایک بار"></label></div>
@@ -295,7 +299,7 @@ interactive_html: >-
             <div class="option"><input type="radio" name="q2" value="5" id="q2e"><label for="q2e" data-en="Not at all" data-ur="بالکل نہیں"></label></div>
           </div>
         </div>
-  
+
         <!-- QUESTION 3 -->
         <div class="act-question">
           <div class="question-title">
@@ -304,7 +308,7 @@ interactive_html: >-
               data-ur="پچھلے 4 ہفتوں کے دوران، کتنی بار آپ کی دمہ کی علامات (سانس میں سیٹی، کھانسی، سانس کی تنگی، سینے میں جکڑن یا درد) نے آپ کو رات کو یا صبح معمول سے پہلے جگایا؟">
             </span>
           </div>
-  
+
           <div class="options">
             <div class="option"><input type="radio" name="q3" value="1" id="q3a"><label for="q3a" data-en="4 or more times a week" data-ur="ہفتے میں 4 یا اس سے زیادہ بار"></label></div>
             <div class="option"><input type="radio" name="q3" value="2" id="q3b"><label for="q3b" data-en="2 to 3 nights a week" data-ur="ہفتے میں 2 سے 3 راتیں"></label></div>
@@ -313,7 +317,7 @@ interactive_html: >-
             <div class="option"><input type="radio" name="q3" value="5" id="q3e"><label for="q3e" data-en="Not at all" data-ur="بالکل نہیں"></label></div>
           </div>
         </div>
-  
+
         <!-- QUESTION 4 -->
         <div class="act-question">
           <div class="question-title">
@@ -322,7 +326,7 @@ interactive_html: >-
               data-ur="پچھلے 4 ہفتوں کے دوران، آپ نے کتنی بار اپنی فوری آرام دینے والی دوا (مثلاً ریسکیو انہیلر) استعمال کی؟">
             </span>
           </div>
-  
+
           <div class="options">
             <div class="option"><input type="radio" name="q4" value="1" id="q4a"><label for="q4a" data-en="3 or more times a day" data-ur="دن میں 3 یا اس سے زیادہ بار"></label></div>
             <div class="option"><input type="radio" name="q4" value="2" id="q4b"><label for="q4b" data-en="1 or 2 times a day" data-ur="دن میں 1 یا 2 بار"></label></div>
@@ -331,7 +335,7 @@ interactive_html: >-
             <div class="option"><input type="radio" name="q4" value="5" id="q4e"><label for="q4e" data-en="Not at all" data-ur="بالکل نہیں"></label></div>
           </div>
         </div>
-  
+
         <!-- QUESTION 5 -->
         <div class="act-question">
           <div class="question-title">
@@ -340,7 +344,7 @@ interactive_html: >-
               data-ur="پچھلے 4 ہفتوں کے دوران آپ اپنی دمہ کی کیفیت کو کس طرح بیان کریں گے؟">
             </span>
           </div>
-  
+
           <div class="options">
             <div class="option"><input type="radio" name="q5" value="1" id="q5a"><label for="q5a" data-en="Not controlled" data-ur="بالکل قابو میں نہیں"></label></div>
             <div class="option"><input type="radio" name="q5" value="2" id="q5b"><label for="q5b" data-en="Poorly controlled" data-ur="خراب کنٹرول"></label></div>
@@ -349,12 +353,12 @@ interactive_html: >-
             <div class="option"><input type="radio" name="q5" value="5" id="q5e"><label for="q5e" data-en="Completely controlled" data-ur="مکمل طور پر قابو میں"></label></div>
           </div>
         </div>
-  
+
         <div class="score-area">
           <button type="button" class="calculate-btn" id="calculate-btn">
             Calculate My Score
           </button>
-  
+
           <div id="act-result" class="result">
             <div id="score-label">Your ACT Score</div>
             <div class="score-number" id="score-number"></div>
@@ -365,23 +369,23 @@ interactive_html: >-
             </button>
           </div>
         </div>
-  
+
       </form>
-  
+
       <div class="act-note" id="act-note">
         This questionnaire is a screening tool and does not replace medical assessment.
       </div>
-  
+
     </div>
-  
+
     <script>
       (function () {
-  
+
         const root = document.getElementById("abk-act");
         const card = document.getElementById("act-card");
-  
+
         let language = "en";
-  
+
         const translations = {
           en: {
             title: "Asthma Control Test",
@@ -396,7 +400,7 @@ interactive_html: >-
             reset: "Start Again",
             note: "This questionnaire is a screening tool and does not replace medical assessment."
           },
-  
+
           ur: {
             title: "دمہ کنٹرول ٹیسٹ",
             subtitle: "پچھلے 4 ہفتوں کے دوران اپنی دمہ کی کیفیت کے بارے میں ان پانچ سوالات کے جواب دیں۔",
@@ -411,23 +415,23 @@ interactive_html: >-
             note: "یہ سوالنامہ صرف ایک جائزہ لینے کا ذریعہ ہے اور طبی معائنے کا متبادل نہیں ہے۔"
           }
         };
-  
+
         function updateLanguage() {
           const t = translations[language];
-  
+
           document.getElementById("act-title").textContent = t.title;
           document.getElementById("act-subtitle").textContent = t.subtitle;
           document.getElementById("calculate-btn").textContent = t.calculate;
           document.getElementById("reset-btn").textContent = t.reset;
           document.getElementById("score-label").textContent = t.score;
           document.getElementById("act-note").textContent = t.note;
-  
+
           root.querySelectorAll("[data-en]").forEach(function (element) {
             element.textContent = element.getAttribute(
               language === "en" ? "data-en" : "data-ur"
             );
           });
-  
+
           if (language === "ur") {
             card.classList.add("rtl");
             card.setAttribute("dir", "rtl");
@@ -435,9 +439,9 @@ interactive_html: >-
             card.classList.remove("rtl");
             card.setAttribute("dir", "ltr");
           }
-  
+
           const result = document.getElementById("act-result");
-  
+
           if (result.style.display === "block") {
             const score = Number(
               document.getElementById("score-number").textContent.split("/")[0].trim()
@@ -445,18 +449,18 @@ interactive_html: >-
             showResult(score);
           }
         }
-  
+
         function showResult(score) {
           const t = translations[language];
           const result = document.getElementById("act-result");
-  
+
           result.style.display = "block";
-  
+
           document.getElementById("score-number").textContent =
             score + " / 25";
-  
+
           result.classList.remove("controlled", "uncontrolled");
-  
+
           if (score >= 20) {
             result.classList.add("controlled");
             document.getElementById("result-title").textContent =
@@ -470,52 +474,52 @@ interactive_html: >-
             document.getElementById("result-text").textContent =
               t.uncontrolledText;
           }
-  
+
           result.scrollIntoView({
             behavior: "smooth",
             block: "center"
           });
         }
-  
+
         document.getElementById("calculate-btn").addEventListener("click", function () {
-  
+
           let total = 0;
           let complete = true;
-  
+
           for (let i = 1; i <= 5; i++) {
             const answer = document.querySelector(
               'input[name="q' + i + '"]:checked'
             );
-  
+
             if (!answer) {
               complete = false;
               break;
             }
-  
+
             total += Number(answer.value);
           }
-  
+
           if (!complete) {
             alert(translations[language].incomplete);
             return;
           }
-  
+
           showResult(total);
         });
-  
+
         document.getElementById("reset-btn").addEventListener("click", function () {
           document.getElementById("act-form").reset();
-  
+
           const result = document.getElementById("act-result");
           result.style.display = "none";
           result.classList.remove("controlled", "uncontrolled");
-  
+
           window.scrollTo({
             top: root.offsetTop,
             behavior: "smooth"
           });
         });
-  
+
         window.addEventListener("message", function (event) {
           if (
             event.source !== window.parent ||
@@ -524,11 +528,11 @@ interactive_html: >-
           ) {
             return;
           }
-  
+
           language = event.data.language === "ur" ? "ur" : "en";
           updateLanguage();
         });
-  
+
         function reportHeight() {
           window.requestAnimationFrame(function () {
             window.parent.postMessage({
@@ -537,16 +541,18 @@ interactive_html: >-
             }, "*");
           });
         }
-  
+
         if ("ResizeObserver" in window) {
           new ResizeObserver(reportHeight).observe(document.documentElement);
         }
-  
+
         window.addEventListener("load", reportHeight);
         window.parent.postMessage({ type: "abk-tool-ready" }, "*");
         updateLanguage();
-  
+
       })();
     </script>
   </div>
+date: 2026-08-25
+published: true
 ---
