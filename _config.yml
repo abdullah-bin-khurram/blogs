@@ -8,6 +8,8 @@ baseurl: "/blogs"
 lang: en
 
 timezone: Asia/Karachi
+plugins:
+  - jekyll-sitemap
 permalink: /articles/:title/
 markdown: kramdown
 excerpt_separator: "<!--more-->"
