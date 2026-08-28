@@ -57,13 +57,13 @@ It may manifest as:
 * **Chronic bronchitis** (long-standing cough with phlegm)
 * **Emphysema** (damage to air sacs in the lungs)
 
-COPD progresses slowly, but **early treatment and lifestyle changes make a big difference**.
+COPD is a chronic lung condition. And while established COPD cannot usually be reversed, appropriate treatment, smoking cessation, physical activity, vaccinations and Pulmonary Rehabilitation can reduce symptoms, lower the risk of exacerbations and improve quality of life.
 
 - - -
 
-# 🚬 Main Causes of COPD
+# 🚬 Risk factors and Contributors to COPD
 
-| **CAUSE**                                      | **LABEL** | **ACTION NEEDED**                                                                 |
+| **RISK FACTOR**                                      | **LABEL** | **ACTION NEEDED**                                                                 |
 | ---------------------------------------------- | --------- | --------------------------------------------------------------------------------- |
 |                                                |           |                                                                                   |
 | 🚬Huqqa, Sheesha, Chillum                      | COPD-C    | 🚭 Smoking Cessation (page coming soon)                                           |
