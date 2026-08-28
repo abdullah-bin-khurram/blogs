@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Chronic Obstructive Pulmonary Disease (COPD)
-title_ur: مضمن متعرض پھیپھڑوں کا مرض
+title: 🚬 Chronic Obstructive Pulmonary Disease (COPD)
+title_ur: "مضمن متعرض پھیپھڑوں کا مرض 🚬 "
 description: >-
   COPD is more than just a long-lasting cough or breathlessness.
 
