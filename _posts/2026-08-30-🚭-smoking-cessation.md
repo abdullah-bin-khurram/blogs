@@ -31,7 +31,7 @@ tags_ur:
   - دھواں
   - سانس کی نالیوں کی بیماریاں
   - پھیپھڑوں کا کینسر
-image: /blogs/assets/images/uploads/smoking-cessation.png
+image: /blogs/assets/images/uploads/127432.png
 read_time: 20
 featured: false
 published: false
@@ -226,40 +226,5 @@ Many people require **multiple attempts before quitting successfully**.
 
 ---
 
-# 🏥 Contact Clinic
+> In case of any query or unusual symptoms, contact us at the clinic
 
-In case of any query or unusual symptoms, visit Dr. Abdullah Bin Khurram at:
-
-<aside>
-💡
-
-ONLINE CONSULTATION
-
-Dr. Abdullah Bin Khurram - General Practitioner at Online Clinic Islamabad, Islamabad | Marham
-
-</aside>
-
-<aside>
-💡
-
-ARIF MEDICAL COMPLEX
-
-Google Maps
-
-For appointment, book using the following link or contact 051-5148373, 0343-9282179
-
-[Pulmonology Clinic, Arif Medical Complex | Islamabad [ Book now ]](http://bit.ly/4cHem2T)
-
-</aside>
-
----
-
-# 🌳 Follow me
-
-Follow me on my social media sites:
-
-[](https://linktr.ee/abkpk)
-
-Go back to the Main page:
-
-Pulmonology Clinic
