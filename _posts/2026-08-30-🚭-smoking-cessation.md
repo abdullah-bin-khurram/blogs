@@ -32,6 +32,16 @@ tags_ur:
   - سانس کی نالیوں کی بیماریاں
   - پھیپھڑوں کا کینسر
 image: /blogs/assets/images/uploads/127432.png
+image_alt: Smoking cessation health poster from ABK Lung Health Education Portal
+  showing cigarettes, cigars and a huqqa surrounded by smoke, alongside
+  illustrations of lung cancer, chronic cough, and damaged lungs. The poster
+  urges readers in Urdu to quit tobacco smoking and highlights its harmful
+  effects on the lungs, heart, and overall health.
+image_alt_ur: ABK Lung Health Education Portal کا تمباکو نوشی ترک کرنے سے متعلق
+  معلوماتی پوسٹر، جس میں دھوئیں میں گھری ہوئی سگریٹیں، سگار اور حقہ دکھائے گئے
+  ہیں۔ ساتھ ہی پھیپھڑوں کے کینسر، دائمی کھانسی اور متاثرہ پھیپھڑوں کی علامات
+  نمایاں کی گئی ہیں۔ پوسٹر تمباکو نوشی ترک کرنے کی ترغیب دیتا ہے اور پھیپھڑوں،
+  دل اور مجموعی صحت پر اس کے مضر اثرات کو اجاگر کرتا ہے۔
 read_time: 20
 featured: false
 published: false
