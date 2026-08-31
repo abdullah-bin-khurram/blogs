@@ -54,9 +54,7 @@ body_ur: |-
 
 This page provides **simple tools and resources to help you stop smoking**.
 
-Quitting tobacco is **one of the most important steps you can take to improve your health**, reducing the risk of heart disease, cancer, COPD, and premature death.
-
-Even people who have smoked for many years **benefit from quitting at any age**.
+Quitting tobacco is **one of the most important steps you can take to improve your health**, reducing the risk of heart disease, cancer, COPD, and premature death. Whether you have tried quitting before or are preparing for your first attempt, success relies on understanding how addiction works and putting a structured, evidence-based plan in place. Even people who have smoked for many years **benefit from quitting at any age**.
 
 ## 🫁 Why Quitting Smoking Matters
 
