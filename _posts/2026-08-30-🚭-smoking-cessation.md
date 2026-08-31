@@ -136,9 +136,17 @@ When an urge strikes, rely on the "4 Ds" Strategy to ride out the craving:
 
 >🎎 People who combine **support + medication** have higher quit success rates.
 
-
 A smoking cessation support system is planned and coming soon at our clinic. 
 
+#### 🚨 Withdrawal Symptoms (Temporary)
+When quitting, you may experience:
+- Irritability
+- Anxiety
+- Difficulty concentrating
+- Increased appetite
+- Strong cravings
+
+These symptoms are **temporary and usually improve within a few weeks**.
 
 ## Phase 3: Evidence-Based Treatments
 Combining behavioral strategies with medical support significantly increases long-term quit rates.
@@ -148,21 +156,30 @@ Combining behavioral strategies with medical support significantly increases lon
 
 > Combining counseling and medication **significantly increases the chance of quitting successfully**.
 
-Phase 4: Long-Term Maintenance & Relapse Prevention
-Distinguish Between a "Slip" and a "Relapse": If you smoke one cigarette, do not view the attempt as a total failure. Identify what triggered the slip, adjust your plan, and immediately resume your smoke-free routine.
-
-Adopt Healthy Coping Mechanisms: Replace smoking with regular aerobic exercise, structured stress management, or new hobbies that keep your hands engaged.
-
-Track Your Progress: Monitor health milestones and tally the financial savings from unpurchased packs to reinforce your success.
----
-
-
-
-
+## Phase 4: Long-Term Maintenance & Relapse Prevention
+1. **Distinguish Between a "Slip" and a "Relapse":** If you smoke one cigarette, do not view the attempt as a total failure. Identify what triggered the slip, adjust your plan, and immediately resume your smoke-free routine.
+2. **Adopt Healthy Coping Mechanisms:** Replace smoking with regular aerobic exercise, structured stress management, or new hobbies that keep your hands engaged.
+3. **Track Your Progress:** Monitor health milestones and tally the financial savings from unpurchased packs to reinforce your success.
 
 ---
 
-## 🌐 Trusted Online Resources
+# Conclusion & Clinical Support
+Quitting smoking is a process of unlearning old patterns and establishing healthier habits. Every day without tobacco allows your lungs, heart, and vasculature to rebuild.  If you are preparing to quit or need guidance choosing the right cessation aids, schedule an appointment with your us to tailor a safe, effective cessation plan.
+
+---
+
+### Scientific References
+1. World Health Organization (WHO). Health Benefits of Smoking Cessation. WHO Fact Sheets.
+
+2. U.S. Department of Health and Human Services (USDHHS). The Health Consequences of Smoking—50 Years of Progress: A Report of the Surgeon General. Atlanta: CDC; 2014.
+
+3. US Preventive Services Task Force (USPSTF). Interventions for Tobacco Smoking Cessation in Adults, Including Pregnant Persons: US Preventive Services Task Force Recommendation Statement. JAMA. 2021;325(3):265–279.
+
+4. Centers for Disease Control and Prevention (CDC). Benefits of Quitting. National Center for Chronic Disease Prevention and Health Promotion, Office on Smoking and Health.
+
+---
+
+## 🌐 Further Links - Resources that may help
 
 You can explore these helpful websites:
 
@@ -180,88 +197,21 @@ USA’s Center of Disease Control - Quit Tobacco page
 
 Quit Smoking
 
-These sites provide:
-
-- Quit plans
-- Counseling resources
-- Tips for cravings
-- Community support
-
----
-
-## 📱 Mobile Apps That Help
-
-Tracking apps can improve motivation and help manage cravings.
-
-Recommended:
-
-📲 **Dejalo Ya (Quit Smoking app)**
-
-https://play.google.com/store/apps/details?id=com.EAGINsoftware.dejaloYa
-
-Features:
-
-- Progress tracking
-- Motivation reminders
-- Health improvements timeline
-
----
-
-# 🕸 Social Media Efforts
+[Dejalo Ya (Quit Smoking app)](https://play.google.com/store/apps/details?id=com.EAGINsoftware.dejaloYa)
 
 Feature Drama 'Smoking Area'
 
-## 🚨 Withdrawal Symptoms (Temporary)
 
-When quitting, you may experience:
 
-- Irritability
-- Anxiety
-- Difficulty concentrating
-- Increased appetite
-- Strong cravings
 
-These symptoms are **temporary and usually improve within a few weeks**.
-
-## 💡 Tips for Managing Cravings
-
-Try the **4 Ds strategy**
-
-1. **Delay** – wait 5 minutes
-2. **Deep breathe**
-3. **Drink water**
-4. **Do something else**
-
-Cravings usually pass within **a few minutes**.
 
 ---
 
-## 🫁 Benefits for Lung Patients
 
-For patients with asthma or COPD:
-
-Quitting smoking can:
-
-- Slow lung damage
-- Reduce symptoms
-- Improve treatment effectiveness
-- Reduce hospitalizations
 
 ---
 
-## 📅 Follow-Up Support
 
-If you are trying to quit:
-
-✔ Inform your doctor
-
-✔ Track your progress
-
-✔ Seek support from family or friends
-
-✔ Do not be discouraged by setbacks
-
-Many people require **multiple attempts before quitting successfully**.
 
 ---
 
