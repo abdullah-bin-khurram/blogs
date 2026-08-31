@@ -56,6 +56,28 @@ This page provides **simple tools and resources to help you stop smoking**.
 
 Quitting tobacco is **one of the most important steps you can take to improve your health**, reducing the risk of heart disease, cancer, COPD, and premature death. Whether you have tried quitting before or are preparing for your first attempt, success relies on understanding how addiction works and putting a structured, evidence-based plan in place. Even people who have smoked for many years **benefit from quitting at any age**.
 
+# 🎆 What happens when you smoke!
+
+I found this excellent video online that tells all about how body responds to smoking. Have a look.
+
+<div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
+  <iframe 
+    src="https://youtu.be/_rBPwu2uS-w?si=rY8j0ua6inAmzxji" 
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen>
+  </iframe>
+</div>
+
+## Health Hazards of Smoking & Why You Should Quit
+Tobacco smoke contains over 7,000 chemicals, including hundreds that are toxic and at least 69 known carcinogens. Long-term exposure damages nearly every organ system in the body:
+
+**Respiratory System:** Inhaled toxins damage the cilia (microscopic sweeping structures in the airways) and cause chronic inflammation, leading to Chronic Obstructive Pulmonary Disease (COPD), chronic bronchitis, emphysema, and a significantly heightened risk of lung cancer.
+
+**Cardiovascular System:** Nicotine and carbon monoxide strain the heart by narrowing blood vessels, elevating blood pressure, and increasing blood clot risks—substantially driving up stroke and coronary heart disease incidence.
+
+**Systemic & Cellular Health:** Smoking impairs immune response, delays wound healing, accelerates skin aging, and increases the risk of cancers throughout the body, including the mouth, throat, esophagus, bladder, and kidneys.
+
 ## 🫁 Why Quitting Smoking Matters
 
 Stopping smoking leads to major health improvements:
@@ -66,7 +88,7 @@ Stopping smoking leads to major health improvements:
 - Reduced risk of many cancers
 - Improved quality of life and longer life expectancy
 
-## 🏃‍♂️Health improvements after quitting
+## 🏃‍♂️ Health improvements after quitting
 
 - **20 minutes:** heart rate begins to fall
 - **12 hours:** carbon monoxide level returns to normal
@@ -76,11 +98,7 @@ Stopping smoking leads to major health improvements:
 
 ---
 
-## 🎥 Understanding Smoking Addiction
-
-Helpful video explaining nicotine addiction and quitting strategies:
-
-https://youtu.be/_rBPwu2uS-w?si=rY8j0ua6inAmzxji
+Understanding Nicotine & AddictionQuitting is challenging because tobacco creates a dual-layered dependence:Physical Addiction: Nicotine triggers rapid dopamine release in the brain's reward centers. When nicotine levels drop, physical withdrawal symptoms emerge—such as restlessness, irritability, intense cravings, and difficulty concentrating.  Behavioral & Psychological Habit: Smoking becomes intertwined with daily routines—such as drinking morning coffee, taking work breaks, driving, or coping with emotional stress.Recognizing that cravings are temporary physiological spikes (typically lasting only 3 to 5 minutes) makes them far easier to manage.
 
 ---
 
