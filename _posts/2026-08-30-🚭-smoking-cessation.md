@@ -183,7 +183,7 @@ Quitting smoking is a process of unlearning old patterns and establishing health
 
 You can explore these helpful websites:
 
-Quit Smoking & Vaping | Expert Help & Support
+[Quit Smoking & Vaping \| Expert Help & Support](https://www.icanquit.com.au/)
 
 Home | Smokefree
 
