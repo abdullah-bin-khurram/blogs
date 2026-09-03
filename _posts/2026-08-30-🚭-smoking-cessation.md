@@ -43,8 +43,8 @@ image_alt_ur: ABK Lung Health Education Portal کا تمباکو نوشی ترک
   نمایاں کی گئی ہیں۔ پوسٹر تمباکو نوشی ترک کرنے کی ترغیب دیتا ہے اور پھیپھڑوں،
   دل اور مجموعی صحت پر اس کے مضر اثرات کو اجاگر کرتا ہے۔
 read_time: 20
-featured: false
-published: false
+featured: true
+published: true
 body_ur: |-
   🚭 ترکِ سیگریٹ نوشی
 
@@ -181,39 +181,21 @@ Quitting smoking is a process of unlearning old patterns and establishing health
 
 ## 🌐 Further Links - Resources that may help
 
-You can explore these helpful websites:
+Pakistan Alliance for Nicotine and Tobacco Harm Reduction (PANTHR) is an initiative to reduce overall smoking in Pakistan. They have helpful dramas, talks and other material to help you quit smoking. Check out their website at 
+[PANTHR](https://www.panthr.org/)
+
+You can further explore these helpful websites, apps and social media efforts:
 
 [Quit Smoking & Vaping \| Expert Help & Support](https://www.icanquit.com.au/)
 
-Home | Smokefree
+[Smokefree - an official US Government site](https://smokefree.gov/)
 
-POST data
+[Become an Ex-smoker Program](https://www.exprogram.com/)
 
-Become an Ex-smoker program 
+[USA’s Center of Disease Control - Quit Tobacco page](https://www.cdc.gov/tobacco/index.htm)
 
-[](https://www.cdc.gov/tobacco/index.htm)
-
-USA’s Center of Disease Control - Quit Tobacco page
-
-Quit Smoking
+[Quit Smoking - by American Lung Association](https://www.lung.org/quit-smoking)
 
 [Dejalo Ya (Quit Smoking app)](https://play.google.com/store/apps/details?id=com.EAGINsoftware.dejaloYa)
 
-Feature Drama 'Smoking Area'
-
-
-
-
-
----
-
-
-
----
-
-
-
----
-
-> In case of any query or unusual symptoms, contact us at the clinic
 
