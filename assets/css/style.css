@@ -345,8 +345,9 @@ html[data-language="ur"] .article-appointment-cta .button { padding-block: 5px; 
   .sidebar-inner { height: auto; padding: 24px 0 32px; }
   .sidebar-sticky { position: static; }
   .sidebar-nav { position: static; padding: 0; background: transparent; }
-  .article-toc-mobile-wrap { position: sticky; top: 86px; z-index: 90; display: block; padding: 12px clamp(14px,3vw,44px); pointer-events: none; }
+  .article-toc-mobile-wrap { min-height: 76px; display: block; padding: 12px clamp(14px,3vw,44px); pointer-events: none; }
   .article-toc--mobile { width: min(100%,760px); margin: auto; border-radius: 999px; pointer-events: auto; transition: border-radius .2s ease, box-shadow .2s ease; }
+  .article-toc-mobile-wrap.is-fixed .article-toc--mobile { position: fixed; top: var(--article-toc-top,86px); left: 50%; z-index: 90; width: min(calc(100% - 28px),760px); transform: translateX(-50%); }
   .article-toc--mobile[open] { border-radius: 22px; box-shadow: var(--shadow); }
   .article-toc--mobile .article-toc-title { min-height: 52px; padding-block: 8px; }
   .article-toc--mobile ol { max-height: min(48vh,380px); padding-top: 8px; }

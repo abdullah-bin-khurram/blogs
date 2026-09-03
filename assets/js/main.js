@@ -221,8 +221,21 @@
   const articleTocs = [...document.querySelectorAll("[data-article-toc]")];
   if (articleBody && articleTocs.length) {
     const headingsByLanguage = new Map();
+    const mobileTocWrap = document.querySelector(".article-toc-mobile-wrap");
+    const mobileTocQuery = window.matchMedia("(max-width: 1040px)");
+    const siteHeader = document.querySelector(".site-header");
     let visibleHeadings = [];
     let tocFrame = 0;
+
+    const setMobileTocPosition = () => {
+      if (!mobileTocWrap) return;
+      const stickyTop = (siteHeader?.getBoundingClientRect().bottom || 78) + 8;
+      const wrapPaddingTop = Number.parseFloat(window.getComputedStyle(mobileTocWrap).paddingTop) || 0;
+      mobileTocWrap.style.setProperty("--article-toc-top", `${stickyTop}px`);
+      const naturalPillTop = mobileTocWrap.getBoundingClientRect().top + wrapPaddingTop;
+      const shouldFix = mobileTocQuery.matches && naturalPillTop <= stickyTop;
+      mobileTocWrap.classList.toggle("is-fixed", shouldFix);
+    };
 
     const slugifyHeading = (text, index) => {
       const slug = text.normalize("NFKD").toLowerCase()
@@ -251,6 +264,7 @@
 
     const setActiveTocLink = () => {
       tocFrame = 0;
+      setMobileTocPosition();
       if (!visibleHeadings.length) return;
       const activationLine = Math.min(window.innerHeight * .28, 180);
       let activeHeading = visibleHeadings[0];
@@ -312,6 +326,7 @@
 
     window.addEventListener("scroll", queueTocUpdate, { passive: true });
     window.addEventListener("resize", queueTocUpdate);
+    mobileTocQuery.addEventListener?.("change", queueTocUpdate);
   }
   const linkMetadataRequests = new Map();
   const linkMetadataCacheKey = "abk-rich-link-metadata-v1";
