@@ -261,6 +261,10 @@ html[dir="rtl"] .article-toc a { border-radius: 9px 0 0 9px; }
 .article-toc-mobile-wrap { display: none; }
 .article-toc--mobile > summary { cursor: pointer; list-style: none; }
 .article-toc--mobile > summary::-webkit-details-marker { display: none; }
+.article-toc-summary-copy { min-width: 0; display: grid; flex: 1; }
+.article-toc-summary-copy small { color: var(--ink-soft); font-size: 8px; font-weight: 700; line-height: 1.2; text-transform: uppercase; letter-spacing: .08em; }
+.article-toc-summary-copy strong { overflow: hidden; color: var(--forest-deep); line-height: 1.4; text-overflow: ellipsis; white-space: nowrap; }
+html[data-language="ur"] .article-toc-summary-copy small { line-height: 1.8; letter-spacing: 0; }
 .article-toc--mobile .article-toc-chevron { margin-inline-start: auto; transition: transform .2s ease; }
 .article-toc--mobile[open] .article-toc-chevron { transform: rotate(180deg); }
 .article-toc--mobile nav { border-top: 1px solid var(--line); }
@@ -341,8 +345,12 @@ html[data-language="ur"] .article-appointment-cta .button { padding-block: 5px; 
   .sidebar-inner { height: auto; padding: 24px 0 32px; }
   .sidebar-sticky { position: static; }
   .sidebar-nav { position: static; padding: 0; background: transparent; }
-  .article-toc-mobile-wrap { display: block; padding: 24px clamp(14px,3vw,44px) 0; }
-  .article-toc--mobile { width: min(100%,760px); margin: auto; }
+  .article-toc-mobile-wrap { position: sticky; top: 86px; z-index: 90; display: block; padding: 12px clamp(14px,3vw,44px); pointer-events: none; }
+  .article-toc--mobile { width: min(100%,760px); margin: auto; border-radius: 999px; pointer-events: auto; transition: border-radius .2s ease, box-shadow .2s ease; }
+  .article-toc--mobile[open] { border-radius: 22px; box-shadow: var(--shadow); }
+  .article-toc--mobile .article-toc-title { min-height: 52px; padding-block: 8px; }
+  .article-toc--mobile ol { max-height: min(48vh,380px); padding-top: 8px; }
+  .prose :is(h1,h2,h3,h4,h5,h6) { scroll-margin-top: 158px; }
   .article-content-grid { grid-template-columns: 1fr; }.article-aside { position: static; justify-self: start; }.aside-card { display: block; }.article-aside .tag-list { margin: 12px 0 18px; }.article-aside .copy-link { width: 100%; border-top: 1px solid var(--line); padding-top: 9px; }
   .values-grid { grid-template-columns: repeat(2,1fr); }
 }

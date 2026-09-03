@@ -260,7 +260,10 @@
       if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
         activeHeading = visibleHeadings[visibleHeadings.length - 1];
       }
+      const activeHeadingText = activeHeading.textContent.replace(/\s+/g, " ").trim();
       articleTocs.forEach((toc) => {
+        const currentHeading = toc.querySelector("[data-article-toc-current]");
+        if (currentHeading) currentHeading.textContent = activeHeadingText;
         toc.querySelectorAll("a[data-toc-target]").forEach((link) => {
           const isActive = link.dataset.tocTarget === activeHeading.id;
           link.toggleAttribute("aria-current", isActive);
@@ -294,7 +297,10 @@
           link.href = `#${heading.id}`;
           link.dataset.tocTarget = heading.id;
           link.textContent = heading.textContent.replace(/\s+/g, " ").trim();
-          link.addEventListener("click", () => window.requestAnimationFrame(setActiveTocLink));
+          link.addEventListener("click", () => {
+            if (toc.matches("details")) toc.open = false;
+            window.requestAnimationFrame(setActiveTocLink);
+          });
           item.append(link);
           items.append(item);
         });
