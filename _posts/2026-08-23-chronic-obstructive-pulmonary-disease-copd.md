@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Chronic Obstructive Pulmonary Disease (COPD)
-title_ur: مضمن متعرض پھیپھڑوں کا مرض
+title: 🚬 Chronic Obstructive Pulmonary Disease (COPD)
+title_ur: "مزمن انسدادی پھیپھڑوں کا مرض 🚬 "
 description: >-
   COPD is more than just a long-lasting cough or breathlessness.
 
@@ -43,11 +43,10 @@ read_time: 20
 featured: true
 published: true
 body_ur: |-
-  # مضمن متعرض پھیپھڑوں کا مرض
+  # مزمن انسدادی پھیپھڑوں کا مرض
 
   یہ صفحہ ابھی زیر تعمیر ہے
 ---
-#### *This page is under construction*
 
 # What is COPD?
 
@@ -58,13 +57,13 @@ It may manifest as:
 * **Chronic bronchitis** (long-standing cough with phlegm)
 * **Emphysema** (damage to air sacs in the lungs)
 
-COPD progresses slowly, but **early treatment and lifestyle changes make a big difference**.
+COPD is a chronic lung condition. And while established COPD cannot usually be reversed, appropriate treatment, smoking cessation, physical activity, vaccinations and Pulmonary Rehabilitation can reduce symptoms, lower the risk of exacerbations and improve quality of life.
 
 - - -
 
-# 🚬 Main Causes of COPD
+# 🚬 Risk factors and Contributors to COPD
 
-| **CAUSE**                                      | **LABEL** | **ACTION NEEDED**                                                                 |
+| **RISK FACTOR**                                      | **LABEL** | **ACTION NEEDED**                                                                 |
 | ---------------------------------------------- | --------- | --------------------------------------------------------------------------------- |
 |                                                |           |                                                                                   |
 | 🚬Huqqa, Sheesha, Chillum                      | COPD-C    | 🚭 Smoking Cessation (page coming soon)                                           |
@@ -95,7 +94,7 @@ Also remember that these are non-specific symptoms and may be caused by other di
 
 # 🔥 What Makes COPD Worse?
 
-Even when you have COPD, these triggers can make it worse, even ay require hospital admissions.
+Even when you have COPD, these triggers can make it worse, even may require hospital admissions.
 
 * Smoking or second-hand smoke
 * Respiratory infections
@@ -128,11 +127,12 @@ Treatment usually includes:
 
 ## Inhaler Technique
 
-All 1st line medication in COPD are usually delivered through the inhalational route. Mastering the technique of the inhaler prescribed to you is the most important step you can take to control your asthma. I hope to have similar videos on every type of inhaler soon on my portal for your convenience.
+All 1st line medication in COPD are usually delivered through the inhalational route. Mastering the technique of the inhaler prescribed to you is one of the most important step you can take to control your asthma. I hope to have similar videos on every type of inhaler soon on my portal for your convenience.
 
 ### How to use a metered-dose inhaler
 
 A step-by-step video showing how to use a metered-dose inhaler correctly. Good inhaler technique helps ensure that your medicine reaches your lungs properly.
+q
 [How to use a metered dose inhaler - (*pump, inhaler*) - by American Lung Association](https://www.youtube.com/watch?v=2i9_DelNqs4&list=PLxdDQiAI50j-3AJixgoz_tPKqpWashCNS&index=59)
 
 ### How to use an inhaler with a spacer
@@ -160,6 +160,10 @@ ALA also has a video on how to clean your nebulizer regularly. A nebulizer never
 - - -
 
 # Prevention of Exacerbations
+Exacerbations can be prevented by
+1. Avoiding triggers
+2. Avoiding air pollution
+3. Timely vaccinationsw
 
 ## Keep an eye on AQI
 
@@ -174,7 +178,7 @@ Poor air quality can irritate your lungs and make breathing problems worse, espe
 3. 🚪 Keep windows and doors closed if outdoor air quality is poor.
 4. 😷 If you must go outside, consider wearing a well-fitting N95 or KN95 mask, particularly during smoke or severe pollution events
 5. 💊 Continue taking your prescribed inhalers and medications. Do not stop them because you feel well
-6. 💨 Keep your reliever inhaler with you if you have asthma or COPD.
+6. 💨 Keep your reliever inhaler with you.
 7. 🚭 Avoid smoking, second-hand smoke, and burning wood or rubbish, which further worsen indoor air quality
 8. 🚗 If travelling, use your vehicle's recirculation mode when driving through heavy traffic.
 9. 🚨 Seek medical attention promptly if you develop severe breathlessness, chest pain, blue lips, confusion, or if your reliever inhaler is not providing the usual relief.
