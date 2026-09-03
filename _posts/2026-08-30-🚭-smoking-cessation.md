@@ -44,7 +44,9 @@ image_alt_ur: ABK Lung Health Education Portal کا تمباکو نوشی ترک
   دل اور مجموعی صحت پر اس کے مضر اثرات کو اجاگر کرتا ہے۔
 read_time: 20
 featured: true
-published: true
+published: false
+related_articles:
+  - 2026-08-23-chronic-obstructive-pulmonary-disease-copd
 body_ur: |-
   🚭 ترکِ سیگریٹ نوشی
 
