@@ -43,9 +43,11 @@
 
   const searchInput = document.querySelector("[data-search-input]");
   const resourceSearch = document.querySelector("[data-resource-search]");
+  let refreshArticleToc = () => {};
   const refreshLanguageDependentViews = () => {
     searchInput?.dispatchEvent(new Event("input"));
     resourceSearch?.dispatchEvent(new Event("input"));
+    refreshArticleToc();
   };
   const updateCarouselControls = () => {
     const isUrdu = activeLanguage === "ur";
@@ -216,6 +218,95 @@
   });
 
   const articleBody = document.querySelector("[data-article-body]");
+  const articleTocs = [...document.querySelectorAll("[data-article-toc]")];
+  if (articleBody && articleTocs.length) {
+    const headingsByLanguage = new Map();
+    let visibleHeadings = [];
+    let tocFrame = 0;
+
+    const slugifyHeading = (text, index) => {
+      const slug = text.normalize("NFKD").toLowerCase()
+        .replace(/[^\p{Letter}\p{Number}\s-]/gu, "")
+        .trim().replace(/[\s_-]+/g, "-");
+      return slug || `section-${index + 1}`;
+    };
+
+    ["en", "ur"].forEach((language) => {
+      const languageBody = articleBody.querySelector(`:scope > [data-lang="${language}"]`);
+      const headings = languageBody ? [...languageBody.querySelectorAll("h1, h2, h3, h4, h5, h6")]
+        .filter((heading) => heading.textContent.trim()) : [];
+      headings.forEach((heading, index) => {
+        const originalId = heading.id.trim() || slugifyHeading(heading.textContent, index);
+        const baseId = language === "en" ? originalId : `${language}-${originalId}`;
+        let uniqueId = baseId;
+        let suffix = 2;
+        while (document.getElementById(uniqueId) && document.getElementById(uniqueId) !== heading) {
+          uniqueId = `${baseId}-${suffix}`;
+          suffix += 1;
+        }
+        heading.id = uniqueId;
+      });
+      headingsByLanguage.set(language, headings);
+    });
+
+    const setActiveTocLink = () => {
+      tocFrame = 0;
+      if (!visibleHeadings.length) return;
+      const activationLine = Math.min(window.innerHeight * .28, 180);
+      let activeHeading = visibleHeadings[0];
+      visibleHeadings.forEach((heading) => {
+        if (heading.getBoundingClientRect().top <= activationLine) activeHeading = heading;
+      });
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+        activeHeading = visibleHeadings[visibleHeadings.length - 1];
+      }
+      articleTocs.forEach((toc) => {
+        toc.querySelectorAll("a[data-toc-target]").forEach((link) => {
+          const isActive = link.dataset.tocTarget === activeHeading.id;
+          link.toggleAttribute("aria-current", isActive);
+          if (isActive) link.setAttribute("aria-current", "location");
+        });
+        const list = toc.querySelector("[data-article-toc-list]");
+        const activeLink = toc.querySelector('a[aria-current="location"]');
+        if (list && activeLink && list.scrollHeight > list.clientHeight && (!toc.matches("details") || toc.open)) {
+          const listBounds = list.getBoundingClientRect();
+          const linkBounds = activeLink.getBoundingClientRect();
+          if (linkBounds.top < listBounds.top) list.scrollTop -= listBounds.top - linkBounds.top;
+          if (linkBounds.bottom > listBounds.bottom) list.scrollTop += linkBounds.bottom - listBounds.bottom;
+        }
+      });
+    };
+
+    const queueTocUpdate = () => {
+      if (!tocFrame) tocFrame = window.requestAnimationFrame(setActiveTocLink);
+    };
+
+    refreshArticleToc = () => {
+      visibleHeadings = headingsByLanguage.get(activeLanguage) || [];
+      articleTocs.forEach((toc) => {
+        const list = toc.querySelector("[data-article-toc-list]");
+        if (!list) return;
+        const items = document.createDocumentFragment();
+        visibleHeadings.forEach((heading) => {
+          const item = document.createElement("li");
+          const link = document.createElement("a");
+          item.dataset.tocLevel = heading.tagName.slice(1);
+          link.href = `#${heading.id}`;
+          link.dataset.tocTarget = heading.id;
+          link.textContent = heading.textContent.replace(/\s+/g, " ").trim();
+          link.addEventListener("click", () => window.requestAnimationFrame(setActiveTocLink));
+          item.append(link);
+          items.append(item);
+        });
+        list.replaceChildren(items);
+        toc.hidden = visibleHeadings.length === 0;
+      });
+      queueTocUpdate();
+    };
+
+    window.addEventListener("scroll", queueTocUpdate, { passive: true });
+    window.addEventListener("resize", queueTocUpdate);
+  }
   const linkMetadataRequests = new Map();
   const linkMetadataCacheKey = "abk-rich-link-metadata-v1";
   const linkMetadataQueue = [];

@@ -1,12 +1,23 @@
 <aside class="portal-sidebar" id="portal-navigation" data-sidebar>
   <div class="sidebar-inner">
     <div class="sidebar-heading"><span data-lang="en">Explore the portal</span><span data-lang="ur">مرکز دیکھیں</span></div>
-    <nav class="sidebar-nav" aria-label="Portal navigation">
-      <a href="{{ '/' | relative_url }}#top" data-nav-link><span class="nav-icon" aria-hidden="true">🏠</span><span data-lang="en">Home</span><span data-lang="ur">سرورق</span></a>
-      <a href="{{ '/' | relative_url }}#articles" data-nav-link><span class="nav-icon" aria-hidden="true">📰</span><span data-lang="en">Articles</span><span data-lang="ur">مضامین</span></a>
-      <a href="{{ '/' | relative_url }}#resources" data-nav-link><span class="nav-icon" aria-hidden="true">📚</span><span data-lang="en">Resources</span><span data-lang="ur">وسائل</span></a>
-      <a href="{{ '/' | relative_url }}#contact" data-nav-link><span class="nav-icon" aria-hidden="true">📞</span><span data-lang="en">Connect</span><span data-lang="ur">رابطہ</span></a>
-    </nav>
+    <div class="sidebar-sticky">
+      <nav class="sidebar-nav" aria-label="Portal navigation">
+        <a href="{{ '/' | relative_url }}#top" data-nav-link><span class="nav-icon" aria-hidden="true">🏠</span><span data-lang="en">Home</span><span data-lang="ur">سرورق</span></a>
+        <a href="{{ '/' | relative_url }}#articles" data-nav-link><span class="nav-icon" aria-hidden="true">📰</span><span data-lang="en">Articles</span><span data-lang="ur">مضامین</span></a>
+        <a href="{{ '/' | relative_url }}#resources" data-nav-link><span class="nav-icon" aria-hidden="true">📚</span><span data-lang="en">Resources</span><span data-lang="ur">وسائل</span></a>
+        <a href="{{ '/' | relative_url }}#contact" data-nav-link><span class="nav-icon" aria-hidden="true">📞</span><span data-lang="en">Connect</span><span data-lang="ur">رابطہ</span></a>
+      </nav>
+      {% if page.layout == 'post' %}
+        <nav class="article-toc article-toc--desktop" data-article-toc hidden aria-labelledby="article-toc-title-desktop">
+          <div class="article-toc-title" id="article-toc-title-desktop">
+            <span class="material-symbols-outlined" aria-hidden="true">format_list_bulleted</span>
+            <strong data-lang="en">On this page</strong><strong data-lang="ur">اس صفحے پر</strong>
+          </div>
+          <ol data-article-toc-list></ol>
+        </nav>
+      {% endif %}
+    </div>
     <div class="sidebar-card">
       <span class="status-dot" aria-hidden="true"></span>
       <strong data-lang="en">Practical respiratory education</strong><strong data-lang="ur">سانس کی صحت سے متعلق عملی تعلیم</strong>
