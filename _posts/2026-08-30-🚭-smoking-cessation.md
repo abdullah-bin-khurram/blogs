@@ -62,14 +62,8 @@ Quitting tobacco is **one of the most important steps you can take to improve yo
 
 I found this excellent video online that tells all about how body responds to smoking. Have a look.
 
-<div class="video-container" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-  <iframe 
-    src="https://youtu.be/_rBPwu2uS-w?si=rY8j0ua6inAmzxji" 
-    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen>
-  </iframe>
-</div>
+[Smoking effects](https://youtu.be/_rBPwu2uS-w?si=rY8j0ua6inAmzxji)
+
 
 ## Health Hazards of Smoking & Why You Should Quit
 Tobacco smoke contains over 7,000 chemicals, including hundreds that are toxic and at least 69 known carcinogens. Long-term exposure damages nearly every organ system in the body:
