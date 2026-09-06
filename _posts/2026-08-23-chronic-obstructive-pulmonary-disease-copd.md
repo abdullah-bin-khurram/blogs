@@ -66,7 +66,7 @@ COPD is a chronic lung condition. And while established COPD cannot usually be r
 | **RISK FACTOR**                                      | **LABEL** | **ACTION NEEDED**                                                                 |
 | ---------------------------------------------- | --------- | --------------------------------------------------------------------------------- |
 |                                                |           |                                                                                   |
-| 🚬 Cigarette, Huqqa, Sheesha, Chillum                      | COPD-C    | 🚭 Smoking Cessation (page coming soon)                                           |
+| 🚬 Cigarette, Huqqa, Sheesha, Chillum                      | COPD-C    | [🚭 Smoking Cessation](https://abdullah-bin-khurram.github.io/blogs/articles/smoking-cessation/)                  |
 | 🔥 Wood burning, indoor smoke                  | COPD-P    | 🍽 Switch to gas stoves, electric stoves, or induction stoves.                    |
 | 🦠 Childhood infections, previous Tuberculosis | COPD-I    | 🩺 Regular checkup, timely treatment                                              |
 | 🌳 Long standing Asthma                        | COPD-A    | Optimize  [Asthma](https://abdullah-bin-khurram.github.io/blogs/articles/asthma/) |
