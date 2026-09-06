@@ -77,7 +77,7 @@ COPD is a chronic lung condition. And while established COPD cannot usually be r
 
 # 📌 Common Symptoms
 
-Common symptoms that one may becuase of COPD include:
+Common symptoms that one may suffer becuase of COPD include:
 
 * Shortness of breath (especially on walking)
 * Chronic cough
