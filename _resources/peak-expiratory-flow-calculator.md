@@ -28,14 +28,15 @@ interactive_html: >-
 
   <style>
       :root {
-          --help-primary: #176b87;
-          --help-secondary: #eaf6f9;
-          --help-dark: #12343b;
-          --help-border: #d6e2e5;
-          --help-success: #287a4d;
-          --help-warning: #9a6500;
-          --help-danger: #a33a3a;
-          --help-background: #f7fafb;
+      --help-primary: #2e7d32;
+      --help-primary-dark: #256628;
+      --help-secondary: #edf7ee;
+      --help-dark: #183b20;
+      --help-border: #d5e4d7;
+      --help-success: #287a4d;
+      --help-warning: #9a6500;
+      --help-danger: #a33a3a;
+      --help-background: #f7faf7;
       }
 
       * {
@@ -1735,21 +1736,79 @@ interactive_html: >-
    *
    */
 
-  window.addEventListener(
-      "help-language-change",
-      function(event) {
+  /* ------------------------------------------------------------
+     AUTOMATIC CONNECTION TO HELP LANGUAGE TOGGLE
+  ------------------------------------------------------------ */
 
-          if (
-              event.detail &&
-              event.detail.language
-          ) {
 
-              setPEFLanguage(
-                  event.detail.language
-              );
+  /*
+   * The calculator watches the main website's <html lang="">
+   * attribute.
+   *
+   * When HELP changes:
+   *
+   *     <html lang="en">
+   *
+   * to:
+   *
+   *     <html lang="ur">
+   *
+   * the calculator automatically changes language.
+   */
 
+  function detectHELPanguage() {
+
+      const htmlLanguage =
+          document.documentElement.lang
+              .toLowerCase()
+              .trim();
+
+      if (htmlLanguage.startsWith("ur")) {
+
+          if (currentLanguage !== "ur") {
+              setPEFLanguage("ur");
           }
 
+      } else {
+
+          if (currentLanguage !== "en") {
+              setPEFLanguage("en");
+          }
+
+      }
+
+  }
+
+
+
+  /*
+   * Check the language when the calculator first loads.
+   */
+
+  detectHELPanguage();
+
+
+
+  /*
+   * Watch for changes to the <html> element.
+   *
+   * This means your existing HELP language toggle does not
+   * need to be modified, provided it changes <html lang="">.
+   */
+
+  const languageObserver =
+      new MutationObserver(function() {
+
+          detectHELPanguage();
+
+      });
+
+
+  languageObserver.observe(
+      document.documentElement,
+      {
+          attributes: true,
+          attributeFilter: ["lang"]
       }
   );
 
