@@ -534,7 +534,12 @@ interactive_html: >-
   </div>
 
 
-
+  <iframe
+      name="pefSubmissionFrame"
+      id="pefSubmissionFrame"
+      style="display:none;">
+  </iframe>
+    
   <script>
 
 
@@ -1004,15 +1009,9 @@ interactive_html: >-
 
   function sendDataToGoogle(age, completeDays, averageVariability) {
 
-      /*
-       * If the Apps Script URL has not yet been entered,
-       * simply don't send anything.
-       */
-
       if (!GOOGLE_SCRIPT_URL) {
           return;
       }
-
 
       const payload = {
 
@@ -1037,42 +1036,47 @@ interactive_html: >-
 
           language:
               currentLanguage
-
       };
 
 
       /*
-       * "no-cors" avoids browser CORS restrictions for the
-       * Google Apps Script endpoint.
+       * Submit through a normal HTML form rather than fetch().
        *
-       * The sheet receives the data, but the webpage does not
-       * need to read the server response.
+       * This avoids the cross-origin/redirect problem that can
+       * occur with Google Apps Script Web Apps.
        */
 
-      fetch(GOOGLE_SCRIPT_URL, {
+      const form = document.createElement("form");
 
-          method: "POST",
+      form.method = "POST";
+      form.action = GOOGLE_SCRIPT_URL;
+      form.target = "pefSubmissionFrame";
+      form.style.display = "none";
 
-          mode: "no-cors",
 
-          headers: {
-              "Content-Type": "text/plain;charset=utf-8"
-          },
+      const input = document.createElement("input");
 
-          body: JSON.stringify(payload)
+      input.type = "hidden";
+      input.name = "payload";
+      input.value = JSON.stringify(payload);
 
-      }).catch(error => {
 
-          /*
-           * Do not interrupt the patient's result if the
-           * submission fails.
-           */
+      form.appendChild(input);
+      document.body.appendChild(form);
 
-          console.log("PEF submission error:", error);
 
-      });
+      form.submit();
+
+
+      /*
+       * Remove the temporary form after submission.
+       */
+
+      setTimeout(function () {
+          form.remove();
+      }, 2000);
+
   }
-
 
 
   /* ------------------------------------------------------------
