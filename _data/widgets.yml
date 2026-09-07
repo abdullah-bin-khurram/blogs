@@ -296,9 +296,9 @@ widgets:
           <span style="font-size: 0.78rem; color: #64748b;">07 Sep 2026</span>
         </li>
 
-        <!-- 🟢 3. THIRD UPDATE -->
+        <!-- 🟢 3. THIRD UPDATE (Fixed: target="_top") -->
         <li style="padding: 10px 0; border-bottom: 1px solid #f1f5f9;">
-          <a href="https://abdullah-bin-khurram.github.io/blogs/peak-expiratory-flow-calculator/" style="color: #0284c7; text-decoration: none; font-weight: 600; display: block;">
+          <a href="https://abdullah-bin-khurram.github.io/blogs/peak-expiratory-flow-calculator/" target="_top" style="color: #0284c7; text-decoration: none; font-weight: 600; display: block;">
             Added Peak Expiratory Flow Calculator →
           </a>
           <span style="font-size: 0.78rem; color: #64748b;">07 Sep 2026</span>
@@ -315,15 +315,15 @@ widgets:
         </summary>
         <ul style="list-style: none; padding: 6px 0 0 0; margin: 0; line-height: 1.4;">
           
-          <!-- ⚪ ITEM 4: ARTICLE LINK -->
+          <!-- ⚪ ITEM 4: ARTICLE LINK (Fixed: target="_top") -->
           <li style="padding: 6px 0; border-bottom: 1px dashed #e2e8f0;">
-            <a href="https://abdullah-bin-khurram.github.io/blogs/articles/smoking-cessation/" style="color: #0284c7; text-decoration: none; font-weight: 500; display: block;">
+            <a href="https://abdullah-bin-khurram.github.io/blogs/articles/smoking-cessation/" target="_top" style="color: #0284c7; text-decoration: none; font-weight: 500; display: block;">
               🚭 Smoking Cessation
             </a>
             <span style="font-size: 0.75rem; color: #94a3b8;">01 Sep 2026</span>
           </li>
 
-          <!-- ⚪ ITEM 5: PDF DOWNLOAD LINK -->
+          <!-- ⚪ ITEM 5: PDF DOWNLOAD LINK (Fixed: target="_blank" opens in fresh tab) -->
           <li style="padding: 6px 0; border-bottom: 1px dashed #e2e8f0;">
             <a href="https://github.com/abdullah-bin-khurram/blogs/raw/refs/heads/main/downloads/pef-chart-extra-sheets.pdf" target="_blank" rel="noopener noreferrer" style="color: #0284c7; text-decoration: none; font-weight: 500; display: block;">
               📄 Download: Extra Pages for Peak Flow Charting (PDF)
