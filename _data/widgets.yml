@@ -4,3 +4,271 @@ widgets:
     title_en: Pakistan City AQI
     title_ur: پاکستانی شہروں کا فضائی معیار
     html: ""
+  - type: html
+    enabled: true
+    title_en: Subscribe to our Mailing List
+    title_ur: ہماری ای میل فہرست کا حصہ بنیں
+    html: >
+      <div id="abk-nl-root" class="abk-nl-container" dir="ltr" lang="en">
+        <style>
+          #abk-nl-root {
+            --abk-nl-bg: #f8fafc;
+            --abk-nl-border: #cbd5e1;
+            --abk-nl-primary: #0284c7;
+            --abk-nl-primary-hover: #0369a1;
+            --abk-nl-text: #1e293b;
+            --abk-nl-muted: #64748b;
+            --abk-nl-success: #15803d;
+            --abk-nl-error: #b91c1c;
+            --abk-nl-radius: 6px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans Arabic", Tahoma, sans-serif;
+            box-sizing: border-box;
+            background-color: var(--abk-nl-bg);
+            border: 1px solid var(--abk-nl-border);
+            border-radius: var(--abk-nl-radius);
+            padding: 16px;
+            max-width: 100%;
+            min-width: 280px;
+            color: var(--abk-nl-text);
+          }
+          #abk-nl-root * {
+            box-sizing: border-box;
+          }
+          #abk-nl-root[dir="rtl"] {
+            text-align: right;
+          }
+          #abk-nl-root .abk-nl-header {
+            margin-top: 0;
+            margin-bottom: 6px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--abk-nl-text);
+          }
+          #abk-nl-root .abk-nl-desc {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 0.85rem;
+            color: var(--abk-nl-muted);
+            line-height: 1.4;
+          }
+          #abk-nl-root .abk-nl-form-group {
+            margin-bottom: 10px;
+          }
+          #abk-nl-root .abk-nl-label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+          }
+          #abk-nl-root input[type="email"] {
+            width: 100%;
+            padding: 9px 12px;
+            font-size: 0.9rem;
+            border: 1px solid var(--abk-nl-border);
+            border-radius: var(--abk-nl-radius);
+            background-color: #ffffff;
+            color: var(--abk-nl-text);
+            outline: none;
+            transition: border-color 0.15s ease-in-out;
+          }
+          #abk-nl-root input[type="email"]:focus {
+            border-color: var(--abk-nl-primary);
+            box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.2);
+          }
+          #abk-nl-root button[type="submit"] {
+            width: 100%;
+            padding: 9px 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #ffffff;
+            background-color: var(--abk-nl-primary);
+            border: none;
+            border-radius: var(--abk-nl-radius);
+            cursor: pointer;
+            transition: background-color 0.15s ease-in-out;
+          }
+          #abk-nl-root button[type="submit"]:hover:not(:disabled) {
+            background-color: var(--abk-nl-primary-hover);
+          }
+          #abk-nl-root button[type="submit"]:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+          }
+          #abk-nl-root .abk-nl-status {
+            font-size: 0.8rem;
+            margin-top: 8px;
+            min-height: 1.2em;
+            line-height: 1.3;
+          }
+          #abk-nl-root .abk-nl-status.success {
+            color: var(--abk-nl-success);
+          }
+          #abk-nl-root .abk-nl-status.error {
+            color: var(--abk-nl-error);
+          }
+          #abk-nl-root .abk-nl-disclaimer {
+            margin-top: 14px;
+            padding-top: 10px;
+            border-top: 1px dashed var(--abk-nl-border);
+            font-size: 0.72rem;
+            color: var(--abk-nl-muted);
+            line-height: 1.35;
+          }
+        </style>
+
+        <h3 class="abk-nl-header" id="abk-nl-heading">Site Updates &amp; Alerts</h3>
+        <p class="abk-nl-desc" id="abk-nl-intro">Get new articles, announcements, and newsletters directly in your inbox.</p>
+
+        <form id="abk-nl-form" novalidate>
+          <div class="abk-nl-form-group">
+            <label class="abk-nl-label" for="abk-nl-email-input" id="abk-nl-label-txt">Email Address</label>
+            <input
+              type="email"
+              id="abk-nl-email-input"
+              name="email"
+              required
+              autocomplete="email"
+              placeholder="name@example.com"
+              aria-describedby="abk-nl-status-msg"
+            />
+          </div>
+          <button type="submit" id="abk-nl-submit-btn">Subscribe</button>
+        </form>
+
+        <div id="abk-nl-status-msg" class="abk-nl-status" role="alert" aria-live="polite"></div>
+
+        <aside class="abk-nl-disclaimer" id="abk-nl-disclaimer-txt">
+          <strong>Notice:</strong> For general website updates only. Do not submit medical information or patient records. Content provided is strictly educational and does not constitute medical diagnosis, consultation, or treatment.
+        </aside>
+
+        <script>
+          (function () {
+            // Configuration: Enter your deployed Google Apps Script Web App URL here
+            var SCRIPT_URL = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+
+            var root = document.getElementById("abk-nl-root");
+            var form = document.getElementById("abk-nl-form");
+            var emailInput = document.getElementById("abk-nl-email-input");
+            var submitBtn = document.getElementById("abk-nl-submit-btn");
+            var statusMsg = document.getElementById("abk-nl-status-msg");
+
+            var translations = {
+              en: {
+                heading: "Site Updates & Alerts",
+                intro: "Get new articles, announcements, and newsletters directly in your inbox.",
+                label: "Email Address",
+                placeholder: "name@example.com",
+                submit: "Subscribe",
+                submitting: "Subscribing...",
+                errInvalid: "Please enter a valid email address (e.g. name@domain.com).",
+                errFailed: "Could not record subscription. Please check connection and try again.",
+                success: "Thank you! You have been subscribed.",
+                disclaimer: "<strong>Notice:</strong> For general website updates only. Do not submit medical information or patient records. Content provided is strictly educational and does not constitute medical diagnosis, consultation, or treatment."
+              },
+              ur: {
+                heading: "سائٹ کی نئی اپ ڈیٹس اور الرٹس",
+                intro: "نئے مضامین، اعلانات اور خبریں براہِ راست اپنے ای میل پر حاصل کریں۔",
+                label: "ای میل ایڈریس",
+                placeholder: "name@example.com",
+                submit: "سبسکرائب کریں",
+                submitting: "ارسال ہو رہا ہے...",
+                errInvalid: "براہ کرم درست ای میل ایڈریس درج کریں (مثال: name@domain.com)۔",
+                errFailed: "درخواست جمع نہیں ہو سکی۔ براہ کرم دوبارہ کوشش کریں۔",
+                success: "شکریہ! آپ کامیابی سے شامل کر لیے گئے ہیں۔",
+                disclaimer: "<strong>اہم اطلاع:</strong> یہ سروس صرف عام معلومات اور اپ ڈیٹس کے لیے ہے۔ مریض سے متعلق کوئی ذاتی طبی معلومات فراہم نہ کریں۔ پیش کردہ معلومات طبی تشخیص یا علاج کا متبادل نہیں ہیں۔"
+              }
+            };
+
+            var currentLang = "en";
+
+            function notifyHeight() {
+              var height = document.documentElement.scrollHeight || root.scrollHeight;
+              if (window.parent) {
+                window.parent.postMessage({ type: "abk-tool-height", height: height }, "*");
+              }
+            }
+
+            function updateLanguage(lang) {
+              if (!translations[lang]) return;
+              currentLang = lang;
+              var t = translations[lang];
+
+              root.setAttribute("lang", lang);
+              root.setAttribute("dir", lang === "ur" ? "rtl" : "ltr");
+
+              document.getElementById("abk-nl-heading").textContent = t.heading;
+              document.getElementById("abk-nl-intro").textContent = t.intro;
+              document.getElementById("abk-nl-label-txt").textContent = t.label;
+              document.getElementById("abk-nl-disclaimer-txt").innerHTML = t.disclaimer;
+              emailInput.placeholder = t.placeholder;
+
+              if (!submitBtn.disabled) {
+                submitBtn.textContent = t.submit;
+              }
+
+              notifyHeight();
+            }
+
+            function validateEmail(val) {
+              // Strict RFC 5322 regex for standard web addresses
+              var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
+              return re.test(String(val).trim());
+            }
+
+            form.addEventListener("submit", function (e) {
+              e.preventDefault();
+              statusMsg.className = "abk-nl-status";
+              statusMsg.textContent = "";
+
+              var emailVal = emailInput.value.trim();
+
+              if (!validateEmail(emailVal)) {
+                statusMsg.className = "abk-nl-status error";
+                statusMsg.textContent = translations[currentLang].errInvalid;
+                emailInput.focus();
+                notifyHeight();
+                return;
+              }
+
+              submitBtn.disabled = true;
+              submitBtn.textContent = translations[currentLang].submitting;
+              notifyHeight();
+
+              // Send submission to Google Apps Script
+              fetch(SCRIPT_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: {
+                  "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ email: emailVal })
+              })
+              .then(function () {
+                statusMsg.className = "abk-nl-status success";
+                statusMsg.textContent = translations[currentLang].success;
+                form.reset();
+              })
+              .catch(function () {
+                statusMsg.className = "abk-nl-status error";
+                statusMsg.textContent = translations[currentLang].errFailed;
+              })
+              .finally(function () {
+                submitBtn.disabled = false;
+                submitBtn.textContent = translations[currentLang].submit;
+                notifyHeight();
+              });
+            });
+
+            window.addEventListener("message", function (evt) {
+              if (evt.data && evt.data.type === "abk-language" && evt.data.language) {
+                updateLanguage(evt.data.language);
+              }
+            });
+
+            window.addEventListener("resize", notifyHeight);
+            window.addEventListener("load", notifyHeight);
+            notifyHeight();
+          })();
+        </script>
+      </div>
