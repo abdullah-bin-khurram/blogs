@@ -275,51 +275,45 @@ widgets:
   - type: html
     enabled: true
     title_en: Recent Updates to Portal
-    title_ur: "مرکزِ تعلیم میں تاشہ ترین اضافے "
+    title_ur: "مرکزِ تعلیم میں تازہ ترین اضافے "
     html: >
       <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.95rem;
       line-height: 1.5;">
 
-        <!-- 🟢 NEWEST UPDATE (Replace text and href="#" with your page link) -->
+        <!-- 🟢 1. LATEST UPDATE -->
         <li style="padding: 10px 0; border-bottom: 1px solid #f1f5f9;">
-          <a href="/link-to-inhaler-guide" style="color: #0284c7; text-decoration: none; font-weight: 600; display: block;">
-            Added Inhaler Technique Guide
-          </a>
+          <span style="color: #0f172a; font-weight: 600; display: block;">
+            Added "Recent Updates" section to widgets panel
+          </span>
           <span style="font-size: 0.78rem; color: #64748b;">07 Sep 2026</span>
         </li>
 
-        <!-- 🟢 SECOND UPDATE -->
+        <!-- 🟢 2. SECOND UPDATE -->
         <li style="padding: 10px 0; border-bottom: 1px solid #f1f5f9;">
-          <a href="/link-to-widget" style="color: #0284c7; text-decoration: none; font-weight: 600; display: block;">
-            Added New Interactive Widget
-          </a>
-          <span style="font-size: 0.78rem; color: #64748b;">01 Sep 2026</span>
+          <span style="color: #0f172a; font-weight: 600; display: block;">
+            Added Mailing List subscription widget
+          </span>
+          <span style="font-size: 0.78rem; color: #64748b;">07 Sep 2026</span>
         </li>
 
-        <!-- 🟢 THIRD UPDATE -->
+        <!-- 🟢 3. THIRD UPDATE (With your direct link) -->
         <li style="padding: 10px 0; border-bottom: 1px solid #f1f5f9;">
-          <a href="#" style="color: #0284c7; text-decoration: none; font-weight: 600; display: block;">
-            Updated Clinical References
+          <a href="https://abdullah-bin-khurram.github.io/blogs/peak-expiratory-flow-calculator/" style="color: #0284c7; text-decoration: none; font-weight: 600; display: block;">
+            Added Peak Expiratory Flow Calculator →
           </a>
-          <span style="font-size: 0.78rem; color: #64748b;">25 Aug 2026</span>
+          <span style="font-size: 0.78rem; color: #64748b;">07 Sep 2026</span>
         </li>
 
       </ul>
 
 
-      <!-- 📦 OLDER UPDATES ACCORDION -->
+      <!-- 📦 OLDER UPDATES ACCORDION (Currently empty, ready for future updates) -->
 
       <details style="margin-top: 10px; font-size: 0.85rem;">
         <summary style="cursor: pointer; color: #64748b; font-weight: 500; padding: 4px 0;">
           Older updates
         </summary>
         <ul style="list-style: none; padding: 6px 0 0 0; margin: 0; line-height: 1.4;">
-          
-          <!-- Move updates down here as you add newer ones above -->
-          <li style="padding: 6px 0; border-bottom: 1px dashed #e2e8f0;">
-            <a href="#" style="color: #0284c7; text-decoration: none;">Updated Site Navigation</a>
-            <span style="font-size: 0.75rem; color: #94a3b8; display: block;">15 Aug 2026</span>
-          </li>
-
+          <!-- When you add a 4th update in the future, move item #3 down here -->
         </ul>
       </details>
