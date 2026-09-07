@@ -1741,97 +1741,76 @@ interactive_html: >-
    */
 
   /* ------------------------------------------------------------
-     AUTOMATIC CONNECTION TO HELP LANGUAGE TOGGLE
+     /* ------------------------------------------------------------
+     ABK / HELP PORTAL INTEGRATION (Language + Height)
   ------------------------------------------------------------ */
 
 
-  /*
-   * The calculator watches the main website's <html lang="">
-   * attribute.
-   *
-   * When HELP changes:
-   *
-   *     <html lang="en">
-   *
-   * to:
-   *
-   *     <html lang="ur">
-   *
-   * the calculator automatically changes language.
-   */
+  // 1. Auto-report height changes to parent container
 
-  function detectHELPanguage() {
+  function notifyParentHeight() {
+      if (window.parent && window.parent !== window) {
+          const height = document.documentElement.scrollHeight || document.body.scrollHeight;
+          window.parent.postMessage({
+              type: "abk-tool-height",
+              height: height
+          }, "*");
+      }
+  }
 
-      const htmlLanguage =
-          document.documentElement.lang
-              .toLowerCase()
-              .trim();
 
-      if (htmlLanguage.startsWith("ur")) {
+  window.addEventListener("load", notifyParentHeight);
 
-          if (currentLanguage !== "ur") {
-              setPEFLanguage("ur");
+  window.addEventListener("resize", notifyParentHeight);
+
+
+  // Report height whenever DOM contents resize (e.g. results appear or error blocks expand)
+
+  if (window.ResizeObserver) {
+      new ResizeObserver(notifyParentHeight).observe(document.body);
+  }
+
+
+  // 2. Listen for the parent window's language toggle
+
+  window.addEventListener("message", function (event) {
+      if (!event.data) return;
+
+      // Direct object format: { type: "abk-language", language: "en" | "ur" }
+      if (event.data.type === "abk-language" && event.data.language) {
+          setPEFLanguage(event.data.language);
+          notifyParentHeight();
+          return;
+      }
+
+      // Fallback: in case the portal serializes the message as a string
+      if (typeof event.data === "string") {
+          try {
+              const parsed = JSON.parse(event.data);
+              if (parsed.type === "abk-language" && parsed.language) {
+                  setPEFLanguage(parsed.language);
+                  notifyParentHeight();
+              }
+          } catch (e) {
+              // Non-JSON message from other extensions; safely ignore
           }
+      }
+  });
 
+
+  // 3. Keep local checks in case it is loaded directly (not in an iframe)
+
+  function detectLocalLanguage() {
+      const htmlLang = (document.documentElement.lang || "").toLowerCase().trim();
+      if (htmlLang.startsWith("ur")) {
+          setPEFLanguage("ur");
       } else {
-
-          if (currentLanguage !== "en") {
-              setPEFLanguage("en");
-          }
-
+          setPEFLanguage("en");
       }
-
   }
 
 
-
-  /*
-   * Check the language when the calculator first loads.
-   */
-
-  detectHELPanguage();
-
-
-
-  /*
-   * Watch for changes to the <html> element.
-   *
-   * This means your existing HELP language toggle does not
-   * need to be modified, provided it changes <html lang="">.
-   */
-
-  const languageObserver =
-      new MutationObserver(function() {
-
-          detectHELPanguage();
-
-      });
-
-
-  languageObserver.observe(
-      document.documentElement,
-      {
-          attributes: true,
-          attributeFilter: ["lang"]
-      }
-  );
-
-
-
-  /*
-   * If the page already has <html lang="ur"> when this
-   * calculator loads, automatically use Urdu.
-   */
-
-  if (
-      document.documentElement.lang
-          .toLowerCase()
-          .startsWith("ur")
-  ) {
-
-      setPEFLanguage("ur");
-
-  }
+  detectLocalLanguage();
 
 
   </script>
