@@ -296,7 +296,7 @@ widgets:
           <span style="font-size: 0.78rem; color: #64748b;">07 Sep 2026</span>
         </li>
 
-        <!-- 🟢 3. THIRD UPDATE (With your direct link) -->
+        <!-- 🟢 3. THIRD UPDATE -->
         <li style="padding: 10px 0; border-bottom: 1px solid #f1f5f9;">
           <a href="https://abdullah-bin-khurram.github.io/blogs/peak-expiratory-flow-calculator/" style="color: #0284c7; text-decoration: none; font-weight: 600; display: block;">
             Added Peak Expiratory Flow Calculator →
@@ -307,13 +307,29 @@ widgets:
       </ul>
 
 
-      <!-- 📦 OLDER UPDATES ACCORDION (Currently empty, ready for future updates) -->
+      <!-- 📦 OLDER UPDATES ACCORDION -->
 
       <details style="margin-top: 10px; font-size: 0.85rem;">
         <summary style="cursor: pointer; color: #64748b; font-weight: 500; padding: 4px 0;">
           Older updates
         </summary>
         <ul style="list-style: none; padding: 6px 0 0 0; margin: 0; line-height: 1.4;">
-          <!-- When you add a 4th update in the future, move item #3 down here -->
+          
+          <!-- ⚪ ITEM 4: ARTICLE LINK -->
+          <li style="padding: 6px 0; border-bottom: 1px dashed #e2e8f0;">
+            <a href="https://abdullah-bin-khurram.github.io/blogs/articles/smoking-cessation/" style="color: #0284c7; text-decoration: none; font-weight: 500; display: block;">
+              🚭 Smoking Cessation
+            </a>
+            <span style="font-size: 0.75rem; color: #94a3b8;">01 Sep 2026</span>
+          </li>
+
+          <!-- ⚪ ITEM 5: PDF DOWNLOAD LINK -->
+          <li style="padding: 6px 0; border-bottom: 1px dashed #e2e8f0;">
+            <a href="https://github.com/abdullah-bin-khurram/blogs/raw/refs/heads/main/downloads/pef-chart-extra-sheets.pdf" target="_blank" rel="noopener noreferrer" style="color: #0284c7; text-decoration: none; font-weight: 500; display: block;">
+              📄 Download: Extra Pages for Peak Flow Charting (PDF)
+            </a>
+            <span style="font-size: 0.75rem; color: #94a3b8;">28 Aug 2026</span>
+          </li>
+
         </ul>
       </details>
