@@ -145,7 +145,7 @@ widgets:
         <script>
           (function () {
             // Configuration: Enter your deployed Google Apps Script Web App URL here
-            var SCRIPT_URL = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE";
+            var SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxqAosN7_OGXLii_xrtCDL-gWdVizO1FFalGNH8mY2wrpwO2BozPGNkMQb5ATt0ZFPE/exec";
 
             var root = document.getElementById("abk-nl-root");
             var form = document.getElementById("abk-nl-form");
