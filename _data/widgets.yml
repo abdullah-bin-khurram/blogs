@@ -5,7 +5,7 @@ widgets:
     title_ur: پاکستانی شہروں کا فضائی معیار
     html: ""
   - type: html
-    enabled: false
+    enabled: true
     title_en: Subscribe to our Mailing List
     title_ur: ہماری ای میل فہرست کا حصہ بنیں
     html: >
