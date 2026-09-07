@@ -553,7 +553,7 @@ interactive_html: >-
   ------------------------------------------------------------ */
 
 
-  const GOOGLE_SCRIPT_URL = "";
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwVIw7nMk8GXhcwcTL50BYkZnYlP5nlfG7l-02LNosdDK_PwR1IZmuRYZYvIwqqypM/exec";
 
 
 
