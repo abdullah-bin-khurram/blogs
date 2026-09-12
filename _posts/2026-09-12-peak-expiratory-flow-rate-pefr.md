@@ -87,7 +87,9 @@ The exact instructions may vary slightly between devices, but the basic techniqu
 Good technique is important. A weak or slow blow can give you an artificially low reading.
 
 Watch this video by American Lung Association on how to use a peak flow meter:
+
 [How to use a peak flow meter](https://youtu.be/6NBeSbiqeOo?si=nXbyLNjcQ-3NuaV3)
+
 # How Can PEF Help in Asthma?
 PEF can be useful in several ways.
 ### 1. 🔬 It can support the diagnosis of asthma. 
@@ -98,7 +100,7 @@ However, PEF alone does not prove that you have asthma. Depending on the circums
 ### 2. 📈 It can help monitor asthma.
 Your PEF can be followed over days or weeks to see whether your airflow is relatively **stable or changing.** It is particularly useful in patients who have difficulty recognizing symptoms or exacerbations, and also in helping in the diagnosis of occupational asthma.
 
-A sustained fall from your usual readings may be an **early warning** that your asthma is becoming less well controlled. Appropriate intervention may then be initiated as per your *Asthma Action Plan* (see below)
+A sustained fall from your usual readings may be an **early warning** that your asthma is becoming less well controlled. Appropriate intervention may then be initiated as per your *Asthma Action Plan* (see below)2
 
 ### 3. 📏 It can help define "zones" in your *Asthma Action Plan*
 Regular monitoring can give you your "personal best" readings. These readings are used to establish an asthma action plan, where specific zones of PEF readings are marked in red yellow and green. A fall in PEF, for example, to a specified number can be used to increase the dose of a prescribed inhaler. 
@@ -152,13 +154,16 @@ For each measurement, record:
 2. Time
 3. PEF reading
 4. Symptoms or use of reliever inhaler 
+
 (What is a Reliever Inhaler? See the [Main Asthma article](https://abdullah-bin-khurram.github.io/blogs/articles/asthma/) for details.)
 
 
 > The purpose is not to become obsessed with every number. The chart helps you recognise a pattern. A gradual fall in your usual readings may be more important than a small difference between two individual measurements.
 
 Download our PEF monitoring handout:
-[Insert HELP handout link]
+
+[PEF instructions and monitoring chart](https://github.com/abdullah-bin-khurram/blogs/raw/refs/heads/main/downloads/abk_pef_patient_handout_and_14_day_chart.docx.pdf)
+
 
 # What to do when I have a Low PEF  Reading?
 A low reading does not always mean that your asthma has suddenly become worse. Other possible reasons include: 
@@ -186,6 +191,7 @@ Peak flow meters are available from medical equipment suppliers and pharmacies.
 If you are purchasing one, make sure you know how to use it correctly and use the same meter consistently when monitoring your asthma.
 
 PEF meters are also available at our associated online store.
+
 [Rossmax PF120(A) \| Adult Peak Flow Meter](https://s.daraz.pk/s.XprtU)
 
 # The Bottom Line
@@ -200,23 +206,29 @@ But remember that PEF is only one part of asthma care. Your symptoms, medication
 Learn your usual PEF, know your personal best, and understand what to do when your readings fall.
 
 # Useful resources on ABK Lung Health Education Portal 
+
 🎥 Learn the correct peak flow technique
 [Peak Flow Meter Technique Video]
 (Coming Soon)
 
 🧮 Calculate and interpret "variability" in your PEF
+
 [HELP PEFR Calculator](https://abdullah-bin-khurram.github.io/blogs/peak-expiratory-flow-calculator/)
 
 📄 Download the PEF Chart handout
+
 [PEF Handout - instruction in English and Urdu with 14-day monitoring chart](https://github.com/abdullah-bin-khurram/blogs/raw/refs/heads/main/downloads/abk_pef_patient_handout_and_14_day_chart.docx.pdf)
 
 📝 Download extra pages for longer PEFR monitoring 
+
 [PEFR mounting chart - extra pages](https://github.com/abdullah-bin-khurram/blogs/raw/refs/heads/main/downloads/pef-chart-extra-sheets.pdf)
 
 🌿 Learn more about asthma
+
 [HELP Asthma Article](https://abdullah-bin-khurram.github.io/blogs/articles/asthma/)
 
 🛒 Buy a peak flow meter
+
 [ABK Lung Health Store - Peak Flow Meter - Daraz](https://s.daraz.pk/s.XprtU)
 
 #### Disclaimer
