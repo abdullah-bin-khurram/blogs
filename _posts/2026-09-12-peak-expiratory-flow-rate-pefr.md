@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Peak Expiratory Flow Rate (PEFR)
-title_ur: عروجی اخراجی بہاؤ (PEFR)
+title: 📈 Peak Expiratory Flow Rate (PEFR)
+title_ur: عروجی اخراجی بہاؤ 📈 (PEFR)
 description: Learn what Peak Expiratory Flow Rate (PEFR) means, how to use a
   peak flow meter correctly, and how PEF can help you monitor asthma, recognise
   worsening symptoms, and follow your asthma action plan.
