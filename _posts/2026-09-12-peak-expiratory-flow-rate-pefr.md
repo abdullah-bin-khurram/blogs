@@ -11,7 +11,7 @@ description_ur: پیک ایکسپائریٹری فلو ریٹ (PEFR) کیا ہے
 date: 2026-09-12 20:49:00 +0500
 author: Hafiz Dr Abdullah Bin Khurram
 author_ur: " حافظ ڈاکٹر عبداللہ بن خرم "
-category: breathing-basics
+category: diagnostics
 tags:
   - Asthma
   - Pulmonary Function Tests
@@ -67,13 +67,21 @@ Digital peak flow meters are also available, although they are expensive.
 
 # How do I use a peak flow meter?
 The exact instructions may vary slightly between devices, but the basic technique is:
+
 1️⃣ Stand up straight if possible.
+
 2️⃣ Set the meter to zero or the lowest position.
+
 3️⃣ Take a deep breath, filling your lungs completely.
+
 4️⃣ Place the mouthpiece between your teeth and close your lips firmly around it.
+
 5️⃣ Blow out as hard and as fast as you can in a single breath.
+
 6️⃣ Note the reading.
+
 7️⃣ Repeat the test as instructed, usually three times.
+
 8️⃣ Record the highest of the three reading on your peak flow chart.
 
 Good technique is important. A weak or slow blow can give you an artificially low reading.
