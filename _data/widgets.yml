@@ -276,7 +276,7 @@ widgets:
     enabled: true
     title_en: Recent Updates to Portal
     title_ur: "مرکزِ تعلیم میں تازہ ترین اضافے "
-    html: >
+    html: >+
       <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.95rem;
       line-height: 1.5;">
 
@@ -333,3 +333,4 @@ widgets:
 
         </ul>
       </details>
+
