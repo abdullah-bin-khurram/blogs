@@ -132,7 +132,8 @@ All 1st line medication in COPD are usually delivered through the inhalational r
 ### How to use a metered-dose inhaler
 
 A step-by-step video showing how to use a metered-dose inhaler correctly. Good inhaler technique helps ensure that your medicine reaches your lungs properly.
-q
+
+
 [How to use a metered dose inhaler - (*pump, inhaler*) - by American Lung Association](https://www.youtube.com/watch?v=2i9_DelNqs4&list=PLxdDQiAI50j-3AJixgoz_tPKqpWashCNS&index=59)
 
 ### How to use an inhaler with a spacer
@@ -163,7 +164,7 @@ ALA also has a video on how to clean your nebulizer regularly. A nebulizer never
 Exacerbations can be prevented by
 1. Avoiding triggers
 2. Avoiding air pollution
-3. Timely vaccinationsw
+3. Timely vaccinations.
 
 ## Keep an eye on AQI
 
