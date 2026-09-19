@@ -187,10 +187,15 @@ Poor air quality can irritate your lungs and make breathing problems worse, espe
 #### UNDERSTANDING THE AIR QUALITY INDEX (AQI)
 
 🟢 Good (0–50): Outdoor activities are generally safe.
+
 🟡 Moderate (51–100): Most people can continue normal activities. Sensitive individuals should monitor symptoms.
+
 🟠 Unhealthy for Sensitive Groups (101–150): People with asthma, COPD, heart disease, older adults, pregnant women, and young children should reduce prolonged outdoor activity.
+
 🔴 Unhealthy (151–200): Everyone should limit prolonged outdoor exertion. People with lung disease should stay indoors whenever possible.
+
 🟣 Very Unhealthy (201–300): Avoid outdoor activities. Keep windows closed and follow your doctor's advice.
+
 🟤 Hazardous (301+): Remain indoors if possible, avoid all outdoor exertion, and follow local public health advice.
 
 # 📚 Learn more about COPD
