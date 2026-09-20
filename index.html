@@ -9,6 +9,144 @@ description_ur: پھیپھڑوں کی صحت سے متعلق واضح اور ع�
 <section class="hero" id="top">
   <div class="hero-copy">
     <div class="hero-kicker"><span></span><b data-lang="en">A clearer path to respiratory health</b><b data-lang="ur">تنفسی صحت کی جانب ایک واضح راستہ</b></div>
+    <!-- ============================================================
+         ABK Lung Health Portal: World Lung Day Hero Badge
+         Self-expires automatically after September 25, 2026 (PKT)
+         ============================================================ -->
+    <div id="wld-hero-badge-wrapper" style="display: none;">
+      <a href="#wld-article" class="hero-badge" aria-label="World Lung Day 2026 Commemoration">
+        <!-- Pulsing Live Indicator -->
+        <span class="badge-pulse"></span>
+        
+        <!-- Date Chip -->
+        <span class="badge-chip">25 Sep 2026</span>
+        
+        <!-- Bilingual Text -->
+        <span class="badge-text-en">World Lung Day: A Lifetime of Lung Health</span>
+        <span class="badge-divider">|</span>
+        <span class="badge-text-ur">عالمی یومِ صحتِ تنفس</span>
+        
+        <!-- Subtle Arrow Action -->
+        <span class="badge-arrow">↗</span>
+      </a>
+    </div>
+
+    <style>
+      #wld-hero-badge-wrapper {
+        margin-bottom: 1.25rem;
+        display: inline-flex;
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 14px 6px 10px;
+        background: rgba(13, 74, 52, 0.08); /* Soft emerald tint matching site */
+        border: 1px solid rgba(212, 175, 55, 0.4); /* Muted gold border */
+        border-radius: 9999px; /* Pill shape */
+        text-decoration: none !important;
+        font-size: 0.85rem;
+        color: #0d4a34;
+        transition: all 0.25s ease-in-out;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      }
+
+      .hero-badge:hover {
+        background: rgba(13, 74, 52, 0.14);
+        border-color: #d4af37;
+        box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
+        transform: translateY(-1px);
+      }
+
+      /* Glowing green pulse dot */
+      .badge-pulse {
+        width: 8px;
+        height: 8px;
+        background-color: #10b981;
+        border-radius: 50%;
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+        animation: badge-pulse-anim 2s infinite;
+      }
+
+      @keyframes badge-pulse-anim {
+        0% {
+          transform: scale(0.95);
+          box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+        }
+        70% {
+          transform: scale(1);
+          box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+        }
+        100% {
+          transform: scale(0.95);
+          box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+        }
+      }
+
+      .badge-chip {
+        background: #0d4a34;
+        color: #ffd700;
+        font-weight: 600;
+        font-size: 0.72rem;
+        padding: 2px 8px;
+        border-radius: 9999px;
+        letter-spacing: 0.3px;
+      }
+
+      .badge-text-en {
+        font-weight: 500;
+        color: #093b2a;
+      }
+
+      .badge-divider {
+        color: #d4af37;
+        font-weight: 300;
+      }
+
+      .badge-text-ur {
+        direction: rtl;
+        font-weight: 600;
+        color: #093b2a;
+        font-family: "Noto Nastaliq Urdu", -apple-system, sans-serif;
+      }
+
+      .badge-arrow {
+        color: #d4af37;
+        font-weight: 700;
+        transition: transform 0.2s ease;
+      }
+
+      .hero-badge:hover .badge-arrow {
+        transform: translate(2px, -2px);
+        color: #093b2a;
+      }
+
+      /* Responsive styling for small mobile screens */
+      @media (max-width: 600px) {
+        .badge-text-ur, .badge-divider {
+          display: none; /* Keep badge compact on small phone screens */
+        }
+        .hero-badge {
+          font-size: 0.78rem;
+        }
+      }
+    </style>
+
+    <script>
+      (function initHeroBadge() {
+        // Time bomb: September 26, 2026 00:00:00 PKT (UTC 2026-09-25 19:00:00)
+        var expiry = Date.UTC(2026, 8, 25, 19, 0, 0);
+        var current = new Date().getTime();
+        var badgeWrapper = document.getElementById("wld-hero-badge-wrapper");
+
+        if (current < expiry) {
+          if (badgeWrapper) badgeWrapper.style.display = "inline-flex";
+        } else {
+          if (badgeWrapper) badgeWrapper.remove();
+        }
+      })();
+    </script>
     <h1 data-lang="en">Knowledge that helps every breath feel <em>lighter</em></h1>
     <h1 data-lang="ur">ایسا علم جو ہر سانس کو <em>آسان</em> بنائے</h1>
     <p data-lang="en">Explore practical, approachable education about breathing disorders, prevention, treatment options, recovery, air quality, and expert guidance on managing common respiratory conditions and supporting everyday respiratory well-being.</p>
