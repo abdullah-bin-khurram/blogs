@@ -135,6 +135,13 @@ html[data-language="ur"] .page-hero h1 { font-family: var(--urdu); font-size: cl
 .hero-trust strong, .hero-trust span { display: block; }
 .hero-trust strong { font-size: 13px; }
 .hero-trust span { color: var(--ink-soft); font-size: 11px; }
+.hero-disclaimer { max-width: 650px; margin-top: 24px; padding: 18px 22px; border: 1.5px solid var(--forest-deep); border-radius: var(--radius-md); background: var(--mint); box-shadow: var(--shadow-soft); }
+.disclaimer-heading { margin: 0 0 8px; font-family: var(--sans); font-size: 15px; font-weight: 700; color: var(--forest-deep); letter-spacing: -.01em; }
+html[data-language="ur"] .disclaimer-heading { font-family: var(--urdu); font-size: 17px; line-height: 1.9; letter-spacing: 0; }
+.disclaimer-text { margin: 0; color: var(--ink-soft); font-size: 13.5px; line-height: 1.6; }
+.disclaimer-text p { margin: 0; }
+.disclaimer-text p + p { margin-top: 8px; }
+html[data-language="ur"] .disclaimer-text { font-family: var(--urdu); font-size: 14px; line-height: 2.15; }
 .hero-visual { min-width: 0; }
 .hero-image-card { position: relative; min-height: 500px; display: grid; place-items: center; overflow: hidden; border: 1px solid rgba(40,94,80,.09); border-radius: 46% 46% 38% 38%; background: linear-gradient(145deg, var(--mint), #dceee3); box-shadow: var(--shadow); }
 .hero-image-card::before, .hero-image-card::after { content: ""; position: absolute; border-radius: 50%; background: rgba(255,255,255,.55); }
@@ -379,6 +386,7 @@ html[data-language="ur"] .article-appointment-cta .button { padding-block: 5px; 
   .brand-mark { width: 42px; height: 42px; }.brand-copy strong { max-width: 130px; }.language-switcher { margin-left: auto; }
   html[dir="rtl"] .language-switcher { margin-left: 0; margin-right: auto; }
   .hero h1 { font-size: 3.35rem; }.hero-copy > p { font-size: 16px; }.hero-actions { align-items: stretch; flex-direction: column; }.hero-actions .button { width: 100%; }.hero-image-card { min-height: 350px; border-radius: 36px; }.hero-note { padding: 8px 10px; font-size: 9px; }
+  .hero-disclaimer { padding: 15px 16px; border-radius: 18px; margin-top: 20px; }
   .section-heading h2, .appointment-copy h2, .about-grid h2 { font-size: 2.65rem; }.content-section { padding-block: 58px; }
   .card-rail, .compact-rail, .resource-rail { grid-auto-columns: 88%; }.post-card-art { height: 175px; }
   .resource-tools { align-items: stretch; flex-direction: column; }.show-all-button { width: 100%; }.resources-section.is-expanded .resource-rail { grid-template-columns: 1fr; }
