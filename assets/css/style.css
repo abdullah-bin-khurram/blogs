@@ -106,7 +106,7 @@ html[data-language="ur"] .portal-sidebar:not(.is-compact) .sidebar-nav a > [data
 .pollutant-grid strong { margin-top: 2px; font-size: 13px; }
 .widget-source { margin: 12px 0 0; color: var(--ink-soft); font-size: 9px; }
 .widget-source a { text-decoration: underline; }
-.custom-widget-frame { width: 100%; height: 350px; min-height: 160px; border: 0; border-radius: 12px; background: var(--mint); overflow: hidden; display: block; }
+.custom-widget-frame { width: 100%; min-height: 120px; border: 0; border-radius: 12px; background: var(--mint); overflow: hidden; display: block; }
 
 @media (min-width: 1041px) {
   .portal-sidebar.is-compact .sidebar-nav { width: 170px; grid-template-columns: repeat(4,36px); gap: 4px; padding: 6px; border: 1px solid var(--line); border-radius: 17px; background: var(--cream); box-shadow: 0 0 0 9px rgba(251,250,246,.96), var(--shadow-soft); }

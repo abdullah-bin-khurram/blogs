@@ -20,8 +20,11 @@
     if (event.data.type === "abk-tool-ready") sendPortalLanguage(frame);
     if (event.data.type === "abk-tool-height") {
       if (frame.classList.contains("custom-widget-frame")) {
-        const height = Math.max((Number(event.data.height) || 0) + 4, 120);
-        frame.style.height = `${height}px`;
+        const newHeight = Math.ceil(Number(event.data.height) || 0);
+        const currentHeight = Math.ceil(frame.getBoundingClientRect().height);
+        if (newHeight >= 50 && Math.abs(newHeight - currentHeight) > 2) {
+          frame.style.height = `${newHeight}px`;
+        }
       } else if (frame.classList.contains("interactive-resource-frame")) {
         const height = Math.min(Math.max((Number(event.data.height) || 0) + 32, 560), 6000);
         frame.style.height = `${height}px`;
