@@ -11,6 +11,12 @@ widgets:
     html: >
       <div id="abk-nl-root" class="abk-nl-container" dir="ltr" lang="en">
         <style>
+          html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: transparent;
+          }
           #abk-nl-root {
             --abk-nl-bg: #f8fafc;
             --abk-nl-border: #cbd5e1;
@@ -28,7 +34,8 @@ widgets:
             border-radius: var(--abk-nl-radius);
             padding: 16px;
             max-width: 100%;
-            min-width: 280px;
+            width: 100%;
+            min-width: 0;
             color: var(--abk-nl-text);
           }
           #abk-nl-root * {
@@ -183,7 +190,12 @@ widgets:
             var currentLang = "en";
 
             function notifyHeight() {
-              var height = document.documentElement.scrollHeight || root.scrollHeight;
+              var height = Math.max(
+                document.documentElement ? document.documentElement.scrollHeight : 0,
+                document.body ? document.body.scrollHeight : 0,
+                root ? root.scrollHeight : 0,
+                root ? root.offsetHeight : 0
+              );
               if (window.parent) {
                 window.parent.postMessage({ type: "abk-tool-height", height: height }, "*");
               }
@@ -266,9 +278,16 @@ widgets:
               }
             });
 
+            if (typeof ResizeObserver !== "undefined" && root) {
+              new ResizeObserver(function () {
+                notifyHeight();
+              }).observe(root);
+            }
             window.addEventListener("resize", notifyHeight);
             window.addEventListener("load", notifyHeight);
             notifyHeight();
+            setTimeout(notifyHeight, 150);
+            setTimeout(notifyHeight, 500);
           })();
         </script>
       </div>
@@ -277,6 +296,15 @@ widgets:
     title_en: Recent Updates to Portal
     title_ur: "مرکزِ تعلیم میں تازہ ترین اضافے "
     html: >+
+      <style>
+        html, body {
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background: transparent;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+      </style>
       <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.95rem;
       line-height: 1.5;">
 
@@ -333,4 +361,17 @@ widgets:
 
         </ul>
       </details>
+      <script>
+        (function () {
+          function notify() {
+            var h = Math.max(document.documentElement ? document.documentElement.scrollHeight : 0, document.body ? document.body.scrollHeight : 0);
+            if (window.parent) window.parent.postMessage({ type: "abk-tool-height", height: h }, "*");
+          }
+          window.addEventListener("load", notify);
+          window.addEventListener("resize", notify);
+          document.addEventListener("toggle", notify, true);
+          notify();
+          setTimeout(notify, 150);
+        })();
+      </script>
 

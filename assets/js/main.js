@@ -18,9 +18,14 @@
     const frame = portalEmbeds.find((item) => item.contentWindow === event.source);
     if (!frame || !event.data || typeof event.data !== "object") return;
     if (event.data.type === "abk-tool-ready") sendPortalLanguage(frame);
-    if (event.data.type === "abk-tool-height" && frame.classList.contains("interactive-resource-frame")) {
-      const height = Math.min(Math.max((Number(event.data.height) || 0) + 32, 560), 6000);
-      frame.style.height = `${height}px`;
+    if (event.data.type === "abk-tool-height") {
+      if (frame.classList.contains("custom-widget-frame")) {
+        const height = Math.max((Number(event.data.height) || 0) + 4, 120);
+        frame.style.height = `${height}px`;
+      } else if (frame.classList.contains("interactive-resource-frame")) {
+        const height = Math.min(Math.max((Number(event.data.height) || 0) + 32, 560), 6000);
+        frame.style.height = `${height}px`;
+      }
     }
   });
 
