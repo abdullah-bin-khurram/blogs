@@ -43,7 +43,7 @@ image_alt_ur: 'عالمی یومِ صحتِ تنفس (World Lung Day 2026) کا 
 read_time: 20
 featured: true
 published: true
-body_ur: >+
+body_ur: >
   پھیپھڑوں کا عالمی دن  ہر سال دنیا بھر میں منایا جاتا ہے، لیکن عوامی صحت کی
   آگاہی اپنا اصل مقصد کھو بیٹھتی ہے جب اسے محض نمائشی اشتہاروں، کھوکھلے نعروں یا
   علامتی تقریبات تک محدود کر دیا جائے۔ سانس کی تنگی میں مبتلا کسی انسان کے لیے
@@ -146,11 +146,11 @@ body_ur: >+
 
   ممکن ہے کوئی یہ سوچے کہ یہ اہداف اس کی بساط سے باہر ہیں۔ شاید کچھ لوگوں کے لیے ایسا ہو، لیکن ایک کام ایسا ہے جو ہر کوئی کر سکتا ہے۔ اس صفحے کو زیادہ سے زیادہ لوگوں تک پہنچائیں؛ ہو سکتا ہے کہ یہ تحریر کسی ایسے شخص تک پہنچ جائے جو ان کاموں کو یا ان میں سے کسی ایک کام کو کرنے کی طاقت رکھتا ہو، یا شاید کسی ایسے شخص تک جو پالیسی سازوں کو ان اہداف کو ترجیح بنانے پر قائل کرنے کی صلاحیت رکھتا ہو۔
 
-  abdullah-bin-khurram.github.io/blogs/articles/asthma/
+  https://abdullah-bin-khurram.github.io/blogs/articles/world-lung-day/
 
   <button onclick="
 
-  const link = '[https://abdullah-bin-khurram.github.io/blogs/articles/asthma/](https://abdullah-bin-khurram.github.io/blogs/articles/asthma/)';
+  const link = '[https://abdullah-bin-khurram.github.io/blogs/articles/world-lung-day/](https://abdullah-bin-khurram.github.io/blogs/articles/asthma/)';
 
   navigator.clipboard.writeText(link);
 
@@ -246,9 +246,9 @@ Gather the adults in your community for a daily mild exercise regime. Practice y
 # Share this page
 One may think they these are targets well beyond their reach. For some they may be, but one thing all can do. Share this page around, and may be, it'll touch someone who *can* do these things, one of these things, or may be even someone who may be able to influence policy makers to make these targets a priority.
 
-abdullah-bin-khurram.github.io/blogs/articles/asthma/
+https://abdullah-bin-khurram.github.io/blogs/articles/world-lung-day/
 <button onclick="
-  const link = 'https://abdullah-bin-khurram.github.io/blogs/articles/asthma/';
+  const link = 'https://abdullah-bin-khurram.github.io/blogs/articles/world-lung-day/';
   navigator.clipboard.writeText(link);
   this.innerText = '✓ Copied!';
   setTimeout(() => this.innerText = '📋 Copy Link', 2000);
