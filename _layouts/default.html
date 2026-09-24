@@ -73,7 +73,7 @@
       </div>
 
       <!-- Call to action button -->
-      <a href="{{ '/' | relative_url }}#articles" class="ribbon-cta">مضامین دیکھیں / Explore</a>
+      <a href="https://abdullah-bin-khurram.github.io/blogs/articles/world-lung-day/" target="_self" class="ribbon-cta">Explore / مضامین دیکھیں</a>
 
       <!-- Manual dismiss button -->
       <button type="button" class="ribbon-close" onclick="dismissRibbon()" aria-label="Close Announcement">&times;</button>
@@ -112,6 +112,8 @@
       border-radius: 4px;
       letter-spacing: 0.5px;
       white-space: nowrap;
+      display: inline-block;
+      flex-shrink: 0;
     }
 
     .ribbon-content {
@@ -122,12 +124,19 @@
       justify-content: center;
       text-align: center;
       flex-wrap: wrap;
+      min-width: 0;
     }
 
     .ribbon-text-ur {
       direction: rtl;
+      unicode-bidi: isolate;
       color: #f1f8f5;
       font-size: 0.92rem;
+      line-height: 1.6;
+      white-space: normal;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      max-width: 100%;
     }
 
     .ribbon-text-ur strong {
@@ -136,7 +145,14 @@
 
     .ribbon-text-en {
       direction: ltr;
+      unicode-bidi: isolate;
       color: #e2f0ea;
+      font-size: 0.88rem;
+      line-height: 1.4;
+      white-space: normal;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      max-width: 100%;
     }
 
     .ribbon-text-en strong {
@@ -149,6 +165,9 @@
     }
 
     .ribbon-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       background: rgba(255, 255, 255, 0.12);
       color: #ffffff !important;
       text-decoration: none;
@@ -159,6 +178,7 @@
       font-weight: 500;
       transition: all 0.2s ease;
       white-space: nowrap;
+      flex-shrink: 0;
     }
 
     .ribbon-cta:hover {
@@ -177,6 +197,7 @@
       padding: 0 4px;
       opacity: 0.8;
       transition: opacity 0.2s;
+      flex-shrink: 0;
     }
 
     .ribbon-close:hover {
@@ -185,15 +206,98 @@
     }
 
     @media (max-width: 768px) {
+      #wld-announcement-ribbon {
+        padding: 10px 36px 12px 16px;
+        padding-inline-end: 36px;
+        padding-inline-start: 16px;
+      }
+
+      html[dir="rtl"] #wld-announcement-ribbon {
+        padding: 10px 16px 12px 36px;
+        padding-inline-end: 36px;
+        padding-inline-start: 16px;
+      }
+
+      .ribbon-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 8px;
+        width: 100%;
+      }
+
+      .ribbon-badge {
+        align-self: center;
+        margin-bottom: 2px;
+      }
+
+      .ribbon-content {
+        flex: none;
+        width: 100%;
+        max-width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        text-align: center;
+      }
+
       .ribbon-separator {
         display: none;
       }
-      .ribbon-content {
-        flex-direction: column;
-        gap: 4px;
+
+      .ribbon-text-ur,
+      .ribbon-text-en {
+        display: block;
+        width: 100%;
+        max-width: 95%;
+        white-space: normal;
+        word-break: keep-all;
+        overflow-wrap: break-word;
+        text-align: center;
       }
-      .ribbon-container {
+
+      .ribbon-text-ur {
+        direction: rtl;
+        font-size: 0.92rem;
+        line-height: 1.6;
+      }
+
+      .ribbon-text-en {
+        direction: ltr;
+        font-size: 0.85rem;
+        line-height: 1.4;
+      }
+
+      .ribbon-cta {
+        align-self: center;
+        margin-top: 4px;
+        padding: 6px 16px;
+        font-size: 0.82rem;
+      }
+
+      .ribbon-close {
+        position: absolute;
+        top: 8px;
+        right: 10px;
+        inset-inline-end: 10px;
+        inset-inline-start: auto;
+        font-size: 1.4rem;
+        line-height: 1;
+        padding: 4px 6px;
+        min-width: 32px;
+        min-height: 32px;
+        display: flex;
+        align-items: center;
         justify-content: center;
+        z-index: 2;
+      }
+
+      html[dir="rtl"] .ribbon-close {
+        right: auto;
+        left: 10px;
       }
     }
   </style>
