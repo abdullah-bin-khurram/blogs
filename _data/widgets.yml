@@ -289,98 +289,25 @@ widgets:
           })();
         </script>
       </div>
-  - type: html
+  - type: updates
     enabled: true
     title_en: Recent Updates to Portal
     title_ur: "مرکزِ تعلیم میں تازہ ترین اضافے "
-    html: >+
-      <div id="abk-updates-root">
-        <style>
-          html, body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background: transparent;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-          }
-          #abk-updates-root {
-            box-sizing: border-box;
-            width: 100%;
-          }
-        </style>
-        <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.95rem;
-        line-height: 1.5;">
-
-          <!-- 🟢 1. LATEST UPDATE -->
-          <li style="padding: 10px 0; border-bottom: 1px solid #f1f5f9;">
-            <span style="color: #0f172a; font-weight: 600; display: block;">
-              Added "Recent Updates" section to widgets panel
-            </span>
-            <span style="font-size: 0.78rem; color: #64748b;">07 Sep 2026</span>
-          </li>
-
-          <!-- 🟢 2. SECOND UPDATE -->
-          <li style="padding: 10px 0; border-bottom: 1px solid #f1f5f9;">
-            <span style="color: #0f172a; font-weight: 600; display: block;">
-              Added Mailing List subscription widget
-            </span>
-            <span style="font-size: 0.78rem; color: #64748b;">07 Sep 2026</span>
-          </li>
-
-          <!-- 🟢 3. THIRD UPDATE (Fixed: target="_top") -->
-          <li style="padding: 10px 0; border-bottom: 1px solid #f1f5f9;">
-            <a href="https://abdullah-bin-khurram.github.io/blogs/peak-expiratory-flow-calculator/" target="_top" style="color: #0284c7; text-decoration: none; font-weight: 600; display: block;">
-              Added Peak Expiratory Flow Calculator →
-            </a>
-            <span style="font-size: 0.78rem; color: #64748b;">07 Sep 2026</span>
-          </li>
-
-        </ul>
-
-
-        <!-- 📦 OLDER UPDATES ACCORDION -->
-
-        <details style="margin-top: 10px; font-size: 0.85rem;">
-          <summary style="cursor: pointer; color: #64748b; font-weight: 500; padding: 4px 0;">
-            Older updates
-          </summary>
-          <ul style="list-style: none; padding: 6px 0 0 0; margin: 0; line-height: 1.4;">
-            
-            <!-- ⚪ ITEM 4: ARTICLE LINK (Fixed: target="_top") -->
-            <li style="padding: 6px 0; border-bottom: 1px dashed #e2e8f0;">
-              <a href="https://abdullah-bin-khurram.github.io/blogs/articles/smoking-cessation/" target="_top" style="color: #0284c7; text-decoration: none; font-weight: 500; display: block;">
-                🚭 Smoking Cessation
-              </a>
-              <span style="font-size: 0.75rem; color: #94a3b8;">01 Sep 2026</span>
-            </li>
-
-            <!-- ⚪ ITEM 5: PDF DOWNLOAD LINK (Fixed: target="_blank" opens in fresh tab) -->
-            <li style="padding: 6px 0; border-bottom: 1px dashed #e2e8f0;">
-              <a href="https://github.com/abdullah-bin-khurram/blogs/raw/refs/heads/main/downloads/pef-chart-extra-sheets.pdf" target="_blank" rel="noopener noreferrer" style="color: #0284c7; text-decoration: none; font-weight: 500; display: block;">
-                📄 Download: Extra Pages for Peak Flow Charting (PDF)
-              </a>
-              <span style="font-size: 0.75rem; color: #94a3b8;">28 Aug 2026</span>
-            </li>
-
-          </ul>
-        </details>
-      </div>
-      <script>
-        (function () {
-          var root = document.getElementById("abk-updates-root");
-          var lastH = 0;
-          function notify() {
-            if (!root) return;
-            var h = Math.ceil(root.getBoundingClientRect().height || root.offsetHeight);
-            if (h > 40 && Math.abs(h - lastH) > 2) {
-              lastH = h;
-              if (window.parent) window.parent.postMessage({ type: "abk-tool-height", height: h }, "*");
-            }
-          }
-          window.addEventListener("load", notify);
-          document.addEventListener("toggle", notify, true);
-          notify();
-          setTimeout(notify, 150);
-        })();
-      </script>
+    html: ""
+    updates:
+      - text: Added "Recent Updates" section to widgets panel
+        url: ""
+        date: 07 Sep 2026
+      - text: Added Mailing List subscription widget
+        url: ""
+        date: 07 Sep 2026
+      - text: Added Peak Expiratory Flow Calculator →
+        url: https://abdullah-bin-khurram.github.io/blogs/peak-expiratory-flow-calculator/
+        date: 07 Sep 2026
+      - text: 🚭 Smoking Cessation
+        url: https://abdullah-bin-khurram.github.io/blogs/articles/smoking-cessation/
+        date: 01 Sep 2026
+      - text: "📄 Download: Extra Pages for Peak Flow Charting (PDF)"
+        url: https://github.com/abdullah-bin-khurram/blogs/raw/refs/heads/main/downloads/pef-chart-extra-sheets.pdf
+        date: 28 Aug 2026
 

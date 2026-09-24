@@ -43,6 +43,72 @@
             </div>
             <p class="widget-source"><span data-lang="en">Forecast data:</span><span data-lang="ur">پیش گوئی کا ڈیٹا:</span> <a href="https://open-meteo.com/en/docs/air-quality-api" target="_blank" rel="noopener">Open-Meteo / CAMS</a></p>
           </div>
+        {% elsif widget.type == 'updates' or widget.updates %}
+          <div class="updates-widget" id="abk-updates-root">
+            {% assign sorted_updates = widget.updates | sort: 'date' | reverse %}
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.95rem; line-height: 1.5;">
+              {% for item in sorted_updates limit: 3 %}
+                {% assign item_url = item.url | default: '' | strip %}
+                {% if item_url contains '.pdf' or item_url contains '.PDF' %}
+                  {% assign link_target = '_blank' %}
+                  {% assign link_rel = ' rel="noopener noreferrer"' %}
+                {% elsif item_url contains '://' %}
+                  {% if item_url contains 'abdullah-bin-khurram.github.io' or item_url contains site.url %}
+                    {% assign link_target = '_top' %}
+                    {% assign link_rel = '' %}
+                  {% else %}
+                    {% assign link_target = '_blank' %}
+                    {% assign link_rel = ' rel="noopener noreferrer"' %}
+                  {% endif %}
+                {% else %}
+                  {% assign link_target = '_top' %}
+                  {% assign link_rel = '' %}
+                {% endif %}
+                <li style="padding: 10px 0; border-bottom: 1px solid #f1f5f9;">
+                  {% if item_url != '' %}
+                    <a href="{{ item_url }}" target="{{ link_target }}"{{ link_rel }} style="color: #0284c7; text-decoration: none; font-weight: 600; display: block;">{{ item.text }}</a>
+                  {% else %}
+                    <span style="color: #0f172a; font-weight: 600; display: block;">{{ item.text }}</span>
+                  {% endif %}
+                  <span style="font-size: 0.78rem; color: #64748b;">{{ item.date }}</span>
+                </li>
+              {% endfor %}
+            </ul>
+
+            {% if sorted_updates.size > 3 %}
+              <details style="margin-top: 10px; font-size: 0.85rem;">
+                <summary style="cursor: pointer; color: #64748b; font-weight: 500; padding: 4px 0;">Older updates</summary>
+                <ul style="list-style: none; padding: 6px 0 0 0; margin: 0; line-height: 1.4;">
+                  {% for item in sorted_updates offset: 3 %}
+                    {% assign item_url = item.url | default: '' | strip %}
+                    {% if item_url contains '.pdf' or item_url contains '.PDF' %}
+                      {% assign link_target = '_blank' %}
+                      {% assign link_rel = ' rel="noopener noreferrer"' %}
+                    {% elsif item_url contains '://' %}
+                      {% if item_url contains 'abdullah-bin-khurram.github.io' or item_url contains site.url %}
+                        {% assign link_target = '_top' %}
+                        {% assign link_rel = '' %}
+                      {% else %}
+                        {% assign link_target = '_blank' %}
+                        {% assign link_rel = ' rel="noopener noreferrer"' %}
+                      {% endif %}
+                    {% else %}
+                      {% assign link_target = '_top' %}
+                      {% assign link_rel = '' %}
+                    {% endif %}
+                    <li style="padding: 6px 0; border-bottom: 1px dashed #e2e8f0;">
+                      {% if item_url != '' %}
+                        <a href="{{ item_url }}" target="{{ link_target }}"{{ link_rel }} style="color: #0284c7; text-decoration: none; font-weight: 500; display: block;">{{ item.text }}</a>
+                      {% else %}
+                        <span style="color: #0f172a; font-weight: 500; display: block;">{{ item.text }}</span>
+                      {% endif %}
+                      <span style="font-size: 0.75rem; color: #94a3b8;">{{ item.date }}</span>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </details>
+            {% endif %}
+          </div>
         {% else %}
           <iframe class="custom-widget-frame" data-portal-embed title="{{ widget.title_en | default: 'Portal widget' | escape }}" sandbox="allow-scripts allow-forms allow-popups" loading="lazy" scrolling="no" srcdoc="{{ widget.html | escape }}"></iframe>
         {% endif %}

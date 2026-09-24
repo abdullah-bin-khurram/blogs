@@ -181,6 +181,7 @@ collections:
                 options:
                   - { label: Pakistan City AQI, value: aqi }
                   - { label: Custom HTML, value: html }
+                  - { label: Site Updates, value: updates }
                 default: html
               - { label: Enabled, name: enabled, widget: boolean, default: true }
               - { label: English title, name: title_en, widget: string }
@@ -193,3 +194,12 @@ collections:
                 output_code_only: true
                 required: false
                 hint: Used only for Custom HTML widgets. It is displayed inside an isolated sandbox.
+              - label: "Updates / Changelog"
+                name: updates
+                widget: list
+                required: false
+                summary: '{{fields.text}} - {{fields.date}}'
+                fields:
+                  - { label: "Text of Update", name: "text", widget: "string", required: true }
+                  - { label: "Associated Link", name: "url", widget: "string", required: false }
+                  - { label: "Date", name: "date", widget: "datetime", format: "DD MMM YYYY", date_format: "DD MMM YYYY", time_format: false, required: true }
