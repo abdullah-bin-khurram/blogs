@@ -4,6 +4,10 @@ widgets:
     title_en: Pakistan City AQI
     title_ur: پاکستانی شہروں کا فضائی معیار
     html: ""
+    updates:
+      - text: "New Article: World Lung Day 2026"
+        url: https://abdullah-bin-khurram.github.io/blogs/articles/world-lung-day/
+        date: 24 Sep 2026
   - type: html
     enabled: true
     title_en: Subscribe to our Mailing List
@@ -310,4 +314,3 @@ widgets:
       - text: "📄 Download: Extra Pages for Peak Flow Charting (PDF)"
         url: https://github.com/abdullah-bin-khurram/blogs/raw/refs/heads/main/downloads/pef-chart-extra-sheets.pdf
         date: 28 Aug 2026
-
