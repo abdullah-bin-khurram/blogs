@@ -41,7 +41,7 @@ image_alt_ur: 'عالمی یومِ صحتِ تنفس (World Lung Day 2026) کا 
   دائیں جانب 25 ستمبر 2026 کی تاریخ، عنوان "A Lifetime of Lung Health" (ہر عمر
   میں پھیپھڑوں کی صحت)، ہیش ٹیگ #WorldLungDay 2026 اور FIRS کا لوگو نمایاں ہے۔'
 read_time: 20
-featured: true
+featured: false
 published: true
 body_ur: >
   پھیپھڑوں کا عالمی دن  ہر سال دنیا بھر میں منایا جاتا ہے، لیکن عوامی صحت کی
