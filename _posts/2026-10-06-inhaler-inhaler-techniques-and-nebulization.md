@@ -14,7 +14,7 @@ category: diagnostics
 tags:
   - Inhalers
 read_time: 5
-featured: true
+featured: false
 published: true
 related_articles:
   - 2026-08-03-asthma
