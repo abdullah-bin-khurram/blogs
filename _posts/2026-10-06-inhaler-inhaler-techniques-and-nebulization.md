@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Inhaler, Inhaler Techniques and Nebulization
-title_ur: ...
+title_ur: مِنشقہ، طریقہ استنشاق، اور عملِ اِرذاذ
 description: Proper use of inhalers is one the most important steps one can take
   to improve their management of Asthma or COPD. Learn what different kinds of
   inhalers are, how to use them and what precautions you need to observe while
@@ -9,10 +9,12 @@ description: Proper use of inhalers is one the most important steps one can take
 description_ur: ...
 date: 2026-10-06 18:49:00 +0500
 author: Dr. Abdullah Bin Khurram
-author_ur: عبداللہ بن خرم
+author_ur: "عبداللہ بن خرم "
 category: diagnostics
 tags:
   - Inhalers
+tags_ur:
+  - انہیلر
 read_time: 5
 featured: false
 published: true
