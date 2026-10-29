@@ -397,7 +397,7 @@ Discuss with your physician regarding your vaccination schedule.
 
 Read my detailed article on vaccination here:
 
-https://abdullah-bin-khurram.github.io/blogs/articles/vaccines-for-lung-patients-in-pakistan/
+[Vaccination for lung Patients in Pakistan - ABK Lung Health Education Portal](https://abdullah-bin-khurram.github.io/blogs/articles/vaccines-for-lung-patients-in-pakistan/)
 
 - - -
 
