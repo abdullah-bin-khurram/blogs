@@ -42,7 +42,7 @@ image_alt_ur: COPD کے بارے میں ایک طبی تصویر، جس میں �
 read_time: 20
 featured: true
 published: true
-body_ur: >+
+body_ur: >
   # مزمن انسدادی مرض کیا ہے؟
 
 
@@ -345,7 +345,7 @@ Treatment usually includes:
 
 ✔ **Regular daily medicines**
 
-✔ **Vaccinations** (flu, pneumonia) - Set yearly reminders for October
+✔ **Vaccinations** (flu, pneumonia) 
 
 ✔ **Pulmonary rehabilitation / exercise -** visit physiotherapist
 
@@ -353,7 +353,7 @@ Treatment usually includes:
 
 👉 Medicines work best **only if inhalers are used correctly**.
 
-## Inhaler Technique
+## Inhaler Therapy,
 
 All 1st line medication in COPD are usually delivered through the inhalational route. Mastering the technique of the inhaler prescribed to you is one of the most important step you can take to control your asthma. I hope to have similar videos on every type of inhaler soon on my portal for your convenience.
 
@@ -386,6 +386,8 @@ ALA also has a video on how to clean your nebulizer regularly. A nebulizer never
 
 [How to clean the nebulizer - by American Lung Association](https://youtube.com/watch?v=TevhZlJzfiM&si=skhMHmwr7_gUraQy)
 
+## Vaccinations
+(See this additions soon)
 - - -
 
 # Prevention of Exacerbations
