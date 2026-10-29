@@ -341,11 +341,11 @@ COPD cannot be cured, but it **can be controlled**.
 
 Treatment usually includes:
 
-✔ **Inhalers** to open airways
+✔ **[Inhalers](#inhaler-therapy)** to open airways
 
 ✔ **Regular daily medicines**
 
-✔ **Vaccinations** (flu, pneumonia) 
+✔ **[Vaccinations](#Vaccinations)** (flu, pneumonia) 
 
 ✔ **Pulmonary rehabilitation / exercise -** visit physiotherapist
 
@@ -353,7 +353,7 @@ Treatment usually includes:
 
 👉 Medicines work best **only if inhalers are used correctly**.
 
-## Inhaler Therapy,
+## Inhaler Therapy
 
 All 1st line medication in COPD are usually delivered through the inhalational route. Mastering the technique of the inhaler prescribed to you is one of the most important step you can take to control your asthma. I hope to have similar videos on every type of inhaler soon on my portal for your convenience.
 
@@ -387,14 +387,25 @@ ALA also has a video on how to clean your nebulizer regularly. A nebulizer never
 [How to clean the nebulizer - by American Lung Association](https://youtube.com/watch?v=TevhZlJzfiM&si=skhMHmwr7_gUraQy)
 
 ## Vaccinations
-(See this additions soon)
+International guidelines recommend the following vaccines in selected  COPD patients to prevent exacerbations:
+1. Influenza - annually 
+2. Pneumococcus - as prescribed
+3. COVID-19 boosters - every 6 - 12 months
+4. Respiratory Syncytial Virus - once
+
+Discuss with your physician regarding your vaccination schedule. 
+
+Read my detailed article on vaccination here:
+
+https://abdullah-bin-khurram.github.io/blogs/articles/vaccines-for-lung-patients-in-pakistan/
+
 - - -
 
 # Prevention of Exacerbations
 Exacerbations can be prevented by
 1. Avoiding triggers
 2. Avoiding air pollution
-3. Timely vaccinations.
+3. Timely [vaccination](#Vaccinations)
 
 ## Keep an eye on AQI
 
