@@ -345,7 +345,7 @@ Treatment usually includes:
 
 ✔ **Regular daily medicines**
 
-✔ **[Vaccinations](#Vaccinations)** (flu, pneumonia) 
+✔ **[Vaccinations](#vaaccinations)** (flu, pneumonia) 
 
 ✔ **Pulmonary rehabilitation / exercise -** visit physiotherapist
 
@@ -405,7 +405,7 @@ Read my detailed article on vaccination here:
 Exacerbations can be prevented by
 1. Avoiding triggers
 2. Avoiding air pollution
-3. Timely [vaccination](#Vaccinations)
+3. Timely [vaccination](#vaccinations)
 
 ## Keep an eye on AQI
 
